@@ -16,8 +16,6 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.2"
-          - "7.3"
           - "7.4"
           - "8.0"
 
@@ -47,7 +45,7 @@ jobs:
           composer update ${{ env.COMPOSER_FLAGS }}
 
       - name: "Run tests"
-        run: "composer exec phpunit -- --verbose"
+        run: "composer test"
 
       - name: Run PHPStan
         run: composer phpstan
