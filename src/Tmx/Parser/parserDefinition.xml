@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer xmlns="http://symfony.com/schema/dic/serializer-mapping"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping
+        https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
+>
+    <class name="Tmx\Map">
+        <attribute name="version" serialized-name="@version" />
+        <attribute name="tiledVersion" serialized-name="@tiledversion" />
+        <attribute name="orientationAsString" serialized-name="@orientation" />
+        <attribute name="renderOrderAsString" serialized-name="@renderorder" />
+        <attribute name="width" serialized-name="@width" />
+        <attribute name="height" serialized-name="@height" />
+        <attribute name="tileWidth" serialized-name="@tilewidth" />
+        <attribute name="tileHeight" serialized-name="@tileheight" />
+        <attribute name="infiniteMap" serialized-name="@infinite" />
+        <attribute name="nextLayerId" serialized-name="@nextlayerid" />
+        <attribute name="nextObjectId" serialized-name="@nextobjectid" />
+        <attribute name="tileSets" serialized-name="tileset" />
+        <attribute name="layers" serialized-name="layer" />
+    </class>
+    <class name="Tmx\TileSet">
+        <attribute name="firstGid" serialized-name="@firstgid" />
+        <attribute name="source" serialized-name="@source" />
+        <attribute name="name" serialized-name="@name" />
+
+        <attribute name="tileWidth" serialized-name="@tilewidth" />
+        <attribute name="tileHeight" serialized-name="@tileheight" />
+        <attribute name="tileCount" serialized-name="@tilecount" />
+        <attribute name="columns" serialized-name="@columns" />
+    </class>
+
+
+    <class name="Tmx\Image">
+        <attribute name="source" serialized-name="@source" />
+        <attribute name="width" serialized-name="@width" />
+        <attribute name="height" serialized-name="@height" />
+    </class>
+
+    <class name="Tmx\Layer">
+        <attribute name="id" serialized-name="@id" />
+        <attribute name="name" serialized-name="@name" />
+        <attribute name="width" serialized-name="@width" />
+        <attribute name="height" serialized-name="@height" />
+        <attribute name="layerData" serialized-name="data" />
+    </class>
+    <class name="Tmx\LayerData">
+        <attribute name="encoding" serialized-name="@encoding" />
+        <attribute name="data" serialized-name="#" />
+    </class>
+</serializer>
