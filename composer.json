@@ -1,0 +1,17 @@
+{
+    "name": "kreemer/tmx",
+    "type": "library",
+    "description": "Parsing and manipulating tmx files",
+    "keywords": ["editing","parsing","tiled","tmx"],
+    "homepage": "https://lethani.ch",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kreemer",
+            "email": "kreemer@me.com",
+            "homepage": "https://lethani.ch",
+            "role": "Developer"
+        }
+    ]
+}
+
