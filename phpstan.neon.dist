@@ -1,0 +1,9 @@
+parameters:
+    level: 5
+
+    treatPhpDocTypesAsCertain: true
+    reportUnmatchedIgnoredErrors: false
+
+    paths:
+        - src/
+        - tests/
