@@ -6,6 +6,8 @@
 
 TMX is a library for creating, parsing and editing tmx files. The main purpose is to parse a tmx file and save the parsed file as image file.
 
+The tmx format is used by the program [Tiled](https://www.mapeditor.org). The format is explained [here](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/).
+
 ## Installation
 
 Install the latest version with
