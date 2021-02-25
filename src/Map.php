@@ -2,7 +2,6 @@
 
 /*
  * This file is part of the Tmx package.
- *
  * (c) kreemer <kreemer@me.com>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -326,6 +325,9 @@ class Map
         return $this;
     }
 
+    /**
+     * @return array<TileSet>
+     */
     public function getTileSets(): array
     {
         return $this->tileSets;

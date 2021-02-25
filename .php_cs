@@ -19,6 +19,9 @@ return PhpCsFixer\Config::create()
     ->setUsingCache(true)
     ->setRules(array(
         '@Symfony' => true,
+        'concat_space' => [
+            'spacing' => 'one'
+        ],
     ))
     ->setFinder($finder)
 ;

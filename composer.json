@@ -28,10 +28,10 @@
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
-        "psr-4": {"Tmx\\": "src/Tmx"}
+        "psr-4": {"Tmx\\": "src/"}
     },
     "autoload-dev": {
-        "psr-4": {"Tmx\\": "tests/Tmx"}
+        "psr-4": {"Tmx\\Tests\\": "tests/"}
     },
     "scripts": {
         "test": "vendor/bin/phpunit",

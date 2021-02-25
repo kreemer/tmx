@@ -2,7 +2,7 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" colors="true" beStrictAboutTestsThatDoNotTestAnything="false">
   <coverage>
     <include>
-      <directory suffix=".php">src/Tmx/</directory>
+      <directory suffix=".php">src/</directory>
     </include>
     <report>
       <clover outputFile="clover.xml"/>
@@ -10,7 +10,7 @@
   </coverage>
   <testsuites>
     <testsuite name="Tmx Test Suite">
-      <directory>tests/Tmx/</directory>
+      <directory>tests/</directory>
     </testsuite>
   </testsuites>
   <php>

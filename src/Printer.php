@@ -21,7 +21,7 @@ class Printer
      */
     public function __construct()
     {
-        $this->manager = new ImageManager(['driver' => 'gd']);
+        $this->manager = new ImageManager();
     }
 
     public function render(Map $map): InterventionImage
@@ -74,18 +74,20 @@ class Printer
             foreach ($dataMap as $keyLine => $line) {
                 foreach ($line as $keyTile => $tile) {
                     if (isset($cacheArray[$tile])) {
-                        $tileSetImage[$cacheArray[$tile]['source']]->backup();
-                        $tileSetImage[$cacheArray[$tile]['source']]->crop(
+                        $tileSource = $tileSetImage[$cacheArray[$tile]['source']];
+                        $id = uniqid();
+                        $tileSource->backup($id);
+                        $tileSource->crop(
                                 $cacheArray[$tile]['width'],
                                 $cacheArray[$tile]['height'],
                                 $cacheArray[$tile]['x'],
                                 $cacheArray[$tile]['y']
                             );
                         $img->insert(
-                                $tileSetImage[$cacheArray[$tile]['source']], 'top-left', $keyTile * $map->getTileWidth(), $keyLine * $map->getTileHeight()
-                            );
+                            $tileSource, 'top-left', $keyTile * $map->getTileWidth(), $keyLine * $map->getTileHeight()
+                        );
 
-                        $tileSetImage[$cacheArray[$tile]['source']]->reset();
+                        $tileSource->reset($id);
                     } else {
                         // Error
                     }

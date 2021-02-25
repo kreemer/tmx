@@ -32,7 +32,7 @@ class Parser
     public function __construct()
     {
         $projectRootPath = dirname(Factory::getComposerFile());
-        $configFile = $projectRootPath.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'parserDefinition.xml';
+        $configFile = $projectRootPath . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'parserDefinition.xml';
         $this->classMetadataFactory = new ClassMetadataFactory(new XmlFileLoader($configFile));
         $this->metadataAwareNameConverter = new MetadataAwareNameConverter($this->classMetadataFactory);
 
@@ -56,11 +56,11 @@ class Parser
 
         foreach ($map->getTileSets() as $tileSet) {
             /** @var TileSet $tileSet */
-            $data = file_get_contents($directory.DIRECTORY_SEPARATOR.$tileSet->getSource());
+            $data = file_get_contents($directory . DIRECTORY_SEPARATOR . $tileSet->getSource());
             $this->serializer->deserialize($data, TileSet::class, 'xml', [AbstractNormalizer::OBJECT_TO_POPULATE => $tileSet]);
 
-            $tileSet->setSource(realpath($directory.DIRECTORY_SEPARATOR.$tileSet->getSource()));
-            $tileSet->getImage()->setSource(realpath($directory.DIRECTORY_SEPARATOR.$tileSet->getImage()->getSource()));
+            $tileSet->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getSource()));
+            $tileSet->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getImage()->getSource()));
         }
 
         return $map;

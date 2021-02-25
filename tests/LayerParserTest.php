@@ -7,14 +7,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx;
+namespace Tmx\Tests;
 
-use PHPUnit\Framework\TestCase;
+use Tmx\Parser;
 
-class LayerParserTest extends TestCase
+class LayerParserTest extends TmxTest
 {
     private Parser $parser;
-    private string $resourceFolder = __DIR__.'/../resources';
 
     protected function setUp(): void
     {
@@ -24,21 +23,20 @@ class LayerParserTest extends TestCase
     public function testSimpleEmptyLayerExists(): void
     {
         // when
-        $map = $this->parser->parse($this->resourceFolder.'/example1.tmx');
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
 
         // then
-        self::assertEquals(1, count($map->getLayers()));
+        self::assertCount(1, $map->getLayers());
     }
 
     public function testIdOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->resourceFolder.'/example1.tmx');
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
 
         // then
-        self::assertEquals(1, count($map->getLayers()));
+        self::assertCount(1, $map->getLayers());
 
-        /** @var Layer $layer */
         $layer = $map->getLayers()[0];
         self::assertEquals(1, $layer->getId());
     }
@@ -46,12 +44,11 @@ class LayerParserTest extends TestCase
     public function testNameOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->resourceFolder.'/example1.tmx');
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
 
         // then
-        self::assertEquals(1, count($map->getLayers()));
+        self::assertCount(1, $map->getLayers());
 
-        /** @var Layer $layer */
         $layer = $map->getLayers()[0];
         self::assertEquals('Tile Layer 1', $layer->getName());
     }
@@ -59,12 +56,11 @@ class LayerParserTest extends TestCase
     public function testWidthOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->resourceFolder.'/example1.tmx');
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
 
         // then
-        self::assertEquals(1, count($map->getLayers()));
+        self::assertCount(1, $map->getLayers());
 
-        /** @var Layer $layer */
         $layer = $map->getLayers()[0];
         self::assertEquals(100, $layer->getWidth());
     }
@@ -72,12 +68,11 @@ class LayerParserTest extends TestCase
     public function testHeightOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->resourceFolder.'/example1.tmx');
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
 
         // then
-        self::assertEquals(1, count($map->getLayers()));
+        self::assertCount(1, $map->getLayers());
 
-        /** @var Layer $layer */
         $layer = $map->getLayers()[0];
         self::assertEquals(100, $layer->getHeight());
     }
