@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" colors="true" beStrictAboutTestsThatDoNotTestAnything="false">
+  <coverage>
+    <include>
+      <directory suffix=".php">src/Tmx/</directory>
+    </include>
+    <report>
+      <clover outputFile="clover.xml"/>
+    </report>
+  </coverage>
+  <testsuites>
+    <testsuite name="Tmx Test Suite">
+      <directory>tests/Tmx/</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <ini name="date.timezone" value="UTC"/>
+  </php>
 
-<phpunit
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
-        colors="true"
-        beStrictAboutTestsThatDoNotTestAnything="false"
->
-    <testsuites>
-        <testsuite name="Tmx Test Suite">
-            <directory>tests/Tmx/</directory>
-        </testsuite>
-    </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory suffix=".php">src/Tmx/</directory>
-        </whitelist>
-    </filter>
-
-    <php>
-        <ini name="date.timezone" value="UTC"/>
-    </php>
 </phpunit>

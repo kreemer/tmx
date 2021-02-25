@@ -41,7 +41,7 @@ class ImageParserTest extends TestCase
         self::assertNotNull($map->getTileSets()[0]->getImage());
         /** @var Image $image */
         $image = $map->getTileSets()[0]->getImage();
-        self::assertEquals('Serene_Village_32x32.png', $image->getSource());
+        self::assertStringEndsWith('Serene_Village_32x32.png', $image->getSource());
     }
 
     public function testImageWidthFromTileSetTest(): void

@@ -9,6 +9,7 @@
 
 namespace Tmx;
 
+use Composer\Factory;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
@@ -30,7 +31,9 @@ class Parser
      */
     public function __construct()
     {
-        $this->classMetadataFactory = new ClassMetadataFactory(new XmlFileLoader(__DIR__.'/Parser/parserDefinition.xml'));
+        $projectRootPath = dirname(Factory::getComposerFile());
+        $configFile = $projectRootPath.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'parserDefinition.xml';
+        $this->classMetadataFactory = new ClassMetadataFactory(new XmlFileLoader($configFile));
         $this->metadataAwareNameConverter = new MetadataAwareNameConverter($this->classMetadataFactory);
 
         $normalizer = new ObjectNormalizer($this->classMetadataFactory, $this->metadataAwareNameConverter, null, new ReflectionExtractor());
@@ -53,8 +56,11 @@ class Parser
 
         foreach ($map->getTileSets() as $tileSet) {
             /** @var TileSet $tileSet */
-            $data = file_get_contents($directory.'/'.$tileSet->getSource());
+            $data = file_get_contents($directory.DIRECTORY_SEPARATOR.$tileSet->getSource());
             $this->serializer->deserialize($data, TileSet::class, 'xml', [AbstractNormalizer::OBJECT_TO_POPULATE => $tileSet]);
+
+            $tileSet->setSource(realpath($directory.DIRECTORY_SEPARATOR.$tileSet->getSource()));
+            $tileSet->getImage()->setSource(realpath($directory.DIRECTORY_SEPARATOR.$tileSet->getImage()->getSource()));
         }
 
         return $map;

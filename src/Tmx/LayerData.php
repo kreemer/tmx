@@ -11,9 +11,15 @@ namespace Tmx;
 
 class LayerData
 {
-    private ?string $encoding;
+    private ?string $encoding = null;
 
     private string $data;
+
+    public function __construct(string $data, string $encoding = null)
+    {
+        $this->data = $data;
+        $this->encoding = $encoding;
+    }
 
     public function getEncoding(): ?string
     {

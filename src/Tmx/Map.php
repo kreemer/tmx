@@ -53,35 +53,35 @@ class Map
      */
     const ORIENTATION_HEXAGONAL = 4;
 
-    private string $version;
+    private ?string $version = null;
 
-    private ?string $tiledVersion;
+    private ?string $tiledVersion = null;
 
-    private int $orientation;
+    private ?int $orientation = null;
 
     private int $renderOrder = self::RENDER_ORDER_RIGHT_DOWN;
 
-    private ?float $compressionLevel;
+    private ?float $compressionLevel = null;
 
-    private int $width;
+    private ?int $width = null;
 
-    private int $height;
+    private ?int $height = null;
 
-    private int $tileWidth;
+    private ?int $tileWidth = null;
 
-    private int $tileHeight;
+    private ?int $tileHeight = null;
 
-    private ?string $backgroundColor;
-
-    /**
-     * @var string the next id of the layer which will be added
-     */
-    private string $nextLayerId;
+    private ?string $backgroundColor = null;
 
     /**
-     * @var string The id of the next object which will be added
+     * @var ?string the next id of the layer which will be added
      */
-    private string $nextObjectId;
+    private ?string $nextLayerId = null;
+
+    /**
+     * @var ?string The id of the next object which will be added
+     */
+    private ?string $nextObjectId = null;
 
     /**
      * @var bool If the map is infinite or not
@@ -94,7 +94,7 @@ class Map
     private array $tileSets = [];
 
     /**
-     * @var array Array of layer objects
+     * @var array<Layer> Array of layer objects
      */
     private array $layers = [];
 
@@ -230,7 +230,7 @@ class Map
         return $this;
     }
 
-    public function getWidth(): int
+    public function getWidth(): ?int
     {
         return $this->width;
     }
@@ -242,7 +242,7 @@ class Map
         return $this;
     }
 
-    public function getHeight(): int
+    public function getHeight(): ?int
     {
         return $this->height;
     }
@@ -347,6 +347,9 @@ class Map
         return $this;
     }
 
+    /**
+     * @return array<Layer>
+     */
     public function getLayers(): array
     {
         return $this->layers;

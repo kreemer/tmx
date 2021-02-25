@@ -47,7 +47,7 @@ class TileSetParserTest extends TestCase
 
         // then
         self::assertEquals(1, count($map->getTileSets()));
-        self::assertEquals('example3.tsx', $map->getTileSets()[0]->getSource());
+        self::assertStringEndsWith('example3.tsx', $map->getTileSets()[0]->getSource());
     }
 
     public function testTileSetWillBeLoadedFromSource(): void
