@@ -218,4 +218,23 @@ class MapParserTest extends TmxTest
         // then
         self::assertEquals(1, $map->getNextObjectId());
     }
+
+    public function testBackgroundColorIsNullWhenNotSet(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+
+        // then
+        self::assertNull($map->getBackgroundColor());
+    }
+
+    public function testBackgroundColorIsCorrect(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getResourceFolder() . 'basic-background.tmx');
+
+        // then
+        self::assertNotNull($map->getBackgroundColor());
+        self::assertEquals('#849600', $map->getBackgroundColor());
+    }
 }

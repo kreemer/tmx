@@ -55,7 +55,6 @@ class Parser
         ]);
 
         foreach ($map->getTileSets() as $tileSet) {
-            /** @var TileSet $tileSet */
             $data = file_get_contents($directory . DIRECTORY_SEPARATOR . $tileSet->getSource());
             $this->serializer->deserialize($data, TileSet::class, 'xml', [AbstractNormalizer::OBJECT_TO_POPULATE => $tileSet]);
 

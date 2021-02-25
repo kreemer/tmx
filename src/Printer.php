@@ -33,12 +33,11 @@ class Printer
         $widthPixel = $map->getWidth() * $map->getTileWidth();
         $heightPixel = $map->getHeight() * $map->getTileHeight();
 
-        $img = $this->manager->canvas($widthPixel, $heightPixel);
+        $img = $this->manager->canvas($widthPixel, $heightPixel, $map->getBackgroundColor());
 
         $cacheArray = [];
         $tileSetImage = [];
         foreach ($map->getTileSets() as $tileSet) {
-            /** @var $tileSet TileSet */
             if (0 != $tileSet->getImage()->getWidth() % $tileSet->getTileWidth()) {
                 // ERROR
             }
@@ -60,6 +59,7 @@ class Printer
                         'y' => $i * $tileSet->getTileHeight(),
                         'width' => $tileSet->getTileWidth(),
                         'height' => $tileSet->getTileHeight(),
+                        'tileSet' => $tileSet,
                         'source' => $tileSet->getImage()->getSource(),
                     ];
                     ++$index;
@@ -83,8 +83,18 @@ class Printer
                                 $cacheArray[$tile]['x'],
                                 $cacheArray[$tile]['y']
                             );
+
+                        /** @var TileSet $tileSet */
+                        $tileSet = $cacheArray[$tile]['tileSet'];
+                        $offsetX = $tileSet->getTileOffset() !== null && $tileSet->getTileOffset()->getX() !== null ?
+                            $tileSet->getTileOffset()->getX() :
+                            0;
+                        $offsetY = $tileSet->getTileOffset() !== null && $tileSet->getTileOffset()->getY() !== null ?
+                            $tileSet->getTileOffset()->getY() :
+                            0;
+
                         $img->insert(
-                            $tileSource, 'top-left', $keyTile * $map->getTileWidth(), $keyLine * $map->getTileHeight()
+                            $tileSource, 'top-left', $keyTile * $map->getTileWidth() + $offsetX, $keyLine * $map->getTileHeight() + $offsetY
                         );
 
                         $tileSource->reset($id);

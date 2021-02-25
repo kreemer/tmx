@@ -26,6 +26,7 @@
         <attribute name="nextObjectId" serialized-name="@nextobjectid" />
         <attribute name="tileSets" serialized-name="tileset" />
         <attribute name="layers" serialized-name="layer" />
+        <attribute name="backgroundColor" serialized-name="@backgroundcolor" />
     </class>
     <class name="Tmx\TileSet">
         <attribute name="firstGid" serialized-name="@firstgid" />
@@ -38,6 +39,11 @@
         <attribute name="columns" serialized-name="@columns" />
     </class>
 
+
+    <class name="Tmx\TileOffset">
+        <attribute name="x" serialized-name="@x" />
+        <attribute name="y" serialized-name="@y" />
+    </class>
 
     <class name="Tmx\Image">
         <attribute name="source" serialized-name="@source" />

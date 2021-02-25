@@ -11,20 +11,21 @@ namespace Tmx;
 
 class TileSet
 {
-    private ?int $firstGid;
-    private ?string $source;
-    private ?string $name;
+    private ?int $firstGid = null;
+    private ?string $source = null;
+    private ?string $name = null;
 
-    private ?int $tileWidth;
-    private ?int $tileHeight;
+    private ?int $tileWidth = null;
+    private ?int $tileHeight = null;
 
-    private ?int $spacing;
-    private ?int $margin;
-    private ?int $tileCount;
-    private ?int $columns;
-    private ?string $objectAlignment;
+    private ?int $spacing = null;
+    private ?int $margin = null;
+    private ?int $tileCount = null;
+    private ?int $columns = null;
+    private ?string $objectAlignment = null;
 
-    private ?Image $image;
+    private ?Image $image = null;
+    private ?TileOffset $tileOffset = null;
 
     public function getFirstGid(): ?int
     {
@@ -154,6 +155,18 @@ class TileSet
     public function setImage(?Image $image): TileSet
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getTileOffset(): ?TileOffset
+    {
+        return $this->tileOffset;
+    }
+
+    public function setTileOffset(?TileOffset $tileOffset): TileSet
+    {
+        $this->tileOffset = $tileOffset;
 
         return $this;
     }
