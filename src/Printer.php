@@ -21,7 +21,7 @@ class Printer
      */
     public function __construct()
     {
-        $this->manager = new ImageManager();
+        $this->manager = new ImageManager(['driver' => 'imagick']);
     }
 
     public function render(Map $map): InterventionImage

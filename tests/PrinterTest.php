@@ -49,7 +49,7 @@ class PrinterTest extends TmxTest
         $img->save($imgPath);
 
         // then
-        self::assertSame(md5_file($expectedImgPath), md5_file($imgPath));
+        $this->assertImagesAreEqual($expectedImgPath, $imgPath);
     }
 
     public function testRenderSimpleMapWithOneTile(): void
@@ -89,7 +89,6 @@ class PrinterTest extends TmxTest
         // when
         $img = $this->printer->render($map);
         $actualImg = vfsStream::url('root') . DIRECTORY_SEPARATOR . 'testblah.png';
-        $img->limitColors(255);
         $img->save($actualImg);
 
         // then
