@@ -16,8 +16,8 @@
     "require": {
         "php": ">=7.4",
         "ext-imagick": "*",
-        "composer/composer": "^2.0",
         "intervention/image": "^2.5",
+        "mindplay/composer-locator": "^2.1",
         "symfony/config": "^5.2",
         "symfony/property-access": "^5.2",
         "symfony/serializer": "^5.2"

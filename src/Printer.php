@@ -68,39 +68,46 @@ class Printer
         }
 
         foreach ($map->getLayers() as $layer) {
+            if (!$layer->isVisible()) {
+                continue;
+            }
             $layerData = $layer->getLayerData();
             $dataMap = $layerData->getDataMap();
 
             foreach ($dataMap as $keyLine => $line) {
                 foreach ($line as $keyTile => $tile) {
-                    if (isset($cacheArray[$tile])) {
-                        $tileSource = $tileSetImage[$cacheArray[$tile]['source']];
-                        $id = uniqid();
-                        $tileSource->backup($id);
-                        $tileSource->crop(
-                                $cacheArray[$tile]['width'],
-                                $cacheArray[$tile]['height'],
-                                $cacheArray[$tile]['x'],
-                                $cacheArray[$tile]['y']
-                            );
-
-                        /** @var TileSet $tileSet */
-                        $tileSet = $cacheArray[$tile]['tileSet'];
-                        $offsetX = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getX() ?
-                            $tileSet->getTileOffset()->getX() :
-                            0;
-                        $offsetY = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getY() ?
-                            $tileSet->getTileOffset()->getY() :
-                            0;
-
-                        $img->insert(
-                            $tileSource, 'top-left', $keyTile * $map->getTileWidth() + $offsetX, $keyLine * $map->getTileHeight() + $offsetY
-                        );
-
-                        $tileSource->reset($id);
-                    } else {
-                        // Error
+                    if (!isset($cacheArray[$tile])) {
+                        // ERROR
+                        continue;
                     }
+                    $tileSource = $tileSetImage[$cacheArray[$tile]['source']];
+                    $id = uniqid();
+                    $tileSource->backup($id);
+                    $tileSource->crop(
+                        $cacheArray[$tile]['width'],
+                        $cacheArray[$tile]['height'],
+                        $cacheArray[$tile]['x'],
+                        $cacheArray[$tile]['y']
+                    );
+
+                    /** @var TileSet $tileSet */
+                    $tileSet = $cacheArray[$tile]['tileSet'];
+                    $offsetX = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getX() ?
+                        $tileSet->getTileOffset()->getX() :
+                        0;
+                    $offsetY = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getY() ?
+                        $tileSet->getTileOffset()->getY() :
+                        0;
+
+                    if (null !== $layer->getOpacity()) {
+                        $tileSource->opacity(intval($layer->getOpacity() * 100));
+                    }
+
+                    $img->insert(
+                        $tileSource, 'top-left', $keyTile * $map->getTileWidth() + $offsetX, $keyLine * $map->getTileHeight() + $offsetY
+                    );
+
+                    $tileSource->reset($id);
                 }
             }
         }

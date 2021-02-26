@@ -9,7 +9,7 @@
 
 namespace Tmx;
 
-use Composer\Factory;
+use ComposerLocator;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
@@ -19,6 +19,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Tmx\Normalizer\TileNormalizer;
 
 class Parser
 {
@@ -31,15 +32,17 @@ class Parser
      */
     public function __construct()
     {
-        $projectRootPath = dirname(Factory::getComposerFile());
+        $projectRootPath = ComposerLocator::getRootPath();
         $configFile = $projectRootPath . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'parserDefinition.xml';
         $this->classMetadataFactory = new ClassMetadataFactory(new XmlFileLoader($configFile));
         $this->metadataAwareNameConverter = new MetadataAwareNameConverter($this->classMetadataFactory);
 
         $normalizer = new ObjectNormalizer($this->classMetadataFactory, $this->metadataAwareNameConverter, null, new ReflectionExtractor());
 
+        $tileNormalizer = new TileNormalizer();
+
         $this->serializer = new Serializer(
-            [$normalizer, new ArrayDenormalizer()],
+            [$tileNormalizer, $normalizer, new ArrayDenormalizer()],
             ['xml' => new XmlEncoder()]
         );
     }

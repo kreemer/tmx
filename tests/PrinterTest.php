@@ -103,7 +103,7 @@ class PrinterTest extends TmxTest
         // given
         $expectedImagePath = $this->getResourceFolder() . 'print' . DIRECTORY_SEPARATOR . $expectedImageName;
         $actualImagePath = $debug ?
-            $mapName . '-generated.png' :
+            __DIR__ . DIRECTORY_SEPARATOR . $mapName . '-generated.png' :
             vfsStream::url('root') . DIRECTORY_SEPARATOR . $mapName . '-generated.png';
 
         $parser = new Parser();
@@ -140,6 +140,9 @@ class PrinterTest extends TmxTest
             'mulipleLayerMap' => ['example8.tmx', 'example8.png'],
             'basicBackground' => ['basic-background.tmx', 'basic-background.png'],
             'basicTileOffset' => ['basic-tileoffset.tmx', 'basic-tileoffset.png'],
+            'basicOpacity' => ['basic-opacity.tmx', 'basic-opacity.png'],
+            'basicOpacityWithMultipleLayers' => ['basic-opacity2.tmx', 'basic-opacity2.png'],
+            'basicVisibility' => ['basic-visible.tmx', 'basic-visible.png', true],
         ];
     }
 }

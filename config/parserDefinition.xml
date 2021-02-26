@@ -39,6 +39,7 @@
         <attribute name="tileCount" serialized-name="@tilecount" />
         <attribute name="columns" serialized-name="@columns" />
         <attribute name="terrainCollection" serialized-name="terraintypes" />
+        <attribute name="tiles" serialized-name="tile" />
     </class>
 
     <class name="Tmx\TerrainCollection">
@@ -66,6 +67,10 @@
         <attribute name="name" serialized-name="@name" />
         <attribute name="width" serialized-name="@width" />
         <attribute name="height" serialized-name="@height" />
+        <attribute name="x" serialized-name="@x" />
+        <attribute name="y" serialized-name="@y" />
+        <attribute name="opacity" serialized-name="@opacity" />
+        <attribute name="visible" serialized-name="@visible" />
         <attribute name="layerData" serialized-name="data" />
     </class>
     <class name="Tmx\LayerData">

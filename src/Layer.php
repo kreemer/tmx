@@ -13,8 +13,22 @@ class Layer
 {
     private ?int $id;
     private ?string $name;
+
+    private int $x = 0;
+    private int $y = 0;
+
     private ?int $width;
     private ?int $height;
+
+    private ?float $opacity = 1.0;
+    private bool $visible = true;
+
+    private ?string $tintColor = null;
+
+    private int $offsetX = 0;
+    private int $offsetY = 0;
+
+
     private ?LayerData $layerData;
 
     public function getId(): ?int
@@ -41,6 +55,43 @@ class Layer
         return $this;
     }
 
+    /**
+     * @return int
+     */
+    public function getX(): int
+    {
+        return $this->x;
+    }
+
+    /**
+     * @param int $x
+     * @return Layer
+     */
+    public function setX(int $x): Layer
+    {
+        $this->x = $x;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getY(): int
+    {
+        return $this->y;
+    }
+
+    /**
+     * @param int $y
+     * @return Layer
+     */
+    public function setY(int $y): Layer
+    {
+        $this->y = $y;
+        return $this;
+    }
+
+
     public function getWidth(): ?int
     {
         return $this->width;
@@ -64,6 +115,43 @@ class Layer
 
         return $this;
     }
+
+    /**
+     * @return float|null
+     */
+    public function getOpacity(): ?float
+    {
+        return $this->opacity;
+    }
+
+    /**
+     * @param float|null $opacity
+     * @return Layer
+     */
+    public function setOpacity($opacity): Layer
+    {
+        $this->opacity = $opacity;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isVisible(): bool
+    {
+        return $this->visible;
+    }
+
+    /**
+     * @param bool $visible
+     * @return Layer
+     */
+    public function setVisible(bool $visible): Layer
+    {
+        $this->visible = $visible;
+        return $this;
+    }
+
 
     public function getLayerData(): ?LayerData
     {

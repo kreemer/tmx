@@ -76,4 +76,79 @@ class LayerParserTest extends TmxTest
         $layer = $map->getLayers()[0];
         self::assertEquals(100, $layer->getHeight());
     }
+
+    public function testXOfLayer(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+
+        // then
+        self::assertCount(1, $map->getLayers());
+
+        $layer = $map->getLayers()[0];
+        self::assertEquals(0, $layer->getX());
+    }
+
+    public function testYOfLayer(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+
+        // then
+        self::assertCount(1, $map->getLayers());
+
+        $layer = $map->getLayers()[0];
+        self::assertEquals(0, $layer->getY());
+    }
+
+    public function testOpacityOfLayerIsDefaultToOne(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+
+        // then
+        self::assertCount(1, $map->getLayers());
+
+        $layer = $map->getLayers()[0];
+        self::assertEquals(1.0, $layer->getOpacity());
+    }
+
+    public function testOpacityOfLayer(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getResourceFolder() . 'basic-opacity.tmx');
+
+        // then
+        self::assertCount(1, $map->getLayers());
+
+        $layer = $map->getLayers()[0];
+        self::assertEquals(0.4, $layer->getOpacity());
+    }
+
+    public function testVisibleDefaultTrue(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+
+        // then
+        self::assertCount(1, $map->getLayers());
+
+        $layer = $map->getLayers()[0];
+        self::assertTrue($layer->isVisible());
+    }
+
+    public function testVisibleCanBeFalse(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getResourceFolder() . 'basic-visible.tmx');
+
+        // then
+        self::assertCount(2, $map->getLayers());
+
+        $layer = $map->getLayers()[0];
+        self::assertTrue($layer->isVisible());
+
+        $layer = $map->getLayers()[1];
+        self::assertFalse($layer->isVisible());
+    }
 }

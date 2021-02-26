@@ -28,6 +28,11 @@ class TileSet
     private ?TileOffset $tileOffset = null;
     private ?TerrainCollection $terrainCollection = null;
 
+    /**
+     * @var array<Tile>
+     */
+    private array $tiles = [];
+
     public function getFirstGid(): ?int
     {
         return $this->firstGid;
@@ -180,6 +185,30 @@ class TileSet
     public function setTerrainCollection(?TerrainCollection $terrainCollection): TileSet
     {
         $this->terrainCollection = $terrainCollection;
+
+        return $this;
+    }
+
+    /**
+     * @return array<Tile>
+     */
+    public function getTiles(): array
+    {
+        return $this->tiles;
+    }
+
+    public function addTile(Tile $tile): self
+    {
+        $this->tiles[] = $tile;
+
+        return $this;
+    }
+
+    public function removeTile(Tile $tile): self
+    {
+        if (in_array($tile, $this->tiles)) {
+            $this->tiles = array_diff($this->tiles, [$tile]);
+        }
 
         return $this;
     }
