@@ -28,6 +28,7 @@
         <attribute name="layers" serialized-name="layer" />
         <attribute name="backgroundColor" serialized-name="@backgroundcolor" />
     </class>
+
     <class name="Tmx\TileSet">
         <attribute name="firstGid" serialized-name="@firstgid" />
         <attribute name="source" serialized-name="@source" />
@@ -37,12 +38,21 @@
         <attribute name="tileHeight" serialized-name="@tileheight" />
         <attribute name="tileCount" serialized-name="@tilecount" />
         <attribute name="columns" serialized-name="@columns" />
+        <attribute name="terrainCollection" serialized-name="terraintypes" />
     </class>
 
+    <class name="Tmx\TerrainCollection">
+        <attribute name="terrains" serialized-name="terrain" />
+    </class>
 
     <class name="Tmx\TileOffset">
         <attribute name="x" serialized-name="@x" />
         <attribute name="y" serialized-name="@y" />
+    </class>
+
+    <class name="Tmx\Terrain">
+        <attribute name="name" serialized-name="@name" />
+        <attribute name="tile" serialized-name="@tile" />
     </class>
 
     <class name="Tmx\Image">

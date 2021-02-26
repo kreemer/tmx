@@ -103,8 +103,8 @@ class PrinterTest extends TmxTest
         // given
         $expectedImagePath = $this->getResourceFolder() . 'print' . DIRECTORY_SEPARATOR . $expectedImageName;
         $actualImagePath = $debug ?
-            $mapName . '.png' :
-            vfsStream::url('root') . DIRECTORY_SEPARATOR . time() . '.png';
+            $mapName . '-generated.png' :
+            vfsStream::url('root') . DIRECTORY_SEPARATOR . $mapName . '-generated.png';
 
         $parser = new Parser();
         $map = $parser->parse($this->getResourceFolder() . $mapName);
@@ -138,7 +138,7 @@ class PrinterTest extends TmxTest
             // 'weirdProportions' => ['example6.tmx', 'example6.png'],
             'orientationSwitched' => ['example7.tmx', 'example7.png'],
             'mulipleLayerMap' => ['example8.tmx', 'example8.png'],
-            'basicBackground' => ['basic-background.tmx', 'basic-background.png', true],
+            'basicBackground' => ['basic-background.tmx', 'basic-background.png'],
             'basicTileOffset' => ['basic-tileoffset.tmx', 'basic-tileoffset.png'],
         ];
     }

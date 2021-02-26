@@ -26,6 +26,7 @@ class TileSet
 
     private ?Image $image = null;
     private ?TileOffset $tileOffset = null;
+    private ?TerrainCollection $terrainCollection = null;
 
     public function getFirstGid(): ?int
     {
@@ -168,6 +169,24 @@ class TileSet
     {
         $this->tileOffset = $tileOffset;
 
+        return $this;
+    }
+
+    /**
+     * @return TerrainCollection|null
+     */
+    public function getTerrainCollection(): ?TerrainCollection
+    {
+        return $this->terrainCollection;
+    }
+
+    /**
+     * @param TerrainCollection|null $terrainCollection
+     * @return TileSet
+     */
+    public function setTerrainCollection(?TerrainCollection $terrainCollection): TileSet
+    {
+        $this->terrainCollection = $terrainCollection;
         return $this;
     }
 }
