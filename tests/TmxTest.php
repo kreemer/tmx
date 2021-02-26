@@ -13,6 +13,16 @@ use PHPUnit\Framework\TestCase;
 
 abstract class TmxTest extends TestCase
 {
+    protected function getMapPath(string $name): string
+    {
+        return $this->getResourceFolder() . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . $name . '.tmx';
+    }
+
+    protected function getImgPath(string $name): string
+    {
+        return $this->getResourceFolder() . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . $name . '.png';
+    }
+
     protected function getResourceFolder(): string
     {
         return __DIR__ . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR;

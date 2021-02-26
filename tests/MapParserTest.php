@@ -24,7 +24,7 @@ class MapParserTest extends TmxTest
     public function testVersionFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(1.4, $map->getVersion());
@@ -33,7 +33,7 @@ class MapParserTest extends TmxTest
     public function testTiledVersionFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals('1.4.3', $map->getTiledVersion());
@@ -42,7 +42,7 @@ class MapParserTest extends TmxTest
     public function testOrientationFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(Map::ORIENTATION_ORTHOGONAL, $map->getOrientation());
@@ -51,7 +51,7 @@ class MapParserTest extends TmxTest
     public function testRenderOrderFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(Map::RENDER_ORDER_RIGHT_DOWN, $map->getRenderOrder());
@@ -60,7 +60,7 @@ class MapParserTest extends TmxTest
     public function testWidthFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(100, $map->getWidth());
@@ -69,7 +69,7 @@ class MapParserTest extends TmxTest
     public function testHeightFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(100, $map->getHeight());
@@ -78,7 +78,7 @@ class MapParserTest extends TmxTest
     public function testTileWidthFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(32, $map->getTileWidth());
@@ -87,7 +87,7 @@ class MapParserTest extends TmxTest
     public function testTileHeightFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(32, $map->getTileHeight());
@@ -96,7 +96,7 @@ class MapParserTest extends TmxTest
     public function testInfiniteFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(false, $map->isInfiniteMap());
@@ -105,7 +105,7 @@ class MapParserTest extends TmxTest
     public function testNextLayerIdFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(2, $map->getNextLayerId());
@@ -114,7 +114,7 @@ class MapParserTest extends TmxTest
     public function testNextObjectIdFromExample1IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertEquals(1, $map->getNextObjectId());
@@ -123,7 +123,7 @@ class MapParserTest extends TmxTest
     public function testVersionFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(1.4, $map->getVersion());
@@ -132,7 +132,7 @@ class MapParserTest extends TmxTest
     public function testTiledVersionFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals('1.4.2', $map->getTiledVersion());
@@ -141,7 +141,7 @@ class MapParserTest extends TmxTest
     public function testOrientationFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(Map::ORIENTATION_ORTHOGONAL, $map->getOrientation());
@@ -150,7 +150,7 @@ class MapParserTest extends TmxTest
     public function testRenderOrderFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(Map::RENDER_ORDER_RIGHT_UP, $map->getRenderOrder());
@@ -159,7 +159,7 @@ class MapParserTest extends TmxTest
     public function testWidthFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(400, $map->getWidth());
@@ -168,7 +168,7 @@ class MapParserTest extends TmxTest
     public function testHeightFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(200, $map->getHeight());
@@ -177,7 +177,7 @@ class MapParserTest extends TmxTest
     public function testTileWidthFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(16, $map->getTileWidth());
@@ -186,7 +186,7 @@ class MapParserTest extends TmxTest
     public function testTileHeightFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(16, $map->getTileHeight());
@@ -195,7 +195,7 @@ class MapParserTest extends TmxTest
     public function testInfiniteFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(false, $map->isInfiniteMap());
@@ -204,7 +204,7 @@ class MapParserTest extends TmxTest
     public function testNextLayerIdFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(2, $map->getNextLayerId());
@@ -213,7 +213,7 @@ class MapParserTest extends TmxTest
     public function testNextObjectIdFromExample2IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertEquals(1, $map->getNextObjectId());
@@ -222,7 +222,7 @@ class MapParserTest extends TmxTest
     public function testBackgroundColorIsNullWhenNotSet(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example2.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-2'));
 
         // then
         self::assertNull($map->getBackgroundColor());
@@ -231,7 +231,7 @@ class MapParserTest extends TmxTest
     public function testBackgroundColorIsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'basic-background.tmx');
+        $map = $this->parser->parse($this->getMapPath('background'));
 
         // then
         self::assertNotNull($map->getBackgroundColor());

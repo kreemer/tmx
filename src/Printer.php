@@ -9,6 +9,7 @@
 
 namespace Tmx;
 
+use ComposerLocator;
 use Intervention\Image\Image as InterventionImage;
 use Intervention\Image\ImageManager;
 
@@ -118,6 +119,10 @@ class Printer
     public function print(Map $map, string $filename): void
     {
         $img = $this->render($map);
-        $img->save($filename);
+        /** @var \Imagick $imagick */
+        $imagick = $img->getCore();
+        $imagick->setImageDepth(32);
+        $imagick->setImageFormat('PNG32');
+        @file_put_contents($filename, $imagick->getImageBlob());
     }
 }

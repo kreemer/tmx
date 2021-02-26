@@ -23,7 +23,7 @@ class LayerDataParserTest extends TmxTest
     public function testSimpleEmptyLayerExists(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -35,7 +35,7 @@ class LayerDataParserTest extends TmxTest
     public function testEncodingOfLayerData(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -47,7 +47,7 @@ class LayerDataParserTest extends TmxTest
     public function testDataOfLayerData(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -60,7 +60,7 @@ class LayerDataParserTest extends TmxTest
     public function testDataMapOfLayerData(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());

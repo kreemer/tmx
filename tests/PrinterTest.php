@@ -55,7 +55,7 @@ class PrinterTest extends TmxTest
     public function testRenderSimpleMapWithOneTile(): void
     {
         // given
-        $expectedImg = $this->getResourceFolder() . 'print' . DIRECTORY_SEPARATOR . 'assertDoorOutput.png';
+        $expectedImg = $this->getImgPath('manual');
 
         $map = new Map();
         $map->setHeight(1);
@@ -66,7 +66,7 @@ class PrinterTest extends TmxTest
         $image = new Image();
         $image->setWidth(32);
         $image->setHeight(32);
-        $image->setSource($this->getResourceFolder() . 'tileSet' . DIRECTORY_SEPARATOR . 'door_32x32.png');
+        $image->setSource($this->getResourceFolder() . '_tileSet' . DIRECTORY_SEPARATOR . 'door_32x32.png');
         $image->setFormat('png');
 
         $tileSet = new TileSet();
@@ -98,16 +98,16 @@ class PrinterTest extends TmxTest
     /**
      * @dataProvider mapOutputProvider
      */
-    public function testPrintingMaps(string $mapName, string $expectedImageName, bool $debug = false): void
+    public function testPrintingMaps(string $mapName, bool $debug = false): void
     {
         // given
-        $expectedImagePath = $this->getResourceFolder() . 'print' . DIRECTORY_SEPARATOR . $expectedImageName;
+        $expectedImagePath = $this->getImgPath($mapName);
         $actualImagePath = $debug ?
             __DIR__ . DIRECTORY_SEPARATOR . $mapName . '-generated.png' :
             vfsStream::url('root') . DIRECTORY_SEPARATOR . $mapName . '-generated.png';
 
         $parser = new Parser();
-        $map = $parser->parse($this->getResourceFolder() . $mapName);
+        $map = $parser->parse($this->getMapPath($mapName));
 
         // when
         $this->printer->print($map, $actualImagePath);
@@ -127,22 +127,21 @@ class PrinterTest extends TmxTest
 
         $result = $img1->compareImages($img2, \Imagick::METRIC_ROOTMEANSQUAREDERROR);
 
-        $this->assertLessThan(0.1, $result[1], 'Images are not equal with factor: ' . $result[1]);
+        $this->assertLessThan(0.01, $result[1], 'Images are not equal with factor: ' . $result[1]);
     }
 
     public function mapOutputProvider(): array
     {
         return [
-            'largeLandMap' => ['example3.tmx', 'example3.png'],
-            'simpleLandMap' => ['example5.tmx', 'example5.png'],
-            // 'weirdProportions' => ['example6.tmx', 'example6.png'],
-            'orientationSwitched' => ['example7.tmx', 'example7.png'],
-            'mulipleLayerMap' => ['example8.tmx', 'example8.png'],
-            'basicBackground' => ['basic-background.tmx', 'basic-background.png'],
-            'basicTileOffset' => ['basic-tileoffset.tmx', 'basic-tileoffset.png'],
-            'basicOpacity' => ['basic-opacity.tmx', 'basic-opacity.png'],
-            'basicOpacityWithMultipleLayers' => ['basic-opacity2.tmx', 'basic-opacity2.png'],
-            'basicVisibility' => ['basic-visible.tmx', 'basic-visible.png'],
+            ['map-3'],
+            ['map-5'],
+            ['map-7'],
+            ['map-8'],
+            ['background'],
+            ['tileoffset'],
+            ['opacity'],
+            ['opacity2'],
+            ['visible'],
         ];
     }
 }

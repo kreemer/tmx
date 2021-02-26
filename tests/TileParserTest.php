@@ -24,7 +24,7 @@ class TileParserTest extends TmxTest
     public function testTileSetWithoutTiles(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -34,7 +34,7 @@ class TileParserTest extends TmxTest
     public function testTileSetWithTilesWillParseThemAsArray(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'basic-terrain.tmx');
+        $map = $this->parser->parse($this->getMapPath('terrain'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -44,7 +44,7 @@ class TileParserTest extends TmxTest
     public function testTileTerrainHasCorrectAmountOfTiles(): array
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'basic-tile-terrain.tmx');
+        $map = $this->parser->parse($this->getMapPath('tile-terrain'));
 
         // then
         self::assertCount(1, $map->getTileSets());

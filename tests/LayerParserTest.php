@@ -23,7 +23,7 @@ class LayerParserTest extends TmxTest
     public function testSimpleEmptyLayerExists(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -32,7 +32,7 @@ class LayerParserTest extends TmxTest
     public function testIdOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -44,7 +44,7 @@ class LayerParserTest extends TmxTest
     public function testNameOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -56,7 +56,7 @@ class LayerParserTest extends TmxTest
     public function testWidthOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -68,7 +68,7 @@ class LayerParserTest extends TmxTest
     public function testHeightOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -80,7 +80,7 @@ class LayerParserTest extends TmxTest
     public function testXOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -92,7 +92,7 @@ class LayerParserTest extends TmxTest
     public function testYOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -104,7 +104,7 @@ class LayerParserTest extends TmxTest
     public function testOpacityOfLayerIsDefaultToOne(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -116,7 +116,7 @@ class LayerParserTest extends TmxTest
     public function testOpacityOfLayer(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'basic-opacity.tmx');
+        $map = $this->parser->parse($this->getMapPath('opacity'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -128,7 +128,7 @@ class LayerParserTest extends TmxTest
     public function testVisibleDefaultTrue(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(1, $map->getLayers());
@@ -140,7 +140,7 @@ class LayerParserTest extends TmxTest
     public function testVisibleCanBeFalse(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'basic-visible.tmx');
+        $map = $this->parser->parse($this->getMapPath('visible'));
 
         // then
         self::assertCount(2, $map->getLayers());

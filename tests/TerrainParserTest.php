@@ -24,7 +24,7 @@ class TerrainParserTest extends TmxTest
     public function testTerrainFromExample3IsNotPresent(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -37,7 +37,7 @@ class TerrainParserTest extends TmxTest
     public function testParseBasicTerrainInformation(): array
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'basic-terrain.tmx');
+        $map = $this->parser->parse($this->getMapPath('terrain'));
 
         // then
         self::assertCount(1, $map->getTileSets());

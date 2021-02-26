@@ -23,7 +23,7 @@ class TileOffsetParserTest extends TmxTest
     public function testTileOffsetFromExample3IsNotPresent(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -33,7 +33,7 @@ class TileOffsetParserTest extends TmxTest
     public function testTileOffsetFromBasicTileOffsetExampleIsPresent(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'basic-tileoffset.tmx');
+        $map = $this->parser->parse($this->getMapPath('tileoffset'));
 
         // then
         self::assertCount(1, $map->getTileSets());

@@ -23,7 +23,7 @@ class TileSetParserTest extends TmxTest
     public function testTileSetFromExample1IsNotPresent(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example1.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-1'));
 
         // then
         self::assertCount(0, $map->getTileSets());
@@ -32,7 +32,7 @@ class TileSetParserTest extends TmxTest
     public function testFirstGidFromExample3IsCorrect(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -42,17 +42,17 @@ class TileSetParserTest extends TmxTest
     public function testSourceFromExample3ReferencesCorrectTileSetFile(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
-        self::assertStringEndsWith('example3.tsx', $map->getTileSets()[0]->getSource());
+        self::assertStringEndsWith('map-3.tsx', $map->getTileSets()[0]->getSource());
     }
 
     public function testTileSetWillBeLoadedFromSource(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -62,7 +62,7 @@ class TileSetParserTest extends TmxTest
     public function testTileWidthWillBeLoaded(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -72,7 +72,7 @@ class TileSetParserTest extends TmxTest
     public function testTileHeightWillBeLoaded(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -82,7 +82,7 @@ class TileSetParserTest extends TmxTest
     public function testTileCountWillBeLoaded(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -92,7 +92,7 @@ class TileSetParserTest extends TmxTest
     public function testColumnWillBeLoaded(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());

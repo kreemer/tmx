@@ -24,7 +24,7 @@ class ImageParserTest extends TmxTest
     public function testImageFromTileSetTestNotNull(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -34,7 +34,7 @@ class ImageParserTest extends TmxTest
     public function testImageSourceFromTileSetTest(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -47,7 +47,7 @@ class ImageParserTest extends TmxTest
     public function testImageWidthFromTileSetTest(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
@@ -59,7 +59,7 @@ class ImageParserTest extends TmxTest
     public function testImageHeightTileSetTest(): void
     {
         // when
-        $map = $this->parser->parse($this->getResourceFolder() . 'example3.tmx');
+        $map = $this->parser->parse($this->getMapPath('map-3'));
 
         // then
         self::assertCount(1, $map->getTileSets());
