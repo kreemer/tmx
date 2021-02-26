@@ -86,10 +86,10 @@ class Printer
 
                         /** @var TileSet $tileSet */
                         $tileSet = $cacheArray[$tile]['tileSet'];
-                        $offsetX = $tileSet->getTileOffset() !== null && $tileSet->getTileOffset()->getX() !== null ?
+                        $offsetX = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getX() ?
                             $tileSet->getTileOffset()->getX() :
                             0;
-                        $offsetY = $tileSet->getTileOffset() !== null && $tileSet->getTileOffset()->getY() !== null ?
+                        $offsetY = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getY() ?
                             $tileSet->getTileOffset()->getY() :
                             0;
 

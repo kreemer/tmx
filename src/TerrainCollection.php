@@ -9,15 +9,12 @@
 
 namespace Tmx;
 
-
 class TerrainCollection
 {
-
     /**
      * @var array<Terrain>
      */
     private array $terrains = [];
-
 
     /**
      * @return array<Terrain>

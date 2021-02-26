@@ -172,21 +172,15 @@ class TileSet
         return $this;
     }
 
-    /**
-     * @return TerrainCollection|null
-     */
     public function getTerrainCollection(): ?TerrainCollection
     {
         return $this->terrainCollection;
     }
 
-    /**
-     * @param TerrainCollection|null $terrainCollection
-     * @return TileSet
-     */
     public function setTerrainCollection(?TerrainCollection $terrainCollection): TileSet
     {
         $this->terrainCollection = $terrainCollection;
+
         return $this;
     }
 }

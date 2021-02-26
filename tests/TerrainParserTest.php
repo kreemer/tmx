@@ -9,7 +9,6 @@
 
 namespace Tmx\Tests;
 
-use Tmx\Image;
 use Tmx\Parser;
 use Tmx\Terrain;
 
@@ -50,16 +49,19 @@ class TerrainParserTest extends TmxTest
 
     /**
      * @depends testParseBasicTerrainInformation
+     *
      * @param array<Terrain> $terrains
      */
     public function testParseBasicTerrainInformationName(array $terrains): void
     {
         // then
-        self::assertEquals("Gras", $terrains[0]->getName());
-        self::assertEquals("Sand", $terrains[1]->getName());
+        self::assertEquals('Gras', $terrains[0]->getName());
+        self::assertEquals('Sand', $terrains[1]->getName());
     }
+
     /**
      * @depends testParseBasicTerrainInformation
+     *
      * @param array<Terrain> $terrains
      */
     public function testParseBasicTerrainInformationFrontTile(array $terrains): void
