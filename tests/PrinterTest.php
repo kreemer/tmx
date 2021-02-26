@@ -142,7 +142,7 @@ class PrinterTest extends TmxTest
             'basicTileOffset' => ['basic-tileoffset.tmx', 'basic-tileoffset.png'],
             'basicOpacity' => ['basic-opacity.tmx', 'basic-opacity.png'],
             'basicOpacityWithMultipleLayers' => ['basic-opacity2.tmx', 'basic-opacity2.png'],
-            'basicVisibility' => ['basic-visible.tmx', 'basic-visible.png', true],
+            'basicVisibility' => ['basic-visible.tmx', 'basic-visible.png'],
         ];
     }
 }

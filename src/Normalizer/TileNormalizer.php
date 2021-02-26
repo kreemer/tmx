@@ -9,22 +9,10 @@
 
 namespace Tmx\Normalizer;
 
-
 use Symfony\Component\Serializer\Encoder\NormalizationAwareInterface;
-use Symfony\Component\Serializer\Exception\BadMethodCallException;
-use Symfony\Component\Serializer\Exception\CircularReferenceException;
-use Symfony\Component\Serializer\Exception\ExceptionInterface;
-use Symfony\Component\Serializer\Exception\ExtraAttributesException;
-use Symfony\Component\Serializer\Exception\InvalidArgumentException;
-use Symfony\Component\Serializer\Exception\LogicException;
-use Symfony\Component\Serializer\Exception\RuntimeException;
-use Symfony\Component\Serializer\Exception\UnexpectedValueException;
-use Symfony\Component\Serializer\Normalizer\DenormalizableInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Tmx\Tile;
@@ -36,8 +24,7 @@ class TileNormalizer implements NormalizerInterface, DenormalizerInterface, Norm
 
     public function normalize($object, string $format = null, array $context = []): array
     {
-
-        /** @var Tile $object */
+        /* @var Tile $object */
         return [
             'id' => $this->normalizer->normalize($object->getId(), $format, $context),
             'type' => $this->normalizer->normalize($object->getType(), $format, $context),
@@ -47,7 +34,7 @@ class TileNormalizer implements NormalizerInterface, DenormalizerInterface, Norm
                     $object->getTopLeftTerrainId(),
                     $object->getTopRightTerrainId(),
                     $object->getBottomLeftTerrainId(),
-                    $object->getBottomRightTerrainId()
+                    $object->getBottomRightTerrainId(),
                 ]
             ),
         ];
@@ -68,7 +55,7 @@ class TileNormalizer implements NormalizerInterface, DenormalizerInterface, Norm
         if (isset($data['@terrain'])) {
             $terrainIdList = explode(',', $data['@terrain']);
 
-            if (count($terrainIdList) === 4) {
+            if (4 === count($terrainIdList)) {
                 $tile->setTopLeftTerrainId(is_numeric($terrainIdList[0]) ? intval($terrainIdList[0]) : null)
                     ->setTopRightTerrainId(is_numeric($terrainIdList[1]) ? intval($terrainIdList[1]) : null)
                     ->setBottomLeftTerrainId(is_numeric($terrainIdList[2]) ? intval($terrainIdList[2]) : null)
@@ -81,7 +68,6 @@ class TileNormalizer implements NormalizerInterface, DenormalizerInterface, Norm
 
     public function supportsDenormalization($data, string $type, string $format = null): bool
     {
-        return $type === Tile::class;
+        return Tile::class === $type;
     }
-
 }

@@ -9,7 +9,6 @@
 
 namespace Tmx\Tests;
 
-use Tmx\Map;
 use Tmx\Parser;
 use Tmx\Tile;
 
