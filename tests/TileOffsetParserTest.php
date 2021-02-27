@@ -9,17 +9,8 @@
 
 namespace Tmx\Tests;
 
-use Tmx\Parser;
-
 class TileOffsetParserTest extends TmxTest
 {
-    private Parser $parser;
-
-    protected function setUp(): void
-    {
-        $this->parser = new Parser();
-    }
-
     public function testTileOffsetFromExample3IsNotPresent(): void
     {
         // when

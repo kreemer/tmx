@@ -9,18 +9,10 @@
 
 namespace Tmx\Tests;
 
-use Tmx\Parser;
 use Tmx\Tile;
 
 class TileParserTest extends TmxTest
 {
-    private Parser $parser;
-
-    protected function setUp(): void
-    {
-        $this->parser = new Parser();
-    }
-
     public function testTileSetWithoutTiles(): void
     {
         // when

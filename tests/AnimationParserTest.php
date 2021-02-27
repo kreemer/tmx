@@ -10,17 +10,9 @@
 namespace Tmx\Tests;
 
 use Tmx\Animation;
-use Tmx\Parser;
 
 class AnimationParserTest extends TmxTest
 {
-    private Parser $parser;
-
-    protected function setUp(): void
-    {
-        $this->parser = new Parser();
-    }
-
     public function testAnimationIsNullIfNotPresent(): void
     {
         // when

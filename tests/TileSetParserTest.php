@@ -9,17 +9,8 @@
 
 namespace Tmx\Tests;
 
-use Tmx\Parser;
-
 class TileSetParserTest extends TmxTest
 {
-    private Parser $parser;
-
-    protected function setUp(): void
-    {
-        $this->parser = new Parser();
-    }
-
     public function testTileSetFromExample1IsNotPresent(): void
     {
         // when

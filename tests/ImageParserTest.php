@@ -10,17 +10,9 @@
 namespace Tmx\Tests;
 
 use Tmx\Image;
-use Tmx\Parser;
 
 class ImageParserTest extends TmxTest
 {
-    private Parser $parser;
-
-    protected function setUp(): void
-    {
-        $this->parser = new Parser();
-    }
-
     public function testImageFromTileSetTestNotNull(): void
     {
         // when

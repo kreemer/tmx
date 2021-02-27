@@ -30,6 +30,7 @@ class TileNormalizer implements NormalizerInterface, DenormalizerInterface, Norm
             'id' => $this->normalizer->normalize($object->getId(), $format, $context),
             'type' => $this->normalizer->normalize($object->getType(), $format, $context),
             'probability' => $this->normalizer->normalize($object->getProbability(), $format, $context),
+            'animation' => $this->normalizer->normalize($object->getAnimation(), $format, $context),
             'terrain' => implode(
                 ',', [
                     $object->getTopLeftTerrainId(),

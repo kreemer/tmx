@@ -9,18 +9,10 @@
 
 namespace Tmx\Tests;
 
-use Tmx\Parser;
 use Tmx\Terrain;
 
 class TerrainParserTest extends TmxTest
 {
-    private Parser $parser;
-
-    protected function setUp(): void
-    {
-        $this->parser = new Parser();
-    }
-
     public function testTerrainFromExample3IsNotPresent(): void
     {
         // when

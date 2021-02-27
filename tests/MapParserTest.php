@@ -10,17 +10,9 @@
 namespace Tmx\Tests;
 
 use Tmx\Map;
-use Tmx\Parser;
 
 class MapParserTest extends TmxTest
 {
-    private Parser $parser;
-
-    protected function setUp(): void
-    {
-        $this->parser = new Parser();
-    }
-
     public function testVersionFromExample1IsCorrect(): void
     {
         // when
