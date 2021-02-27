@@ -19,6 +19,8 @@ class Tile
     private ?int $bottomRightTerrainId = null;
     private float $probability = 1.0;
 
+    private ?Animation $animation = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -99,6 +101,18 @@ class Tile
     public function setProbability(float $probability): Tile
     {
         $this->probability = $probability;
+
+        return $this;
+    }
+
+    public function getAnimation(): ?Animation
+    {
+        return $this->animation;
+    }
+
+    public function setAnimation(?Animation $animation): Tile
+    {
+        $this->animation = $animation;
 
         return $this;
     }

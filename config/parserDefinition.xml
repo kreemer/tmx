@@ -77,4 +77,13 @@
         <attribute name="encoding" serialized-name="@encoding" />
         <attribute name="data" serialized-name="#" />
     </class>
+
+    <class name="Tmx\Animation">
+        <attribute name="frames" serialized-name="frame" />
+    </class>
+
+    <class name="Tmx\Frame">
+        <attribute name="tileId" serialized-name="@tileid" />
+        <attribute name="duration" serialized-name="@duration" />
+    </class>
 </serializer>

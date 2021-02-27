@@ -15,6 +15,7 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Tmx\Animation;
 use Tmx\Tile;
 
 class TileNormalizer implements NormalizerInterface, DenormalizerInterface, NormalizationAwareInterface, DenormalizerAwareInterface
@@ -50,7 +51,8 @@ class TileNormalizer implements NormalizerInterface, DenormalizerInterface, Norm
         $tile = new Tile();
         $tile->setId($data['@id'] ?? null)
             ->setProbability($data['@probability'] ?? 1.0)
-            ->setType($data['@type'] ?? null);
+            ->setType($data['@type'] ?? null)
+            ->setAnimation(isset($data['animation']) ? $this->denormalizer->denormalize($data['animation'], Animation::class, $format) : null);
 
         if (isset($data['@terrain'])) {
             $terrainIdList = explode(',', $data['@terrain']);

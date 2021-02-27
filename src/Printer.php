@@ -9,7 +9,6 @@
 
 namespace Tmx;
 
-use ComposerLocator;
 use Intervention\Image\Image as InterventionImage;
 use Intervention\Image\ImageManager;
 
