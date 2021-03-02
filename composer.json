@@ -38,7 +38,7 @@
         "psr-4": {"Tmx\\Tests\\": "tests/"}
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
+        "test": "vendor/bin/phpunit --coverage-clover coverage.xml",
         "phpstan": "vendor/bin/phpstan analyse"
     },
     "config": {

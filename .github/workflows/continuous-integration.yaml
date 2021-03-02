@@ -26,7 +26,7 @@ jobs:
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"
         with:
-          coverage: "none"
+          coverage: pcov
           php-version: "${{ matrix.php-version }}"
           extensions: imagick, zlib, zstd
 
@@ -48,5 +48,11 @@ jobs:
       - name: "Run tests"
         run: "composer test"
 
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+
       - name: Run PHPStan
         run: composer phpstan
+

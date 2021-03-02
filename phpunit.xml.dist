@@ -4,10 +4,7 @@
     <include>
       <directory suffix=".php">src/</directory>
     </include>
-    <report>
-      <clover outputFile="clover.xml"/>
-    </report>
-  </coverage>
+ </coverage>
   <testsuites>
     <testsuite name="Tmx Test Suite">
       <directory>tests/</directory>
