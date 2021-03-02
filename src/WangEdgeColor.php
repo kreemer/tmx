@@ -9,10 +9,6 @@
 
 namespace Tmx;
 
-class WangEdgeColor
+class WangEdgeColor extends WangColor
 {
-    private ?string $name = null;
-    private ?string $color = null;
-    private ?int $tileId = null;
-    private int $probability = 1;
 }

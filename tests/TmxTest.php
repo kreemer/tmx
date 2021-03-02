@@ -10,20 +10,17 @@
 namespace Tmx\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Tmx\Parser;
 
 abstract class TmxTest extends TestCase
 {
-    protected Parser $parser;
-
-    protected function setUp(): void
-    {
-        $this->parser = new Parser();
-    }
-
     protected function getMapPath(string $name): string
     {
         return $this->getResourceFolder() . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . $name . '.tmx';
+    }
+
+    protected function getTileSetPath(string $name): string
+    {
+        return $this->getResourceFolder() . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . $name . '.tsx';
     }
 
     protected function getImgPath(string $name): string

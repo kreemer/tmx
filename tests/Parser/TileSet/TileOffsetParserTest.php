@@ -7,9 +7,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx\Tests;
+namespace Tmx\Tests\Parser\TileSet;
 
-class TileOffsetParserTest extends TmxTest
+use Tmx\Tests\Parser\ParserTest;
+
+class TileOffsetParserTest extends ParserTest
 {
     public function testTileOffsetFromExample3IsNotPresent(): void
     {

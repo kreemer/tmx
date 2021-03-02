@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx\Tests;
+namespace Tmx\Tests\Parser\TileSet;
 
 use Tmx\Image;
+use Tmx\Tests\Parser\ParserTest;
 
-class ImageParserTest extends TmxTest
+class ImageParserTest extends ParserTest
 {
     public function testImageFromTileSetTestNotNull(): void
     {

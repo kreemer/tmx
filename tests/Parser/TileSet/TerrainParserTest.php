@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx\Tests;
+namespace Tmx\Tests\Parser\TileSet;
 
 use Tmx\Terrain;
+use Tmx\Tests\Parser\ParserTest;
 
-class TerrainParserTest extends TmxTest
+class TerrainParserTest extends ParserTest
 {
     public function testTerrainFromExample3IsNotPresent(): void
     {

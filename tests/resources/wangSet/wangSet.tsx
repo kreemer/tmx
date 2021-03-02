@@ -2,10 +2,10 @@
 <tileset version="1.4" tiledversion="1.4.3" name="wangSet" tilewidth="32" tileheight="32" tilecount="855" columns="19">
  <image source="../_tileSet/Serene_Village_32x32.png" width="608" height="1440"/>
  <wangsets>
-  <wangset name="TestWangSet1" tile="-1">
-   <wangedgecolor name="" color="#ff0000" tile="-1" probability="1"/>
-   <wangedgecolor name="" color="#00ff00" tile="-1" probability="1"/>
-   <wangedgecolor name="" color="#0000ff" tile="-1" probability="1"/>
+  <wangset name="TestWangSet1" tile="1">
+   <wangedgecolor name="WEC1" color="#ff0000" tile="1" probability="0.25"/>
+   <wangedgecolor name="WEC2" color="#00ff00" tile="2" probability="0.3"/>
+   <wangedgecolor name="WEC3" color="#0000ff" tile="3" probability="1"/>
    <wangtile tileid="121" wangid="0x2030102"/>
    <wangtile tileid="122" wangid="0x1010101"/>
    <wangtile tileid="123" wangid="0x1010102"/>
@@ -17,9 +17,12 @@
   <wangset name="TestWangSet2" tile="-1">
    <wangedgecolor name="" color="#ff0000" tile="-1" probability="1"/>
    <wangedgecolor name="" color="#00ff00" tile="-1" probability="1"/>
-   <wangtile tileid="180" wangid="0x1010202"/>
-   <wangtile tileid="181" wangid="0x2010102"/>
-   <wangtile tileid="199" wangid="0x1020101"/>
+   <wangcornercolor name="WCC1" color="#ff0000" tile="1" probability="0.25"/>
+   <wangcornercolor name="WCC2" color="#00ff00" tile="2" probability="0.3"/>
+   <wangcornercolor name="WCC3" color="#0000ff" tile="3" probability="1"/>
+   <wangtile tileid="180" wangid="0x11112121"/>
+   <wangtile tileid="181" wangid="0x11111121"/>
+   <wangtile tileid="199" wangid="0x11111111"/>
   </wangset>
   <wangset name="TestWangSet3" tile="-1">
    <wangcornercolor name="" color="#ff0000" tile="-1" probability="1"/>

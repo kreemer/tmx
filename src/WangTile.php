@@ -14,7 +14,27 @@ class WangTile
     private ?int $tileId = null;
     private ?string $wangId = null;
 
-    private bool $hFlip = false;
-    private bool $vFlip = false;
-    private bool $dFlip = false;
+    public function getTileId(): ?int
+    {
+        return $this->tileId;
+    }
+
+    public function setTileId(?int $tileId): WangTile
+    {
+        $this->tileId = $tileId;
+
+        return $this;
+    }
+
+    public function getWangId(): ?string
+    {
+        return $this->wangId;
+    }
+
+    public function setWangId(?string $wangId): WangTile
+    {
+        $this->wangId = $wangId;
+
+        return $this;
+    }
 }

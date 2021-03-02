@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx\Tests;
+namespace Tmx;
 
-class WangSetParserTest extends TmxTest
+class WangCornerColor extends WangColor
 {
 }

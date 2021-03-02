@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx\Tests;
+namespace Tmx\Tests\Parser\Map;
 
 use Tmx\Map;
+use Tmx\Tests\Parser\ParserTest;
 
-class MapParserTest extends TmxTest
+class MapParserTest extends ParserTest
 {
     public function testVersionFromExample1IsCorrect(): void
     {

@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx\Tests;
+namespace Tmx\Tests\Parser\TileSet;
 
 use Tmx\Animation;
+use Tmx\Tests\Parser\ParserTest;
 
-class AnimationParserTest extends TmxTest
+class AnimationParserTest extends ParserTest
 {
     public function testAnimationIsNullIfNotPresent(): void
     {

@@ -27,6 +27,7 @@ class TileSet
     private ?Image $image = null;
     private ?TileOffset $tileOffset = null;
     private ?TerrainCollection $terrainCollection = null;
+    private ?WangCollection $wangCollection = null;
 
     /**
      * @var array<Tile>
@@ -209,6 +210,18 @@ class TileSet
         if (in_array($tile, $this->tiles)) {
             $this->tiles = array_diff($this->tiles, [$tile]);
         }
+
+        return $this;
+    }
+
+    public function getWangCollection(): ?WangCollection
+    {
+        return $this->wangCollection;
+    }
+
+    public function setWangCollection(?WangCollection $wangCollection): TileSet
+    {
+        $this->wangCollection = $wangCollection;
 
         return $this;
     }

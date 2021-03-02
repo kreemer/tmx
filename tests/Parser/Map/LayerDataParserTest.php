@@ -7,9 +7,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx\Tests;
+namespace Tmx\Tests\Parser\Map;
 
-class LayerDataParserTest extends TmxTest
+use Tmx\Tests\Parser\ParserTest;
+
+class LayerDataParserTest extends ParserTest
 {
     public function testSimpleEmptyLayerExists(): void
     {

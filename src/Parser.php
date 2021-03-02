@@ -58,13 +58,35 @@ class Parser
         ]);
 
         foreach ($map->getTileSets() as $tileSet) {
-            $data = file_get_contents($directory . DIRECTORY_SEPARATOR . $tileSet->getSource());
-            $this->serializer->deserialize($data, TileSet::class, 'xml', [AbstractNormalizer::OBJECT_TO_POPULATE => $tileSet]);
-
-            $tileSet->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getSource()));
-            $tileSet->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getImage()->getSource()));
+            $this->parseTileSet($directory . DIRECTORY_SEPARATOR . $tileSet->getSource(), $tileSet);
         }
 
         return $map;
+    }
+
+    public function parseTileSet(string $file, TileSet $tileSet = null): TileSet
+    {
+        $directory = dirname($file);
+        $fileContents = file_get_contents($file);
+
+        if (null !== $tileSet) {
+            $tileSet = $this->serializer->deserialize($fileContents, TileSet::class, 'xml', [
+                AbstractNormalizer::OBJECT_TO_POPULATE => $tileSet,
+            ]);
+
+            $tileSet->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getSource()));
+            $tileSet->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getImage()->getSource()));
+
+            return $tileSet;
+        }
+
+        $tileSet = $this->serializer->deserialize($fileContents, TileSet::class, 'xml', [
+            ObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true,
+        ]);
+
+        $tileSet->setSource(realpath($directory . DIRECTORY_SEPARATOR . $file));
+        $tileSet->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getImage()->getSource()));
+
+        return $tileSet;
     }
 }

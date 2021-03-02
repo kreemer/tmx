@@ -40,6 +40,37 @@
         <attribute name="columns" serialized-name="@columns" />
         <attribute name="terrainCollection" serialized-name="terraintypes" />
         <attribute name="tiles" serialized-name="tile" />
+        <attribute name="wangCollection" serialized-name="wangsets" />
+    </class>
+
+    <class name="Tmx\WangCollection">
+        <attribute name="wangSets" serialized-name="wangset" />
+    </class>
+    <class name="Tmx\WangSet">
+        <attribute name="name" serialized-name="@name" />
+        <attribute name="tileId" serialized-name="@tile" />
+        <attribute name="wangEdgeColors" serialized-name="wangedgecolor" />
+        <attribute name="wangCornerColors" serialized-name="wangcornercolor" />
+        <attribute name="wangTiles" serialized-name="wangtile" />
+    </class>
+
+    <class name="Tmx\WangTile">
+        <attribute name="wangId" serialized-name="@wangid" />
+        <attribute name="tileId" serialized-name="@tileid" />
+    </class>
+
+    <class name="Tmx\WangEdgeColor">
+        <attribute name="name" serialized-name="@name" />
+        <attribute name="tileId" serialized-name="@tile" />
+        <attribute name="color" serialized-name="@color" />
+        <attribute name="probability" serialized-name="@probability" />
+    </class>
+
+    <class name="Tmx\WangCornerColor">
+        <attribute name="name" serialized-name="@name" />
+        <attribute name="tileId" serialized-name="@tile" />
+        <attribute name="color" serialized-name="@color" />
+        <attribute name="probability" serialized-name="@probability" />
     </class>
 
     <class name="Tmx\TerrainCollection">
