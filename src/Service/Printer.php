@@ -7,14 +7,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx;
+namespace Tmx\Service;
 
 use Intervention\Image\Image as InterventionImage;
 use Intervention\Image\ImageManager;
+use Tmx\Map;
+use Tmx\Service\LayerData\Base64DataParser;
+use Tmx\Service\LayerData\CsvDataParser;
+use Tmx\Service\LayerData\PlainCompression;
+use Tmx\Service\LayerData\ZlibCompression;
+use Tmx\Service\LayerData\ZstdCompression;
+use Tmx\TileSet;
 
 class Printer
 {
     private ImageManager $manager;
+    private LayerDataReader $layerDataReader;
 
     /**
      * Printer constructor.
@@ -22,6 +30,10 @@ class Printer
     public function __construct()
     {
         $this->manager = new ImageManager(['driver' => 'imagick']);
+        $this->layerDataReader = new LayerDataReader(
+            [ new CsvDataParser(), new Base64DataParser() ],
+            [ new PlainCompression(), new ZlibCompression(), new ZstdCompression() ]
+        );
     }
 
     public function render(Map $map): InterventionImage
@@ -30,8 +42,8 @@ class Printer
             return $this->manager->canvas(1, 1, null);
         }
 
-        $widthPixel = $map->getWidth() * $map->getTileWidth();
-        $heightPixel = $map->getHeight() * $map->getTileHeight();
+        $widthPixel = $map->getCalculatedWidth() * $map->getTileWidth();
+        $heightPixel = $map->getCalculatedHeight() * $map->getTileHeight();
 
         $img = $this->manager->canvas($widthPixel, $heightPixel, $map->getBackgroundColor());
 
@@ -72,8 +84,8 @@ class Printer
                 continue;
             }
             $layerData = $layer->getLayerData();
-            $dataMap = $layerData->getDataMap();
-
+            $dataMap = $this->layerDataReader->readLayerData($layerData);
+            var_dump($dataMap);
             foreach ($dataMap as $keyLine => $line) {
                 foreach ($line as $keyTile => $tile) {
                     if (!isset($cacheArray[$tile])) {

@@ -16,8 +16,8 @@ use Tmx\Image;
 use Tmx\Layer;
 use Tmx\LayerData;
 use Tmx\Map;
-use Tmx\Parser;
-use Tmx\Printer;
+use Tmx\Service\Parser;
+use Tmx\Service\Printer;
 use Tmx\TileSet;
 
 class PrinterTest extends TmxTest
@@ -76,7 +76,9 @@ class PrinterTest extends TmxTest
         $tileSet->setTileHeight(32);
         $tileSet->setFirstGid(1);
 
-        $layerData = new LayerData('1,0', 'csv');
+        $layerData = new LayerData();
+        $layerData->setData('1,0');
+        $layerData->setEncoding('csv');
 
         $layer = new Layer();
         $layer->setHeight(1);
@@ -133,18 +135,20 @@ class PrinterTest extends TmxTest
     public function mapOutputProvider(): array
     {
         return [
-            ['map-3'],
-            ['map-5'],
-            ['map-7'],
-            ['map-8'],
-            ['background'],
-            ['tileoffset'],
-            ['opacity'],
-            ['opacity2'],
-            ['visible'],
-            ['base64-saved'],
-            ['base64-saved-zlib'],
-            ['base64-saved-zstd'],
+            'map-3' => ['map-3'],
+            'map-5' => ['map-5'],
+            'map-7' => ['map-7'],
+            'map-8' => ['map-8'],
+            'background' => ['background'],
+            'tileoffset' => ['tileoffset'],
+            'opacity' => ['opacity'],
+            'opacity2' => ['opacity2'],
+            'visible' => ['visible'],
+            'base64-saved' => ['base64-saved'],
+            'base64-saved-zlib' => ['base64-saved-zlib'],
+            'base64-saved-zstd' => ['base64-saved-zstd'],
+            'infinite' => ['infinite'],
+            'infinite-base64' => ['infinite-base64', true],
         ];
     }
 }

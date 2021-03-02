@@ -9,15 +9,26 @@
 
 namespace Tmx\Tests\Parser;
 
-use Tmx\Parser;
+use Tmx\Service\LayerData\Base64DataParser;
+use Tmx\Service\LayerData\CsvDataParser;
+use Tmx\Service\LayerData\PlainCompression;
+use Tmx\Service\LayerData\ZlibCompression;
+use Tmx\Service\LayerData\ZstdCompression;
+use Tmx\Service\LayerDataReader;
+use Tmx\Service\Parser;
 use Tmx\Tests\TmxTest;
 
 abstract class ParserTest extends TmxTest
 {
     protected Parser $parser;
+    protected LayerDataReader $layerDataReader;
 
     protected function setUp(): void
     {
         $this->parser = new Parser();
+        $this->layerDataReader = new LayerDataReader(
+            [ new CsvDataParser(), new Base64DataParser() ],
+            [ new PlainCompression(), new ZlibCompression(), new ZstdCompression() ]
+        );
     }
 }

@@ -83,7 +83,7 @@ class LayerDataParserTest extends ParserTest
         self::assertCount(1, $map->getLayers());
 
         $layer = $map->getLayers()[0];
-        $data = $layer->getLayerData()->getDataMap();
+        $data = $this->layerDataReader->readLayerData($layer->getLayerData());
         self::assertNotNull($data);
         self::assertCount(100, $data);
         foreach ($data as $line) {
@@ -100,7 +100,7 @@ class LayerDataParserTest extends ParserTest
         self::assertCount(1, $map->getLayers());
 
         $layer = $map->getLayers()[0];
-        $data = $layer->getLayerData()->getDataMap();
+        $data = $this->layerDataReader->readLayerData($layer->getLayerData());
         self::assertNotNull($data);
         self::assertCount(4, $data);
         foreach ($data as $line) {
@@ -117,7 +117,7 @@ class LayerDataParserTest extends ParserTest
         self::assertCount(1, $map->getLayers());
 
         $layer = $map->getLayers()[0];
-        $data = $layer->getLayerData()->getDataMap();
+        $data = $this->layerDataReader->readLayerData($layer->getLayerData());
         self::assertNotNull($data);
         self::assertCount(4, $data);
         foreach ($data as $line) {
@@ -134,11 +134,29 @@ class LayerDataParserTest extends ParserTest
         self::assertCount(1, $map->getLayers());
 
         $layer = $map->getLayers()[0];
-        $data = $layer->getLayerData()->getDataMap();
+        $data = $this->layerDataReader->readLayerData($layer->getLayerData());
         self::assertNotNull($data);
         self::assertCount(4, $data);
         foreach ($data as $line) {
             self::assertCount(4, $line);
+        }
+    }
+
+
+    public function testDataOfInfiniteMap(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getMapPath('infinite'));
+
+        // then
+        self::assertCount(2, $map->getLayers());
+
+        $layer = $map->getLayers()[0];
+        $data = $this->layerDataReader->readLayerData($layer->getLayerData());
+        self::assertNotNull($data);
+        self::assertCount(64, $data);
+        foreach ($data as $key => $line) {
+            self::assertCount(80, $line);
         }
     }
 }

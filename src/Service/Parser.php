@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx;
+namespace Tmx\Service;
 
 use ComposerLocator;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
@@ -19,7 +19,9 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Tmx\Map;
 use Tmx\Normalizer\TileNormalizer;
+use Tmx\TileSet;
 
 class Parser
 {

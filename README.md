@@ -21,8 +21,7 @@ $ composer require kreemer/tmx
 ```php
 <?php
 
-use Tmx\Parser;
-use Tmx\Printer;
+use Tmx\Service\Service\Service\Parser;use Tmx\Service\Service\Service\Printer;
 
 $parser = new Parser();
 $map = $parser->parse('filename.tmx');

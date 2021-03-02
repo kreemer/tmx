@@ -373,4 +373,72 @@ class Map
 
         return $this;
     }
+
+    public function getCalculatedWidth(): ?int
+    {
+        if ($this->isInfiniteMap()) {
+            $min = $max = null;
+            foreach($this->layers as $layer) {
+                foreach ($layer->getLayerData()->getChunks() as $chunk) {
+                    $min = $chunk->getX() < $min || $min === null ? $chunk->getX() : $min;
+                    $max = $chunk->getX() + $chunk->getWidth() > $max || $max === null ? $chunk->getX() + $chunk->getWidth(): $max;
+                }
+            }
+
+            return $max - $min;
+        }
+        return $this->getWidth();
+    }
+
+    public function getCalculatedHeight(): ?int
+    {
+        if ($this->isInfiniteMap()) {
+            $min = $max = null;
+            foreach($this->layers as $layer) {
+                foreach ($layer->getLayerData()->getChunks() as $chunk) {
+                    $min = $chunk->getY() < $min || $min === null ? $chunk->getY() : $min;
+                    $max = $chunk->getY() + $chunk->getHeight() > $max || $max === null ? $chunk->getY() + $chunk->getHeight(): $max;
+                }
+            }
+
+            return $max - $min;
+        }
+
+        return $this->getHeight();
+    }
+
+
+    public function getInfiniteMapOffsetX(): ?int
+    {
+        if ($this->isInfiniteMap()) {
+            $min = null;
+            foreach($this->layers as $layer) {
+                foreach ($layer->getLayerData()->getChunks() as $chunk) {
+                    $min = $chunk->getX() < $min || $min === null ? $chunk->getX() : $min;
+                }
+            }
+
+            return abs($min);
+        }
+
+        return 0;
+    }
+
+
+    public function getInfiniteMapOffsetY(): ?int
+    {
+        if ($this->isInfiniteMap()) {
+            $min = null;
+            foreach($this->layers as $layer) {
+                foreach ($layer->getLayerData()->getChunks() as $chunk) {
+                    $min = $chunk->getY() < $min || $min === null ? $chunk->getY() : $min;
+                }
+            }
+
+            return abs($min);
+        }
+
+        return 0;
+    }
+
 }

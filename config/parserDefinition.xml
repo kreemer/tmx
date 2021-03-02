@@ -33,7 +33,6 @@
         <attribute name="firstGid" serialized-name="@firstgid" />
         <attribute name="source" serialized-name="@source" />
         <attribute name="name" serialized-name="@name" />
-
         <attribute name="tileWidth" serialized-name="@tilewidth" />
         <attribute name="tileHeight" serialized-name="@tileheight" />
         <attribute name="tileCount" serialized-name="@tilecount" />
@@ -46,6 +45,7 @@
     <class name="Tmx\WangCollection">
         <attribute name="wangSets" serialized-name="wangset" />
     </class>
+
     <class name="Tmx\WangSet">
         <attribute name="name" serialized-name="@name" />
         <attribute name="tileId" serialized-name="@tile" />
@@ -104,9 +104,20 @@
         <attribute name="visible" serialized-name="@visible" />
         <attribute name="layerData" serialized-name="data" />
     </class>
+
     <class name="Tmx\LayerData">
         <attribute name="encoding" serialized-name="@encoding" />
         <attribute name="compression" serialized-name="@compression" />
+        <attribute name="chunks" serialized-name="chunk" />
+        <attribute name="data" serialized-name="#" />
+    </class>
+
+    <class name="Tmx\Chunk">
+        <attribute name="x" serialized-name="@x" />
+        <attribute name="y" serialized-name="@y" />
+        <attribute name="width" serialized-name="@width" />
+        <attribute name="height" serialized-name="@height" />
+
         <attribute name="data" serialized-name="#" />
     </class>
 
