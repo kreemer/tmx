@@ -44,6 +44,7 @@ Under development
 
 - Tmx works with PHP 7.4 or above.
 - You have to install the imagick extension, gd support is currently under development
+- If you want to parse zlib or zstd compressed maps, you have to install these extensions
 
 
 ### Submitting bugs and feature requests
