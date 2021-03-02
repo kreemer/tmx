@@ -3,6 +3,7 @@
 
 [![Total Downloads](https://img.shields.io/packagist/dt/kreemer/tmx.svg)](https://packagist.org/packages/kreemer/tmx)
 [![Latest Stable Version](https://img.shields.io/packagist/v/kreemer/tmx.svg)](https://packagist.org/packages/kreemer/tmx)
+[![Code Coverage](https://img.shields.io/codecov/c/github/kreemer/tmx)](https://app.codecov.io/gh/kreemer/tmx)
 
 TMX is a library for creating, parsing and editing tmx files. The main purpose is to parse a tmx file and save the parsed file as image file.
 
