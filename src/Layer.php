@@ -29,6 +29,7 @@ class Layer
     private int $offsetY = 0;
 
     private ?LayerData $layerData;
+    private ?Map $map;
 
     public function getId(): ?int
     {
@@ -137,6 +138,19 @@ class Layer
     public function setLayerData(?LayerData $layerData): Layer
     {
         $this->layerData = $layerData;
+        $this->layerData->setLayer($this);
+
+        return $this;
+    }
+
+    public function getMap(): ?Map
+    {
+        return $this->map;
+    }
+
+    public function setMap(?Map $map): Layer
+    {
+        $this->map = $map;
 
         return $this;
     }

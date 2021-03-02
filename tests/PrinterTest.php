@@ -142,6 +142,9 @@ class PrinterTest extends TmxTest
             ['opacity'],
             ['opacity2'],
             ['visible'],
+            ['base64-saved'],
+            ['base64-saved-zlib'],
+            ['base64-saved-zstd'],
         ];
     }
 }

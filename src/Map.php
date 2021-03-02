@@ -360,6 +360,7 @@ class Map
     public function addLayer(Layer $layer): Map
     {
         $this->layers[] = $layer;
+        $layer->setMap($this);
 
         return $this;
     }

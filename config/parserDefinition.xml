@@ -106,6 +106,7 @@
     </class>
     <class name="Tmx\LayerData">
         <attribute name="encoding" serialized-name="@encoding" />
+        <attribute name="compression" serialized-name="@compression" />
         <attribute name="data" serialized-name="#" />
     </class>
 

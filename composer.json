@@ -22,6 +22,10 @@
         "symfony/property-access": "^5.2",
         "symfony/serializer": "^5.2"
     },
+    "suggest": {
+        "ext-zlib": "*",
+        "ext-zstd": "*"
+    },
     "require-dev": {
         "mikey179/vfsstream": "^1.6",
         "phpstan/phpstan": "^0.12.67",
