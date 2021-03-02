@@ -85,7 +85,6 @@ class Printer
             }
             $layerData = $layer->getLayerData();
             $dataMap = $this->layerDataReader->readLayerData($layerData);
-            var_dump($dataMap);
             foreach ($dataMap as $keyLine => $line) {
                 foreach ($line as $keyTile => $tile) {
                     if (!isset($cacheArray[$tile])) {
