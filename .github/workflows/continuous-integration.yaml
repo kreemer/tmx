@@ -28,7 +28,7 @@ jobs:
         with:
           coverage: "none"
           php-version: "${{ matrix.php-version }}"
-          extensions: imagick, ext-zlib
+          extensions: imagick, ext-zlib, ext-zstd
 
       - name: Get composer cache directory
         id: composercache

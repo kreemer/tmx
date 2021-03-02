@@ -18,7 +18,7 @@ class ZstdCompression implements CompressionInterface
     public function unpackData(string $data): string
     {
         if (!function_exists('zstd_uncompress')) {
-            throw new ReaderException('ext-zstd has to be enabled to parse zlib compression');
+            throw new ReaderException('ext-zstd has to be enabled to parse zstd compression');
         }
 
         return zstd_uncompress($data);
