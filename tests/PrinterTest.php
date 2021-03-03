@@ -148,7 +148,13 @@ class PrinterTest extends TmxTest
             'base64-saved-zlib' => ['base64-saved-zlib'],
             'base64-saved-zstd' => ['base64-saved-zstd'],
             'infinite' => ['infinite'],
-            'infinite-base64' => ['infinite-base64', true],
+            'infinite-base64' => ['infinite-base64'],
+//            'group-layer-simple' => ['group-layer-simple'],
+//            'group-layer-multiple' => ['group-layer-multiple'],
+//            'group-layer-nested' => ['group-layer-nested'],
+//            'group-layer-opacity' => ['group-layer-opacity'],
+//            'group-layer-visible' => ['group-layer-visible'],
+
         ];
     }
 }
