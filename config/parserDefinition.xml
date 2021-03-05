@@ -82,6 +82,9 @@
         <attribute name="terrainCollection" serialized-name="terraintypes">
             <group>tmx</group>
         </attribute>
+        <attribute name="tileOffset" serialized-name="tileoffset">
+            <group>tmx</group>
+        </attribute>
         <attribute name="tiles" serialized-name="tile">
             <group>tmx</group>
         </attribute>

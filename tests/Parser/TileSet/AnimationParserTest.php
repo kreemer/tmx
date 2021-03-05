@@ -53,7 +53,7 @@ class AnimationParserTest extends ParserTest
     }
 
     /**
-     * @depends testAnimationIsParsed
+     * @depends testAnimationContainsFrames
      */
     public function testAnimationFrame1HasTileIdAndDuration(Animation $animation): void
     {
@@ -66,7 +66,7 @@ class AnimationParserTest extends ParserTest
     }
 
     /**
-     * @depends testAnimationIsParsed
+     * @depends testAnimationContainsFrames
      */
     public function testAnimationFrame2HasTileIdAndDuration(Animation $animation): void
     {
@@ -79,7 +79,7 @@ class AnimationParserTest extends ParserTest
     }
 
     /**
-     * @depends testAnimationIsParsed
+     * @depends testAnimationContainsFrames
      */
     public function testAnimationFrame3HasTileIdAndDuration(Animation $animation): void
     {
@@ -92,7 +92,7 @@ class AnimationParserTest extends ParserTest
     }
 
     /**
-     * @depends testAnimationIsParsed
+     * @depends testAnimationContainsFrames
      */
     public function testAnimationFrame4HasTileIdAndDuration(Animation $animation): void
     {

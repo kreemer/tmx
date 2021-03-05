@@ -57,6 +57,7 @@ class Parser
         /** @var Map $map */
         $map = $this->serializer->deserialize($fileContents, Map::class, 'xml', [
             ObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true,
+            'groups' => 'tmx'
         ]);
 
         foreach ($map->getTileSets() as $tileSet) {
@@ -74,6 +75,7 @@ class Parser
         if (null !== $tileSet) {
             $tileSet = $this->serializer->deserialize($fileContents, TileSet::class, 'xml', [
                 AbstractNormalizer::OBJECT_TO_POPULATE => $tileSet,
+                'groups' => 'tmx'
             ]);
 
             $tileSet->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getSource()));
@@ -84,6 +86,7 @@ class Parser
 
         $tileSet = $this->serializer->deserialize($fileContents, TileSet::class, 'xml', [
             ObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true,
+            'groups' => 'tmx'
         ]);
 
         $tileSet->setSource(realpath($directory . DIRECTORY_SEPARATOR . $file));

@@ -53,7 +53,7 @@ class TileNormalizer implements NormalizerInterface, DenormalizerInterface, Norm
         $tile->setId($data['@id'] ?? null)
             ->setProbability($data['@probability'] ?? 1.0)
             ->setType($data['@type'] ?? null)
-            ->setAnimation(isset($data['animation']) ? $this->denormalizer->denormalize($data['animation'], Animation::class, $format) : null);
+            ->setAnimation(isset($data['animation']) ? $this->denormalizer->denormalize($data['animation'], Animation::class, $format, $context) : null);
 
         if (isset($data['@terrain'])) {
             $terrainIdList = explode(',', $data['@terrain']);
