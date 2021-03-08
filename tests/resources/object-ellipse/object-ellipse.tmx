@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="6" height="6" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="2">
+ <tileset firstgid="1" source="object-ellipse.tsx"/>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="1" name="Simple" type="Test" x="25.0598" y="20.5034" width="130.994" height="118.464">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>

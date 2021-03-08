@@ -20,4 +20,9 @@ interface GroupContainer
      * @return array<Layer>
      */
     public function getLayers(): array;
+
+    /**
+     * @return array<ObjectLayer>
+     */
+    public function getObjectLayers(): array;
 }

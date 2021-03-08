@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\DrawObject" exclusion-policy="ALL" discriminator-field-name="objecttype" discriminator-disabled="false">
+        <xml-discriminator attribute="true" />
+        <discriminator-class value="ellipse">Tmx\Object\Ellipse</discriminator-class>
+        <discriminator-class value="point">Tmx\Object\Point</discriminator-class>
+        <discriminator-class value="polygon">Tmx\Object\Polygon</discriminator-class>
+        <discriminator-class value="polyline">Tmx\Object\Polyline</discriminator-class>
+        <discriminator-class value="text">Tmx\Object\Text</discriminator-class>
+        <discriminator-class value="rectangle">Tmx\Object\Rectangle</discriminator-class>
+
+        <property name="id" serialized-name="id" xml-attribute="true"/>
+
+        <property name="name" serialized-name="name" xml-attribute="true"/>
+        <property name="type" serialized-name="type" xml-attribute="true"/>
+
+        <property name="width" serialized-name="width" xml-attribute="true"/>
+        <property name="height" serialized-name="height" xml-attribute="true"/>
+        <property name="x" serialized-name="x" xml-attribute="true"/>
+        <property name="y" serialized-name="y" xml-attribute="true"/>
+
+        <property name="rotation" serialized-name="rotation" xml-attribute="true"/>
+        <property name="gid" serialized-name="gid" xml-attribute="true"/>
+        <property name="visible" serialized-name="visible" xml-attribute="true"/>
+
+    </class>
+</serializer>

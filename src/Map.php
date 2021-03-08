@@ -98,6 +98,11 @@ class Map implements GroupContainer
     private array $layers = [];
 
     /**
+     * @var array<ObjectLayer> Array of layer objects
+     */
+    private array $objectLayers = [];
+
+    /**
      * @var array<Group> Array of group objects
      */
     private array $groups = [];
@@ -406,6 +411,30 @@ class Map implements GroupContainer
     public function setHeight(int $height): Map
     {
         $this->height = $height;
+
+        return $this;
+    }
+
+    /**
+     * @return array<ObjectLayer>
+     */
+    public function getObjectLayers(): array
+    {
+        return $this->objectLayers;
+    }
+
+    public function addObjectLayer(ObjectLayer $objectLayer): self
+    {
+        $this->objectLayers[] = $objectLayer;
+
+        return $this;
+    }
+
+    public function removeObjectLayer(ObjectLayer $objectLayer): self
+    {
+        if (in_array($objectLayer, $this->objectLayers)) {
+            $this->objectLayers = array_diff($this->objectLayers, [$objectLayer]);
+        }
 
         return $this;
     }

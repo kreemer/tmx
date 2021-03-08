@@ -48,6 +48,11 @@
             <type><![CDATA[array<Tmx\TileSet>]]></type>
             <xml-list inline="true" entry-name="tileset"/>
         </property>
+
+        <property name="objectLayers" serialized-name="objectgroup">
+            <type><![CDATA[array<Tmx\ObjectLayer>]]></type>
+            <xml-list inline="true" entry-name="objectgroup"/>
+        </property>
     </class>
 
 

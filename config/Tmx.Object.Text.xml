@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\Object\Text" exclusion-policy="ALL">
+        <property name="fontFamily" serialized-name="fontfamily" xml-attribute="true"/>
+        <property name="pixelSize" serialized-name="pixelsize" xml-attribute="true"/>
+        <property name="wrap" serialized-name="wrap" xml-attribute="true"/>
+        <property name="color" serialized-name="color" xml-attribute="true"/>
+        <property name="bold" serialized-name="bold" xml-attribute="true"/>
+        <property name="italic" serialized-name="italic" xml-attribute="true"/>
+        <property name="underline" serialized-name="underline" xml-attribute="true"/>
+        <property name="strikeout" serialized-name="strikeout" xml-attribute="true"/>
+        <property name="kerning" serialized-name="kerning" xml-attribute="true"/>
+        <property name="hAlign" serialized-name="halign" xml-attribute="true"/>
+        <property name="vAlign" serialized-name="valign" xml-attribute="true"/>
+
+        <property name="text" xml-attribute="true" />
+
+    </class>
+</serializer>

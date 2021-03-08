@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="6" height="6" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="4">
+ <tileset firstgid="1" source="object-polygon.tsx"/>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="2" x="33.0656" y="106.282">
+   <polygon points="0,0 22.2687,-46.2244 88.0626,-34.4153 40.1511,-0.337404"/>
+  </object>
+ </objectgroup>
+</map>

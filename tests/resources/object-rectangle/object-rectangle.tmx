@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="6" height="6" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="5">
+ <tileset firstgid="1" source="object-rectangle.tsx"/>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="4" x="28.6794" y="60.058" width="106.282" height="56.0091"/>
+ </objectgroup>
+</map>

@@ -15,6 +15,7 @@ use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
+use Tmx\EventSubscriber\DrawObjectSubscriber;
 use Tmx\EventSubscriber\LayerEventSubscriber;
 use Tmx\EventSubscriber\MapEventSubscriber;
 use Tmx\EventSubscriber\TileEventSubscriber;
@@ -43,6 +44,7 @@ class Parser
                 $dispatcher->addSubscriber(new LayerEventSubscriber());
                 $dispatcher->addSubscriber(new TileSetEventSubscriber());
                 $dispatcher->addSubscriber(new TileEventSubscriber());
+                $dispatcher->addSubscriber(new DrawObjectSubscriber());
             })
             ->setSerializationContextFactory(function () {
                 return SerializationContext::create();

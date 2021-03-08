@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\ObjectLayer" exclusion-policy="ALL">
+        <property name="order" serialized-name="order" xml-attribute="true"/>
+
+        <property name="color" serialized-name="color" xml-attribute="true"/>
+        <property name="drawOrder" serialized-name="draworder" xml-attribute="true"/>
+
+        <property name="width" serialized-name="width" xml-attribute="true"/>
+        <property name="height" serialized-name="height" xml-attribute="true"/>
+        <property name="x" serialized-name="x" xml-attribute="true"/>
+        <property name="y" serialized-name="y" xml-attribute="true"/>
+
+        <property name="drawObjects">
+            <type><![CDATA[array<Tmx\DrawObject>]]></type>
+            <xml-list inline="true" entry-name="object"/>
+        </property>
+    </class>
+</serializer>

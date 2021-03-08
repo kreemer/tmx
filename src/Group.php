@@ -22,6 +22,11 @@ class Group extends TileLayer implements GroupContainer
     private array $groups = [];
 
     /**
+     * @var array<ObjectLayer> Array of object layer objects
+     */
+    private array $objectLayers = [];
+
+    /**
      * @return array<Layer>
      */
     public function getLayers(): array
@@ -64,6 +69,30 @@ class Group extends TileLayer implements GroupContainer
     {
         if (in_array($group, $this->groups)) {
             $this->groups = array_diff($this->groups, [$group]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return array<ObjectLayer>
+     */
+    public function getObjectLayers(): array
+    {
+        return $this->objectLayers;
+    }
+
+    public function addObjectLayer(ObjectLayer $objectLayer): self
+    {
+        $this->objectLayers[] = $objectLayer;
+
+        return $this;
+    }
+
+    public function removeObjectLayer(ObjectLayer $objectLayer): self
+    {
+        if (in_array($objectLayer, $this->objectLayers)) {
+            $this->objectLayers = array_diff($this->objectLayers, [$objectLayer]);
         }
 
         return $this;
