@@ -9,7 +9,7 @@
 
 namespace Tmx;
 
-class ObjectLayer extends TileLayer
+class ObjectLayer extends TileLayer implements Printable
 {
     private int $order = 0;
 

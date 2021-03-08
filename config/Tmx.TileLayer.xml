@@ -14,5 +14,6 @@
         <property name="name" serialized-name="name" xml-attribute="true"/>
         <property name="opacity" serialized-name="opacity" xml-attribute="true"/>
         <property name="visible" serialized-name="visible" xml-attribute="true"/>
+        <property name="tintColor" serialized-name="tintcolor" xml-attribute="true"/>
     </class>
 </serializer>

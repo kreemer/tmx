@@ -13,6 +13,7 @@ use Intervention\Image\Image as InterventionImage;
 use Intervention\Image\ImageManager;
 use Tmx\GroupContainer;
 use Tmx\Map;
+use Tmx\Service\Context\PrintContext;
 use Tmx\Service\LayerData\Base64DataParser;
 use Tmx\Service\LayerData\CsvDataParser;
 use Tmx\Service\LayerData\PlainCompression;
@@ -93,7 +94,9 @@ class Printer
         $layerArray = $this->extractLayersInOrder($map);
         foreach ($layerArray as $layerRow) {
             $layer = $layerRow['layer'];
-            if (!$layerRow['visible']) {
+            /** @var PrintContext $context */
+            $context = $layerRow['context'];
+            if (false === $context->isVisible()) {
                 continue;
             }
             $layerData = $layer->getLayerData();
@@ -123,8 +126,16 @@ class Printer
                         $tileSet->getTileOffset()->getY() :
                         0;
 
-                    if (null !== $layer->getOpacity()) {
-                        $tileSource->opacity(intval($layerRow['opacity'] * 100));
+                    if (null !== $context->getOpacity()) {
+                        $tileSource->opacity(intval($context->getOpacity() * 100));
+                    }
+
+                    if (null !== $context->getTintColor()) {
+                        $tileSource->colorize(
+                            (hexdec(substr($context->getTintColor(), 1, 2)) / 255 * 200) - 100,
+                             (hexdec(substr($context->getTintColor(), 3, 2)) / 255 * 200) - 100,
+                            (hexdec(substr($context->getTintColor(), 5, 2)) / 255 * 200) - 100
+                        );
                     }
 
                     $img->insert(
@@ -139,26 +150,41 @@ class Printer
         return $img;
     }
 
-    private function extractLayersInOrder(GroupContainer $container, $context = []): array
+    private function extractLayersInOrder(GroupContainer $container, $context = null): array
     {
         $layers = [];
+        if ($context === null) {
+            $context = new PrintContext();
+        }
         foreach ($container->getLayers() as $layer) {
+            $currentContext = clone $context;
+            if ($currentContext->isVisible() === null) {
+                $currentContext->setVisible($layer->isVisible());
+            }
+            if ($currentContext->getOpacity() === null) {
+                $currentContext->setOpacity($layer->getOpacity());
+            }
+            if ($currentContext->getTintColor() === null) {
+                $currentContext->setTintColor($layer->getTintColor());
+            }
             $layers[$layer->getOrder()] =
                 [
                     'layer' => $layer,
-                    'visible' => $context['visible'] ?? $layer->isVisible(),
-                    'opacity' => $context['opacity'] ?? $layer->getOpacity(),
+                    'context' => $currentContext,
                 ];
         }
 
         foreach ($container->getGroups() as $group) {
-            $currentContext = $context;
+            $currentContext = clone $context;
 
-            if (!isset($context['visible']) && !$group->isVisible()) {
-                $currentContext['visible'] = $group->isVisible();
+            if (null === $currentContext->isVisible() && !$group->isVisible()) {
+                $currentContext->setVisible($group->isVisible());
             }
-            if (!isset($context['opacity']) && 1.0 !== $group->getOpacity()) {
-                $currentContext['opacity'] = $group->getOpacity();
+            if (null === $currentContext->getOpacity() && 1.0 !== $group->getOpacity()) {
+                $currentContext->setOpacity($group->getOpacity());
+            }
+            if (null === $currentContext->getTintColor() && '' !== $group->getTintColor() && null !== $group->getTintColor()) {
+                $currentContext->setOpacity($group->getOpacity());
             }
             $layers = array_merge($layers, $this->extractLayersInOrder($group, $currentContext));
         }

@@ -149,6 +149,8 @@ class PrinterTest extends TmxTest
             'group-layer-opacity' => ['group-layer-opacity'],
             'group-layer-visible' => ['group-layer-visible'],
             'group-infinite' => ['group-infinite'],
+            // 'layer-tint' => ['layer-tint', true],
+            // 'group-layer-tint' => ['group-layer-tint'],
         ];
     }
 

@@ -50,7 +50,8 @@
   },
   "scripts": {
     "test": "vendor/bin/phpunit --coverage-clover coverage.xml",
-    "phpstan": "vendor/bin/phpstan analyse"
+    "phpstan": "vendor/bin/phpstan analyse",
+    "docs": "phpdocumentor -d ./src -t ./docs/api"
   },
   "config": {
     "sort-packages": true,
