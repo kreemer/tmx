@@ -27,8 +27,8 @@ abstract class ParserTest extends TmxTest
     {
         $this->parser = new Parser();
         $this->layerDataReader = new LayerDataReader(
-            [ new CsvDataParser(), new Base64DataParser() ],
-            [ new PlainCompression(), new ZlibCompression(), new ZstdCompression() ]
+            [new CsvDataParser(), new Base64DataParser()],
+            [new PlainCompression(), new ZlibCompression(), new ZstdCompression()]
         );
     }
 }

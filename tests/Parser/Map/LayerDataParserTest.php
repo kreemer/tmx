@@ -142,7 +142,6 @@ class LayerDataParserTest extends ParserTest
         }
     }
 
-
     public function testDataOfInfiniteMap(): void
     {
         // when

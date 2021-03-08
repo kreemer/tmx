@@ -13,27 +13,14 @@ use ComposerLocator;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
-use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
-use Symfony\Component\Serializer\Mapping\Loader\XmlFileLoader;
-use Symfony\Component\Serializer\NameConverter\MetadataAwareNameConverter;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
-use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
 use Tmx\EventSubscriber\LayerEventSubscriber;
 use Tmx\EventSubscriber\MapEventSubscriber;
 use Tmx\EventSubscriber\TileEventSubscriber;
 use Tmx\EventSubscriber\TileSetEventSubscriber;
 use Tmx\Map;
-use Tmx\Normalizer\TileNormalizer;
-use Tmx\TileSet;
 
 class Writer
 {
-
-
     /**
      * @var \JMS\Serializer\Serializer
      */
@@ -46,9 +33,9 @@ class Writer
     {
         $projectRootPath = ComposerLocator::getRootPath();
         $configDir = $projectRootPath . DIRECTORY_SEPARATOR . 'config';
-        $this->serializer =  SerializerBuilder::create()
+        $this->serializer = SerializerBuilder::create()
             ->addMetadataDir($configDir)
-            ->configureListeners(function(EventDispatcher $dispatcher) {
+            ->configureListeners(function (EventDispatcher $dispatcher) {
                 $dispatcher->addSubscriber(new MapEventSubscriber());
                 $dispatcher->addSubscriber(new LayerEventSubscriber());
                 $dispatcher->addSubscriber(new TileSetEventSubscriber());

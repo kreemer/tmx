@@ -9,27 +9,22 @@
 
 namespace Tmx\EventSubscriber;
 
-
-use JMS\Serializer\EventDispatcher\Event;
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
-use Tmx\Map;
-use Tmx\Service\Parser;
 use Tmx\TileSet;
 
 class TileSetEventSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
     {
-        return array(
-            array(
+        return [
+            [
                 'event' => 'serializer.post_deserialize',
                 'method' => 'onPostDeserialize',
                 'class' => 'Tmx\\TileSet',
                 'format' => 'xml',
-            ),
-        );
+            ],
+        ];
     }
 
     public function onPostDeserialize(ObjectEvent $event): void
@@ -37,7 +32,6 @@ class TileSetEventSubscriber implements EventSubscriberInterface
         if (!$event->getObject() instanceof TileSet) {
             return;
         }
-
 
         if ($event->getContext()->hasAttribute('tileSet')) {
             $oldTileSet = $event->getContext()->getAttribute('tileSet');
@@ -47,9 +41,6 @@ class TileSetEventSubscriber implements EventSubscriberInterface
 
             $tileSet->setFirstGid($oldTileSet->getFirstGid());
             $tileSet->setSource($oldTileSet->getSource());
-
         }
-
-
     }
 }

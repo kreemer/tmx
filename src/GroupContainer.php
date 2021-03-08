@@ -9,7 +9,15 @@
 
 namespace Tmx;
 
-interface DataInterface
+interface GroupContainer
 {
-    public function getData(): ?string;
+    /**
+     * @return array<Group>
+     */
+    public function getGroups(): array;
+
+    /**
+     * @return array<Layer>
+     */
+    public function getLayers(): array;
 }

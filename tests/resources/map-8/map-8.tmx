@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="6" height="6" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="1">
- <tileset firstgid="1" source="map-8.tsx"/>
- <layer id="1" name="Tile Layer 1" width="6" height="6">
-  <data encoding="csv">
-5,5,5,5,5,5,
-5,5,5,5,5,5,
-5,5,5,5,5,5,
-5,5,5,5,5,5,
-5,5,62,5,5,5,
-5,5,5,5,5,5
-</data>
- </layer>
- <layer id="2" name="Tile Layer 2" width="6" height="6">
-  <data encoding="csv">
-0,0,0,0,0,0,
-0,0,0,0,0,0,
-0,0,0,0,0,0,
-0,0,0,0,0,0,
-0,61,47,47,63,0,
-0,61,47,47,63,0
-</data>
- </layer>
- <layer id="3" name="Tile Layer 3" width="6" height="6">
-  <data encoding="csv">
-134,135,136,137,138,139,
-153,154,155,156,157,158,
-172,173,174,175,176,177,
-191,192,193,194,195,196,
-0,0,0,0,0,0,
-0,0,0,0,0,0
-</data>
- </layer>
- <layer id="4" name="Tile Layer 4" width="6" height="6">
-  <data encoding="csv">
-238,239,0,0,238,239,
-257,258,0,0,257,258,
-276,277,0,0,276,277,
-0,0,0,0,0,0,
-0,0,0,0,0,0,
-0,0,0,274,0,0
-</data>
- </layer>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="6" height="6"
+     tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="1">
+    <tileset firstgid="1" source="map-8.tsx"/>
+    <layer id="1" name="Tile Layer 1" width="6" height="6">
+        <data encoding="csv">
+            5,5,5,5,5,5,
+            5,5,5,5,5,5,
+            5,5,5,5,5,5,
+            5,5,5,5,5,5,
+            5,5,62,5,5,5,
+            5,5,5,5,5,5
+        </data>
+    </layer>
+    <layer id="2" name="Tile Layer 2" width="6" height="6">
+        <data encoding="csv">
+            0,0,0,0,0,0,
+            0,0,0,0,0,0,
+            0,0,0,0,0,0,
+            0,0,0,0,0,0,
+            0,61,47,47,63,0,
+            0,61,47,47,63,0
+        </data>
+    </layer>
+    <layer id="3" name="Tile Layer 3" width="6" height="6">
+        <data encoding="csv">
+            134,135,136,137,138,139,
+            153,154,155,156,157,158,
+            172,173,174,175,176,177,
+            191,192,193,194,195,196,
+            0,0,0,0,0,0,
+            0,0,0,0,0,0
+        </data>
+    </layer>
+    <layer id="4" name="Tile Layer 4" width="6" height="6">
+        <data encoding="csv">
+            238,239,0,0,238,239,
+            257,258,0,0,257,258,
+            276,277,0,0,276,277,
+            0,0,0,0,0,0,
+            0,0,0,0,0,0,
+            0,0,0,274,0,0
+        </data>
+    </layer>
 </map>

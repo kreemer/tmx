@@ -10,11 +10,10 @@
 
 namespace Tmx;
 
-
 /**
  * Class Map.
  */
-class Map
+class Map implements GroupContainer
 {
     /**
      * Rendering map from right / down.
@@ -53,48 +52,24 @@ class Map
      */
     const ORIENTATION_HEXAGONAL = 4;
 
-    /**
-     * @var string|null
-     */
     private ?string $version = null;
 
-    /**
-     * @var string|null
-     */
     private ?string $tiledVersion = null;
 
     private ?int $orientation = self::ORIENTATION_ORTHOGONAL;
 
     private int $renderOrder = self::RENDER_ORDER_RIGHT_DOWN;
 
-    /**
-     * @var float|null
-     */
     private ?float $compressionLevel = null;
 
-    /**
-     * @var int|null
-     */
     private ?int $width = null;
 
-    /**
-     * @var int|null
-     */
     private ?int $height = null;
 
-    /**
-     * @var int|null
-     */
     private ?int $tileWidth = null;
 
-    /**
-     * @var int|null
-     */
     private ?int $tileHeight = null;
 
-    /**
-     * @var string|null
-     */
     private ?string $backgroundColor = null;
 
     /**
@@ -122,6 +97,11 @@ class Map
      */
     private array $layers = [];
 
+    /**
+     * @var array<Group> Array of group objects
+     */
+    private array $groups = [];
+
     public function getVersion(): ?string
     {
         return $this->version;
@@ -146,18 +126,6 @@ class Map
         return $this;
     }
 
-    public function getOrientation(): ?int
-    {
-        return $this->orientation;
-    }
-
-    public function setOrientation(int $orientation): Map
-    {
-        $this->orientation = $orientation;
-
-        return $this;
-    }
-
     public function getOrientationAsString(): string
     {
         switch ($this->getOrientation()) {
@@ -172,6 +140,18 @@ class Map
         }
 
         return 'undefined';
+    }
+
+    public function getOrientation(): ?int
+    {
+        return $this->orientation;
+    }
+
+    public function setOrientation(int $orientation): Map
+    {
+        $this->orientation = $orientation;
+
+        return $this;
     }
 
     public function setOrientationAsString(string $orientation): Map
@@ -194,18 +174,6 @@ class Map
         return $this;
     }
 
-    public function getRenderOrder(): int
-    {
-        return $this->renderOrder;
-    }
-
-    public function setRenderOrder(int $renderOrder): Map
-    {
-        $this->renderOrder = $renderOrder;
-
-        return $this;
-    }
-
     public function getRenderOrderAsString(): string
     {
         switch ($this->getRenderOrder()) {
@@ -220,6 +188,18 @@ class Map
         }
 
         return 'undefined';
+    }
+
+    public function getRenderOrder(): int
+    {
+        return $this->renderOrder;
+    }
+
+    public function setRenderOrder(int $renderOrder): Map
+    {
+        $this->renderOrder = $renderOrder;
+
+        return $this;
     }
 
     public function setRenderOrderAsString(string $renderOrder): Map
@@ -250,30 +230,6 @@ class Map
     public function setCompressionLevel(?float $compressionLevel): Map
     {
         $this->compressionLevel = $compressionLevel;
-
-        return $this;
-    }
-
-    public function getWidth(): ?int
-    {
-        return $this->width;
-    }
-
-    public function setWidth(int $width): Map
-    {
-        $this->width = $width;
-
-        return $this;
-    }
-
-    public function getHeight(): ?int
-    {
-        return $this->height;
-    }
-
-    public function setHeight(int $height): Map
-    {
-        $this->height = $height;
 
         return $this;
     }
@@ -338,18 +294,6 @@ class Map
         return $this;
     }
 
-    public function isInfiniteMap(): bool
-    {
-        return $this->infiniteMap;
-    }
-
-    public function setInfiniteMap(bool $infiniteMap): Map
-    {
-        $this->infiniteMap = $infiniteMap;
-
-        return $this;
-    }
-
     /**
      * @return array<TileSet>
      */
@@ -406,71 +350,63 @@ class Map
         return $this;
     }
 
-    public function getCalculatedWidth(): ?int
+    /**
+     * @return array<Group>
+     */
+    public function getGroups(): array
     {
-        if ($this->isInfiniteMap()) {
-            $min = $max = null;
-            foreach($this->layers as $layer) {
-                foreach ($layer->getLayerData()->getChunks() as $chunk) {
-                    $min = $chunk->getX() < $min || $min === null ? $chunk->getX() : $min;
-                    $max = $chunk->getX() + $chunk->getWidth() > $max || $max === null ? $chunk->getX() + $chunk->getWidth(): $max;
-                }
-            }
-
-            return $max - $min;
-        }
-        return $this->getWidth();
+        return $this->groups;
     }
 
-    public function getCalculatedHeight(): ?int
+    public function addGroup(Group $group): self
     {
-        if ($this->isInfiniteMap()) {
-            $min = $max = null;
-            foreach($this->layers as $layer) {
-                foreach ($layer->getLayerData()->getChunks() as $chunk) {
-                    $min = $chunk->getY() < $min || $min === null ? $chunk->getY() : $min;
-                    $max = $chunk->getY() + $chunk->getHeight() > $max || $max === null ? $chunk->getY() + $chunk->getHeight(): $max;
-                }
-            }
+        $this->groups[] = $group;
 
-            return $max - $min;
-        }
-
-        return $this->getHeight();
+        return $this;
     }
 
-
-    public function getInfiniteMapOffsetX(): ?int
+    public function removeGroup(Group $group): self
     {
-        if ($this->isInfiniteMap()) {
-            $min = null;
-            foreach($this->layers as $layer) {
-                foreach ($layer->getLayerData()->getChunks() as $chunk) {
-                    $min = $chunk->getX() < $min || $min === null ? $chunk->getX() : $min;
-                }
-            }
-
-            return abs($min);
+        if (in_array($group, $this->groups)) {
+            $this->groups = array_diff($this->groups, [$group]);
         }
 
-        return 0;
+        return $this;
     }
 
-
-    public function getInfiniteMapOffsetY(): ?int
+    public function isInfiniteMap(): bool
     {
-        if ($this->isInfiniteMap()) {
-            $min = null;
-            foreach($this->layers as $layer) {
-                foreach ($layer->getLayerData()->getChunks() as $chunk) {
-                    $min = $chunk->getY() < $min || $min === null ? $chunk->getY() : $min;
-                }
-            }
-
-            return abs($min);
-        }
-
-        return 0;
+        return $this->infiniteMap;
     }
 
+    public function setInfiniteMap(bool $infiniteMap): Map
+    {
+        $this->infiniteMap = $infiniteMap;
+
+        return $this;
+    }
+
+    public function getWidth(): ?int
+    {
+        return $this->width;
+    }
+
+    public function setWidth(int $width): Map
+    {
+        $this->width = $width;
+
+        return $this;
+    }
+
+    public function getHeight(): ?int
+    {
+        return $this->height;
+    }
+
+    public function setHeight(int $height): Map
+    {
+        $this->height = $height;
+
+        return $this;
+    }
 }

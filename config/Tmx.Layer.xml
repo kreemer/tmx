@@ -9,15 +9,12 @@
 
 <serializer>
     <class name="Tmx\Layer" exclusion-policy="ALL">
-        <property name="id"     serialized-name="id"    xml-attribute="true" />
-        <property name="name"   serialized-name="name"  xml-attribute="true" />
-        <property name="width"   serialized-name="width"  xml-attribute="true" />
-        <property name="height"   serialized-name="height"  xml-attribute="true" />
-        <property name="x"   serialized-name="x"  xml-attribute="true" />
-        <property name="y"   serialized-name="y"  xml-attribute="true" />
-        <property name="opacity"   serialized-name="opacity"  xml-attribute="true" />
-        <property name="visible"   serialized-name="visible"  xml-attribute="true" />
+        <property name="order" serialized-name="order" xml-attribute="true"/>
 
+        <property name="width" serialized-name="width" xml-attribute="true"/>
+        <property name="height" serialized-name="height" xml-attribute="true"/>
+        <property name="x" serialized-name="x" xml-attribute="true"/>
+        <property name="y" serialized-name="y" xml-attribute="true"/>
 
         <property name="layerData" serialized-name="data">
             <type>Tmx\LayerData</type>

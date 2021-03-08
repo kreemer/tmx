@@ -9,9 +9,7 @@
 
 namespace Tmx\Service\LayerData;
 
-
 use Tmx\DataInterface;
-use Tmx\Layer;
 use Tmx\LayerData;
 
 class CsvDataParser implements DataParserInterface
@@ -26,6 +24,7 @@ class CsvDataParser implements DataParserInterface
         $returnArray = [];
         $lines = explode(PHP_EOL, $data);
         foreach ($lines as $key => $line) {
+            $line = trim($line);
             if (empty($line)) {
                 continue;
             }
@@ -38,7 +37,6 @@ class CsvDataParser implements DataParserInterface
 
     public function isResponsible(LayerData $layerData): bool
     {
-        return $layerData->getEncoding() === 'csv';
+        return 'csv' === $layerData->getEncoding();
     }
-
 }

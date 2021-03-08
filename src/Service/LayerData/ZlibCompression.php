@@ -9,8 +9,6 @@
 
 namespace Tmx\Service\LayerData;
 
-
-use RuntimeException;
 use Tmx\LayerData;
 use Tmx\Service\ReaderException;
 
@@ -27,7 +25,6 @@ class ZlibCompression implements CompressionInterface
 
     public function isResponsible(LayerData $layerData): bool
     {
-        return $layerData->getCompression() === 'zlib';
+        return 'zlib' === $layerData->getCompression();
     }
-
 }

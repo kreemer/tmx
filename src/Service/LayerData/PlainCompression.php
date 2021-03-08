@@ -9,7 +9,6 @@
 
 namespace Tmx\Service\LayerData;
 
-
 use Tmx\LayerData;
 
 class PlainCompression implements CompressionInterface
@@ -21,7 +20,6 @@ class PlainCompression implements CompressionInterface
 
     public function isResponsible(LayerData $layerData): bool
     {
-        return $layerData->getCompression() === null || $layerData->getCompression() === '';
+        return null === $layerData->getCompression() || '' === $layerData->getCompression();
     }
-
 }

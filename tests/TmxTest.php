@@ -18,6 +18,11 @@ abstract class TmxTest extends TestCase
         return $this->getResourceFolder() . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . $name . '.tmx';
     }
 
+    protected function getResourceFolder(): string
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR;
+    }
+
     protected function getTileSetPath(string $name): string
     {
         return $this->getResourceFolder() . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . $name . '.tsx';
@@ -26,10 +31,5 @@ abstract class TmxTest extends TestCase
     protected function getImgPath(string $name): string
     {
         return $this->getResourceFolder() . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . $name . '.png';
-    }
-
-    protected function getResourceFolder(): string
-    {
-        return __DIR__ . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR;
     }
 }

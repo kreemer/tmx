@@ -9,9 +9,9 @@
 
 <serializer>
     <class name="Tmx\Image" exclusion-policy="ALL">
-        <property name="source"     serialized-name="source"    xml-attribute="true" />
-        <property name="width"   serialized-name="width"  xml-attribute="true" />
-        <property name="height"   serialized-name="height"  xml-attribute="true" />
+        <property name="source" serialized-name="source" xml-attribute="true"/>
+        <property name="width" serialized-name="width" xml-attribute="true"/>
+        <property name="height" serialized-name="height" xml-attribute="true"/>
 
     </class>
 </serializer>

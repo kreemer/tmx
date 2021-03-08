@@ -1,51 +1,60 @@
 {
-    "name": "kreemer/tmx",
-    "type": "library",
-    "description": "Parsing and manipulating tmx files",
-    "keywords": ["editing","parsing","tiled","tmx"],
-    "homepage": "https://lethani.ch",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "kreemer",
-            "email": "kreemer@me.com",
-            "homepage": "https://lethani.ch",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": ">=7.4",
-        "ext-imagick": "*",
-        "intervention/image": "^2.5",
-        "jms/serializer-bundle": "^3.8",
-        "mindplay/composer-locator": "^2.1",
-        "symfony/config": "^5.2",
-        "symfony/property-access": "^5.2",
-        "symfony/serializer": "^5.2",
-      "ext-simplexml": "*"
-    },
-    "suggest": {
-        "ext-zlib": "*",
-        "ext-zstd": "*"
-    },
-    "require-dev": {
-        "mikey179/vfsstream": "^1.6",
-        "phpstan/phpstan": "^0.12.67",
-        "phpunit/phpunit": "^9.5"
-    },
-    "autoload": {
-        "psr-4": {"Tmx\\": "src/"}
-    },
-    "autoload-dev": {
-        "psr-4": {"Tmx\\Tests\\": "tests/"}
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit --coverage-clover coverage.xml",
-        "phpstan": "vendor/bin/phpstan analyse"
-    },
-    "config": {
-        "sort-packages": true,
-        "platform-check": false
-    },
-    "lock": false
+  "name": "kreemer/tmx",
+  "type": "library",
+  "description": "Parsing and manipulating tmx files",
+  "keywords": [
+    "editing",
+    "parsing",
+    "tiled",
+    "tmx"
+  ],
+  "homepage": "https://lethani.ch",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "kreemer",
+      "email": "kreemer@me.com",
+      "homepage": "https://lethani.ch",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-imagick": "*",
+    "intervention/image": "^2.5",
+    "jms/serializer-bundle": "^3.8",
+    "mindplay/composer-locator": "^2.1",
+    "symfony/config": "^5.2",
+    "symfony/property-access": "^5.2",
+    "symfony/serializer": "^5.2",
+    "ext-simplexml": "*"
+  },
+  "suggest": {
+    "ext-zlib": "*",
+    "ext-zstd": "*"
+  },
+  "require-dev": {
+    "mikey179/vfsstream": "^1.6",
+    "phpstan/phpstan": "^0.12.67",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tmx\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tmx\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --coverage-clover coverage.xml",
+    "phpstan": "vendor/bin/phpstan analyse"
+  },
+  "config": {
+    "sort-packages": true,
+    "platform-check": false
+  },
+  "lock": false
 }

@@ -1,13 +1,14 @@
 # TMX [![Continuous Integration](https://github.com/kreemer/tmx/actions/workflows/continuous-integration.yaml/badge.svg?branch=main)]
 
-
 [![Total Downloads](https://img.shields.io/packagist/dt/kreemer/tmx.svg)](https://packagist.org/packages/kreemer/tmx)
 [![Latest Stable Version](https://img.shields.io/packagist/v/kreemer/tmx.svg)](https://packagist.org/packages/kreemer/tmx)
 [![Code Coverage](https://img.shields.io/codecov/c/github/kreemer/tmx)](https://app.codecov.io/gh/kreemer/tmx)
 
-TMX is a library for creating, parsing and editing tmx files. The main purpose is to parse a tmx file and save the parsed file as image file.
+TMX is a library for creating, parsing and editing tmx files. The main purpose is to parse a tmx file and save the
+parsed file as image file.
 
-The tmx format is used by the program [Tiled](https://www.mapeditor.org). The format is explained [here](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/).
+The tmx format is used by the program [Tiled](https://www.mapeditor.org). The format is
+explained [here](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/).
 
 ## Installation
 
@@ -46,7 +47,6 @@ Under development
 - Tmx works with PHP 7.4 or above.
 - You have to install the imagick extension, gd support is currently under development
 - If you want to parse zlib or zstd compressed maps, you have to install these extensions
-
 
 ### Submitting bugs and feature requests
 

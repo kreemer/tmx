@@ -144,4 +144,27 @@ class LayerParserTest extends ParserTest
         $layer = $map->getLayers()[1];
         self::assertFalse($layer->isVisible());
     }
+
+    public function testFirstLayerHasOrder0(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getMapPath('map-1'));
+
+        // then
+        self::assertCount(1, $map->getLayers());
+        self::assertSame(0, $map->getLayers()[0]->getOrder());
+    }
+
+    public function testOrderIsNumberingUp(): void
+    {
+        // when
+        $map = $this->parser->parse($this->getMapPath('map-8'));
+
+        // then
+        self::assertCount(4, $map->getLayers());
+        self::assertSame(0, $map->getLayers()[0]->getOrder());
+        self::assertSame(1, $map->getLayers()[1]->getOrder());
+        self::assertSame(2, $map->getLayers()[2]->getOrder());
+        self::assertSame(3, $map->getLayers()[3]->getOrder());
+    }
 }

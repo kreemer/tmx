@@ -8,10 +8,11 @@
   -->
 
 <serializer>
-    <class name="Tmx\WangColor" exclusion-policy="ALL">
+    <class name="Tmx\TileLayer" exclusion-policy="ALL">
+
+        <property name="id" serialized-name="id" xml-attribute="true"/>
         <property name="name" serialized-name="name" xml-attribute="true"/>
-        <property name="tileId" serialized-name="tile" xml-attribute="true"/>
-        <property name="color" serialized-name="color" xml-attribute="true"/>
-        <property name="probability" serialized-name="probability" xml-attribute="true"/>
+        <property name="opacity" serialized-name="opacity" xml-attribute="true"/>
+        <property name="visible" serialized-name="visible" xml-attribute="true"/>
     </class>
 </serializer>

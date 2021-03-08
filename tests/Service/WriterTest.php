@@ -16,7 +16,6 @@ use Tmx\Layer;
 use Tmx\LayerData;
 use Tmx\Map;
 use Tmx\Service\Writer;
-use PHPUnit\Framework\TestCase;
 use Tmx\Tests\TmxTest;
 use Tmx\TileSet;
 
@@ -24,14 +23,6 @@ class WriterTest extends TmxTest
 {
     private vfsStreamDirectory $root;
     private Writer $writer;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->root = vfsStream::setup();
-        $this->writer = new Writer();
-
-    }
 
     public function testSaveSimpleMap(): void
     {
@@ -72,5 +63,12 @@ class WriterTest extends TmxTest
 
         // then
         self::assertFileExists(vfsStream::url('root') . DIRECTORY_SEPARATOR . 'testmap.tmx');
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->root = vfsStream::setup();
+        $this->writer = new Writer();
     }
 }

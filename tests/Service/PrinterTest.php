@@ -26,13 +26,6 @@ class PrinterTest extends TmxTest
     private vfsStreamDirectory $root;
     private Printer $printer;
 
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->root = vfsStream::setup();
-        $this->printer = new Printer();
-    }
-
     public function testRenderEmptyMap(): void
     {
         // given
@@ -51,6 +44,20 @@ class PrinterTest extends TmxTest
 
         // then
         $this->assertImagesAreEqual($expectedImgPath, $imgPath);
+    }
+
+    private function assertImagesAreEqual($path1, $path2): void
+    {
+        if (!file_exists($path1) || !file_exists($path2)) {
+            $this->fail('Could not read image');
+        }
+
+        $img1 = new \Imagick($path1);
+        $img2 = new \Imagick($path2);
+
+        $result = $img1->compareImages($img2, \Imagick::METRIC_ROOTMEANSQUAREDERROR);
+
+        $this->assertLessThan(0.01, $result[1], 'Images are not equal with factor: ' . $result[1]);
     }
 
     public function testRenderSimpleMapWithOneTile(): void
@@ -119,20 +126,6 @@ class PrinterTest extends TmxTest
         $this->assertImagesAreEqual($expectedImagePath, $actualImagePath);
     }
 
-    private function assertImagesAreEqual($path1, $path2): void
-    {
-        if (!file_exists($path1) || !file_exists($path2)) {
-            $this->fail('Could not read image');
-        }
-
-        $img1 = new \Imagick($path1);
-        $img2 = new \Imagick($path2);
-
-        $result = $img1->compareImages($img2, \Imagick::METRIC_ROOTMEANSQUAREDERROR);
-
-        $this->assertLessThan(0.01, $result[1], 'Images are not equal with factor: ' . $result[1]);
-    }
-
     public function mapOutputProvider(): array
     {
         return [
@@ -150,12 +143,19 @@ class PrinterTest extends TmxTest
             'base64-saved-zstd' => ['base64-saved-zstd'],
             'infinite' => ['infinite'],
             'infinite-base64' => ['infinite-base64'],
-//            'group-layer-simple' => ['group-layer-simple'],
-//            'group-layer-multiple' => ['group-layer-multiple'],
-//            'group-layer-nested' => ['group-layer-nested'],
-//            'group-layer-opacity' => ['group-layer-opacity'],
-//            'group-layer-visible' => ['group-layer-visible'],
-
+            'group-layer-simple' => ['group-layer-simple'],
+            'group-layer-multiple' => ['group-layer-multiple'],
+            'group-layer-nested' => ['group-layer-nested'],
+            'group-layer-opacity' => ['group-layer-opacity'],
+            'group-layer-visible' => ['group-layer-visible'],
+            'group-infinite' => ['group-infinite'],
         ];
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->root = vfsStream::setup();
+        $this->printer = new Printer();
     }
 }

@@ -11,6 +11,7 @@ namespace Tmx\Service;
 
 use Intervention\Image\Image as InterventionImage;
 use Intervention\Image\ImageManager;
+use Tmx\GroupContainer;
 use Tmx\Map;
 use Tmx\Service\LayerData\Base64DataParser;
 use Tmx\Service\LayerData\CsvDataParser;
@@ -31,9 +32,19 @@ class Printer
     {
         $this->manager = new ImageManager(['driver' => 'imagick']);
         $this->layerDataReader = new LayerDataReader(
-            [ new CsvDataParser(), new Base64DataParser() ],
-            [ new PlainCompression(), new ZlibCompression(), new ZstdCompression() ]
+            [new CsvDataParser(), new Base64DataParser()],
+            [new PlainCompression(), new ZlibCompression(), new ZstdCompression()]
         );
+    }
+
+    public function print(Map $map, string $filename): void
+    {
+        $img = $this->render($map);
+        /** @var \Imagick $imagick */
+        $imagick = $img->getCore();
+        $imagick->setImageDepth(32);
+        $imagick->setImageFormat('PNG32');
+        @file_put_contents($filename, $imagick->getImageBlob());
     }
 
     public function render(Map $map): InterventionImage
@@ -42,8 +53,8 @@ class Printer
             return $this->manager->canvas(1, 1, null);
         }
 
-        $widthPixel = $map->getCalculatedWidth() * $map->getTileWidth();
-        $heightPixel = $map->getCalculatedHeight() * $map->getTileHeight();
+        $widthPixel = MapService::getCalculatedWidth($map) * $map->getTileWidth();
+        $heightPixel = MapService::getCalculatedHeight($map) * $map->getTileHeight();
 
         $img = $this->manager->canvas($widthPixel, $heightPixel, $map->getBackgroundColor());
 
@@ -79,8 +90,10 @@ class Printer
             }
         }
 
-        foreach ($map->getLayers() as $layer) {
-            if (!$layer->isVisible()) {
+        $layerArray = $this->extractLayersInOrder($map);
+        foreach ($layerArray as $layerRow) {
+            $layer = $layerRow['layer'];
+            if (!$layerRow['visible']) {
                 continue;
             }
             $layerData = $layer->getLayerData();
@@ -111,7 +124,7 @@ class Printer
                         0;
 
                     if (null !== $layer->getOpacity()) {
-                        $tileSource->opacity(intval($layer->getOpacity() * 100));
+                        $tileSource->opacity(intval($layerRow['opacity'] * 100));
                     }
 
                     $img->insert(
@@ -126,13 +139,30 @@ class Printer
         return $img;
     }
 
-    public function print(Map $map, string $filename): void
+    private function extractLayersInOrder(GroupContainer $container, $context = []): array
     {
-        $img = $this->render($map);
-        /** @var \Imagick $imagick */
-        $imagick = $img->getCore();
-        $imagick->setImageDepth(32);
-        $imagick->setImageFormat('PNG32');
-        @file_put_contents($filename, $imagick->getImageBlob());
+        $layers = [];
+        foreach ($container->getLayers() as $layer) {
+            $layers[$layer->getOrder()] =
+                [
+                    'layer' => $layer,
+                    'visible' => $context['visible'] ?? $layer->isVisible(),
+                    'opacity' => $context['opacity'] ?? $layer->getOpacity(),
+                ];
+        }
+
+        foreach ($container->getGroups() as $group) {
+            $currentContext = $context;
+
+            if (!isset($context['visible']) && !$group->isVisible()) {
+                $currentContext['visible'] = $group->isVisible();
+            }
+            if (!isset($context['opacity']) && 1.0 !== $group->getOpacity()) {
+                $currentContext['opacity'] = $group->getOpacity();
+            }
+            $layers = array_merge($layers, $this->extractLayersInOrder($group, $currentContext));
+        }
+
+        return $layers;
     }
 }

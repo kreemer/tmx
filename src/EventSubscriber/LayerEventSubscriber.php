@@ -9,26 +9,22 @@
 
 namespace Tmx\EventSubscriber;
 
-
-use JMS\Serializer\EventDispatcher\Event;
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 use Tmx\Layer;
-use Tmx\Map;
 
 class LayerEventSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
     {
-        return array(
-            array(
+        return [
+            [
                 'event' => 'serializer.post_deserialize',
                 'method' => 'onPostDeserialize',
                 'class' => 'Tmx\\Layer',
                 'format' => 'xml',
-            ),
-        );
+            ],
+        ];
     }
 
     public function onPostDeserialize(ObjectEvent $event): void

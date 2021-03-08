@@ -12,23 +12,18 @@ namespace Tmx\Service;
 use ComposerLocator;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Tmx\EventSubscriber\LayerEventSubscriber;
 use Tmx\EventSubscriber\MapEventSubscriber;
 use Tmx\EventSubscriber\TileEventSubscriber;
 use Tmx\EventSubscriber\TileSetEventSubscriber;
-use Tmx\Handler\TileTerrainHandler;
 use Tmx\Map;
 use Tmx\TileSet;
 
 class Parser
 {
-
     /**
      * @var Serializer
      */
@@ -41,9 +36,9 @@ class Parser
     {
         $projectRootPath = ComposerLocator::getRootPath();
         $configDir = $projectRootPath . DIRECTORY_SEPARATOR . 'config';
-        $this->serializer =  SerializerBuilder::create()
+        $this->serializer = SerializerBuilder::create()
             ->addMetadataDir($configDir)
-            ->configureListeners(function(EventDispatcher $dispatcher) {
+            ->configureListeners(function (EventDispatcher $dispatcher) {
                 $dispatcher->addSubscriber(new MapEventSubscriber());
                 $dispatcher->addSubscriber(new LayerEventSubscriber());
                 $dispatcher->addSubscriber(new TileSetEventSubscriber());

@@ -9,25 +9,54 @@
 
 namespace Tmx\EventSubscriber;
 
-
-use JMS\Serializer\EventDispatcher\Event;
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\ObjectEvent;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
+use Tmx\GroupContainer;
 use Tmx\Map;
 
 class MapEventSubscriber implements EventSubscriberInterface
 {
+    private int $layerOrder = 0;
+
     public static function getSubscribedEvents(): array
     {
-        return array(
-            array(
+        return [
+            [
+                'event' => 'serializer.pre_deserialize',
+                'method' => 'onPreDeserialize',
+                'class' => 'Tmx\\Map',
+                'format' => 'xml',
+            ],
+            [
                 'event' => 'serializer.post_deserialize',
                 'method' => 'onPostDeserialize',
                 'class' => 'Tmx\\Map',
                 'format' => 'xml',
-            ),
-        );
+            ],
+        ];
+    }
+
+    public function onPreDeserialize(PreDeserializeEvent $event): void
+    {
+        /** @var \SimpleXMLElement $data */
+        $data = $event->getData();
+
+        foreach ($data->children() as $child) {
+            $this->searchLayer($child);
+        }
+    }
+
+    private function searchLayer(\SimpleXMLElement $element): void
+    {
+        if ('layer' === $element->getName()) {
+            $element->addAttribute('order', (string) $this->layerOrder);
+            ++$this->layerOrder;
+        } elseif ('group' === $element->getName()) {
+            foreach ($element->children() as $child) {
+                $this->searchLayer($child);
+            }
+        }
     }
 
     public function onPostDeserialize(ObjectEvent $event): void
@@ -37,8 +66,16 @@ class MapEventSubscriber implements EventSubscriberInterface
         }
         /** @var Map $map */
         $map = $event->getObject();
-        foreach ($map->getLayers() as $layer) {
+        $this->initializeMapWithinGroup($map, $map);
+    }
+
+    private function initializeMapWithinGroup(GroupContainer $group, Map $map)
+    {
+        foreach ($group->getLayers() as $layer) {
             $layer->setMap($map);
+        }
+        foreach ($group->getGroups() as $group) {
+            $this->initializeMapWithinGroup($group, $map);
         }
     }
 }

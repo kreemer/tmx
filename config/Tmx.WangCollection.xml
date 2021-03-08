@@ -12,7 +12,7 @@
 
         <property name="wangSets" serialized-name="wangset">
             <type><![CDATA[array<Tmx\WangSet>]]></type>
-            <xml-list inline="true" entry-name="wangset" />
+            <xml-list inline="true" entry-name="wangset"/>
         </property>
     </class>
 </serializer>

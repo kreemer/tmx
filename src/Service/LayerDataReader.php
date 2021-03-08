@@ -26,7 +26,6 @@ class LayerDataReader
      */
     private $compressions;
 
-
     public function __construct(array $parsers, array $compressions)
     {
         $this->parsers = $parsers;
@@ -54,7 +53,6 @@ class LayerDataReader
             $parsedData = $parser->getData($layerData);
             $uncompressed = $compression->unpackData($parsedData);
 
-
             return $parser->postCompress(
                 $uncompressed,
                 $layerData->getLayer()->getMap()->getWidth(),
@@ -64,17 +62,17 @@ class LayerDataReader
 
         $returnArray = [];
 
-        $width = $layerData->getLayer()->getMap()->getCalculatedWidth();
-        $height = $layerData->getLayer()->getMap()->getCalculatedHeight();
+        $width = MapService::getCalculatedWidth($layerData->getLayer()->getMap());
+        $height = MapService::getCalculatedHeight($layerData->getLayer()->getMap());
 
-        for ($i = 0; $i < $height; $i++) {
-            for ($u = 0; $u < $width; $u++) {
+        for ($i = 0; $i < $height; ++$i) {
+            for ($u = 0; $u < $width; ++$u) {
                 $returnArray[$i][$u] = 0;
             }
         }
 
-        $offsetX = $layerData->getLayer()->getMap()->getInfiniteMapOffsetX();
-        $offsetY = $layerData->getLayer()->getMap()->getInfiniteMapOffsetY();
+        $offsetX = MapService::getInfiniteMapOffsetX($layerData->getLayer()->getMap());
+        $offsetY = MapService::getInfiniteMapOffsetY($layerData->getLayer()->getMap());
         foreach ($layerData->getChunks() as $chunk) {
             $parsedData = $parser->getData($chunk);
             $uncompressed = $compression->unpackData($parsedData);

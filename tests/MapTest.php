@@ -9,22 +9,16 @@
 
 namespace Tmx\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Tmx\Chunk;
 use Tmx\Layer;
 use Tmx\LayerData;
 use Tmx\Map;
-use PHPUnit\Framework\TestCase;
+use Tmx\Service\MapService;
 
 class MapTest extends TestCase
 {
-
     private Map $map;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->map = new Map();
-    }
 
     public function testCalculatedWidthIsWidthWhenNotInfinite(): void
     {
@@ -32,7 +26,7 @@ class MapTest extends TestCase
         $this->map->setWidth(100);
 
         // when
-        $result = $this->map->getCalculatedWidth();
+        $result = MapService::getCalculatedWidth($this->map);
 
         // then
         self::assertSame(100, $result);
@@ -44,7 +38,7 @@ class MapTest extends TestCase
         $this->map->setHeight(100);
 
         // when
-        $result = $this->map->getCalculatedHeight();
+        $result = MapService::getCalculatedHeight($this->map);
 
         // then
         self::assertSame(100, $result);
@@ -68,7 +62,7 @@ class MapTest extends TestCase
         $this->map->addLayer($layer);
 
         // when
-        $result = $this->map->getCalculatedWidth();
+        $result = MapService::getCalculatedWidth($this->map);
 
         // then
         self::assertSame(12, $result);
@@ -92,9 +86,15 @@ class MapTest extends TestCase
         $this->map->addLayer($layer);
 
         // when
-        $result = $this->map->getCalculatedHeight();
+        $result = MapService::getCalculatedHeight($this->map);
 
         // then
         self::assertSame(12, $result);
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->map = new Map();
     }
 }

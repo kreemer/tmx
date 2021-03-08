@@ -9,8 +9,6 @@
 
 namespace Tmx\Service;
 
-
 class ReaderException extends \RuntimeException
 {
-
 }

@@ -9,13 +9,13 @@
 
 <serializer>
     <class name="Tmx\LayerData" exclusion-policy="ALL">
-        <property name="encoding"     serialized-name="encoding"    xml-attribute="true" />
-        <property name="compression"   serialized-name="compression"  xml-attribute="true" />
-        <property name="data"   serialized-name="data"  inline="true" />
+        <property name="encoding" serialized-name="encoding" xml-attribute="true"/>
+        <property name="compression" serialized-name="compression" xml-attribute="true"/>
+        <property name="data" serialized-name="data" inline="true"/>
 
         <property name="chunks" serialized-name="chunk">
             <type><![CDATA[array<Tmx\Chunk>]]></type>
-            <xml-list inline="true" entry-name="chunk" />
+            <xml-list inline="true" entry-name="chunk"/>
         </property>
     </class>
 </serializer>

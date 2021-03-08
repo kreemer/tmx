@@ -9,7 +9,7 @@
 
 <serializer>
     <class name="Tmx\WangTile" exclusion-policy="ALL">
-        <property name="wangId"   serialized-name="wangid"  xml-attribute="true" />
-        <property name="tileId"   serialized-name="tileid"  xml-attribute="true" />
+        <property name="wangId" serialized-name="wangid" xml-attribute="true"/>
+        <property name="tileId" serialized-name="tileid" xml-attribute="true"/>
     </class>
 </serializer>

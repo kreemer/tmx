@@ -9,13 +9,14 @@
 
 namespace Tmx\Service\LayerData;
 
-
 use Tmx\DataInterface;
 use Tmx\LayerData;
 
 interface DataParserInterface
 {
     public function getData(DataInterface $dataInterface): string;
+
     public function postCompress(string $data, int $width = null, int $height = null): array;
+
     public function isResponsible(LayerData $layerData): bool;
 }

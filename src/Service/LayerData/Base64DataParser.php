@@ -9,7 +9,6 @@
 
 namespace Tmx\Service\LayerData;
 
-
 use Tmx\DataInterface;
 use Tmx\LayerData;
 use Tmx\Service\ReaderException;
@@ -39,12 +38,12 @@ class Base64DataParser implements DataParserInterface
                 $i = 0;
             }
         }
+
         return $returnArray;
     }
 
     public function isResponsible(LayerData $layerData): bool
     {
-        return $layerData->getEncoding() === 'base64';
+        return 'base64' === $layerData->getEncoding();
     }
-
 }

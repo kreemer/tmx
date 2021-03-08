@@ -9,7 +9,6 @@
 
 namespace Tmx\Service\LayerData;
 
-
 use Tmx\LayerData;
 use Tmx\Service\ReaderException;
 
@@ -26,7 +25,6 @@ class ZstdCompression implements CompressionInterface
 
     public function isResponsible(LayerData $layerData): bool
     {
-        return $layerData->getCompression() === 'zstd';
+        return 'zstd' === $layerData->getCompression();
     }
-
 }

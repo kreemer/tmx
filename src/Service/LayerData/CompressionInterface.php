@@ -9,11 +9,11 @@
 
 namespace Tmx\Service\LayerData;
 
-
 use Tmx\LayerData;
 
 interface CompressionInterface
 {
     public function unpackData(string $data): string;
+
     public function isResponsible(LayerData $layerData): bool;
 }

@@ -9,10 +9,9 @@
 
 namespace Tmx;
 
-class Layer
+class Layer extends TileLayer
 {
-    private ?int $id = null;
-    private ?string $name = null;
+    private int $order = 0;
 
     private int $x = 0;
     private int $y = 0;
@@ -20,37 +19,16 @@ class Layer
     private ?int $width;
     private ?int $height;
 
-    private ?float $opacity = 1.0;
-    private bool $visible = true;
-
-    private ?string $tintColor = null;
-
-    private int $offsetX = 0;
-    private int $offsetY = 0;
-
     private ?LayerData $layerData;
-    private ?Map $map;
 
-    public function getId(): ?int
+    public function getOrder(): int
     {
-        return $this->id;
+        return $this->order;
     }
 
-    public function setId(?int $id): Layer
+    public function setOrder(int $order): Layer
     {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(?string $name): Layer
-    {
-        $this->name = $name;
+        $this->order = $order;
 
         return $this;
     }
@@ -103,33 +81,6 @@ class Layer
         return $this;
     }
 
-    public function getOpacity(): ?float
-    {
-        return $this->opacity;
-    }
-
-    /**
-     * @param float|null $opacity
-     */
-    public function setOpacity($opacity): Layer
-    {
-        $this->opacity = $opacity;
-
-        return $this;
-    }
-
-    public function isVisible(): bool
-    {
-        return $this->visible;
-    }
-
-    public function setVisible(bool $visible): Layer
-    {
-        $this->visible = $visible;
-
-        return $this;
-    }
-
     public function getLayerData(): ?LayerData
     {
         return $this->layerData;
@@ -137,20 +88,8 @@ class Layer
 
     public function setLayerData(?LayerData $layerData): Layer
     {
+        $layerData->setLayer($this);
         $this->layerData = $layerData;
-        $this->layerData->setLayer($this);
-
-        return $this;
-    }
-
-    public function getMap(): ?Map
-    {
-        return $this->map;
-    }
-
-    public function setMap(?Map $map): Layer
-    {
-        $this->map = $map;
 
         return $this;
     }

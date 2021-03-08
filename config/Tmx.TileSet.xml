@@ -9,15 +9,15 @@
 
 <serializer>
     <class name="Tmx\TileSet" exclusion-policy="ALL">
-        <property name="firstGid"     serialized-name="firstgid"    xml-attribute="true" />
-        <property name="source"   serialized-name="source"  xml-attribute="true" />
-        <property name="name"   serialized-name="name"  xml-attribute="true" />
-        <property name="tileWidth"   serialized-name="tilewidth"  xml-attribute="true" />
-        <property name="tileHeight"   serialized-name="tileheight"  xml-attribute="true" />
-        <property name="tileCount"   serialized-name="tilecount"  xml-attribute="true" />
-        <property name="columns"   serialized-name="columns"  xml-attribute="true" />
+        <property name="firstGid" serialized-name="firstgid" xml-attribute="true"/>
+        <property name="source" serialized-name="source" xml-attribute="true"/>
+        <property name="name" serialized-name="name" xml-attribute="true"/>
+        <property name="tileWidth" serialized-name="tilewidth" xml-attribute="true"/>
+        <property name="tileHeight" serialized-name="tileheight" xml-attribute="true"/>
+        <property name="tileCount" serialized-name="tilecount" xml-attribute="true"/>
+        <property name="columns" serialized-name="columns" xml-attribute="true"/>
 
-        <property name="terrainCollection" serialized-name="terraintypes" type="Tmx\TerrainCollection" />
+        <property name="terrainCollection" serialized-name="terraintypes" type="Tmx\TerrainCollection"/>
 
         <property name="tileOffset" serialized-name="tileoffset">
             <type><![CDATA[Tmx\TileOffset]]></type>
@@ -25,7 +25,7 @@
 
         <property name="tiles" serialized-name="tile">
             <type><![CDATA[array<Tmx\Tile>]]></type>
-            <xml-list inline="true" entry-name="tile" />
+            <xml-list inline="true" entry-name="tile"/>
         </property>
 
         <property name="wangCollection" serialized-name="wangsets">

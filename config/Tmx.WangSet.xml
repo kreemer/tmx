@@ -10,20 +10,20 @@
 <serializer>
     <class name="Tmx\WangSet" exclusion-policy="ALL">
 
-        <property name="name"   serialized-name="name"  xml-attribute="true" />
-        <property name="tileId"   serialized-name="tile"  xml-attribute="true" />
+        <property name="name" serialized-name="name" xml-attribute="true"/>
+        <property name="tileId" serialized-name="tile" xml-attribute="true"/>
 
         <property name="wangEdgeColors" serialized-name="wangedgecolor">
             <type><![CDATA[array<Tmx\WangEdgeColor>]]></type>
-            <xml-list inline="true" entry-name="wangedgecolor" />
+            <xml-list inline="true" entry-name="wangedgecolor"/>
         </property>
         <property name="wangCornerColors" serialized-name="wangcornercolor">
             <type><![CDATA[array<Tmx\WangCornerColor>]]></type>
-            <xml-list inline="true" entry-name="wangcornercolor" />
+            <xml-list inline="true" entry-name="wangcornercolor"/>
         </property>
         <property name="wangTiles" serialized-name="wangtile">
             <type><![CDATA[array<Tmx\WangTile>]]></type>
-            <xml-list inline="true" entry-name="wangtile" />
+            <xml-list inline="true" entry-name="wangtile"/>
         </property>
     </class>
 </serializer>

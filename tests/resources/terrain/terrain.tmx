@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="6" height="6" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
- <tileset firstgid="1" source="terrain.tsx"/>
- <layer id="1" name="Tile Layer 1" width="6" height="6">
-  <data encoding="csv">
-46,62,63,49,61,24,
-44,65,67,49,64,66,
-48,49,49,49,49,49,
-25,29,49,49,26,28,
-47,25,29,49,61,47,
-43,47,48,49,61,47
-</data>
- </layer>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="6" height="6"
+     tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
+    <tileset firstgid="1" source="terrain.tsx"/>
+    <layer id="1" name="Tile Layer 1" width="6" height="6">
+        <data encoding="csv">
+            46,62,63,49,61,24,
+            44,65,67,49,64,66,
+            48,49,49,49,49,49,
+            25,29,49,49,26,28,
+            47,25,29,49,61,47,
+            43,47,48,49,61,47
+        </data>
+    </layer>
 </map>

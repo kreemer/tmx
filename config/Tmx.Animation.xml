@@ -12,7 +12,7 @@
 
         <property name="frames" serialized-name="frame">
             <type><![CDATA[array<Tmx\Frame>]]></type>
-            <xml-list inline="true" entry-name="frame" />
+            <xml-list inline="true" entry-name="frame"/>
         </property>
     </class>
 </serializer>
