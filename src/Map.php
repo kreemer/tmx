@@ -11,7 +11,11 @@
 namespace Tmx;
 
 /**
- * Class Map.
+ * Representation of a map inside a tmx file.
+ *
+ * This class contains all map related data. It closely represent the map element inside of a tmx file.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#map Documentation
  */
 class Map implements GroupContainer, PropertyBagHolder
 {
@@ -54,71 +58,141 @@ class Map implements GroupContainer, PropertyBagHolder
      */
     const ORIENTATION_HEXAGONAL = 4;
 
+    /**
+     * The parsed version of the map.
+     *
+     * @see Map::getVersion()
+     * @see Map::setVersion()
+     */
     private ?string $version = null;
 
+    /**
+     * The version of tiled, which created the map.
+     */
     private ?string $tiledVersion = null;
 
+    /**
+     * The internal representation of the orientation of the map.
+     *
+     * the orientation is internally saved as an integer: 0 (orthogonal), 1 (isometric), 2 (staggered) or 3 (hexagonal)
+     *
+     * @see Map::getOrientationAsString() Returns orientation as string
+     * @see Map::setOrientationAsString() Sets the orientation as string
+     * @see Map::getOrientation() Returns the orientation as int
+     * @see Map::setOrientation() Sets the orientation as int
+     */
     private ?int $orientation = self::ORIENTATION_ORTHOGONAL;
 
+    /**
+     * Used rendering order.
+     *
+     * The rendering order does control how a map will be printed. The value is an integer:  0 (right-down), 1 (right-left), 2 (top-down), 3 (top-left)
+     */
     private int $renderOrder = self::RENDER_ORDER_RIGHT_DOWN;
 
+    /**
+     * How the compression is used.
+     */
     private ?float $compressionLevel = null;
 
+    /**
+     * The width (in tiles) of this map.
+     */
     private ?int $width = null;
 
+    /**
+     * The height (in tiles) of this map.
+     */
     private ?int $height = null;
 
+    /**
+     * The width of one tile in pixel.
+     */
     private ?int $tileWidth = null;
 
+    /**
+     * The height of one tile in pixel.
+     */
     private ?int $tileHeight = null;
 
+    /**
+     * The background color of this map.
+     */
     private ?string $backgroundColor = null;
 
     /**
-     * @var ?string the next id of the layer which will be added
+     * the next id of the layer which will be added.
+     *
+     * @var ?string
      */
     private ?string $nextLayerId = null;
 
     /**
-     * @var ?string The id of the next object which will be added
+     *  The id of the next object which will be added.
+     *
+     * @var ?string
      */
     private ?string $nextObjectId = null;
 
     /**
-     * @var bool If the map is infinite or not
+     * If the map is infinite or not.
      */
     private bool $infiniteMap = false;
 
     /**
-     * @var array Array of tileSet objects
+     * Array of tileSet objects.
+     *
+     * @var TileSet[]
      */
     private array $tileSets = [];
 
     /**
-     * @var array<Layer> Array of layer objects
+     * Array of layer objects.
+     *
+     * @var Layer[]
      */
     private array $layers = [];
 
     /**
-     * @var array<ObjectLayer> Array of layer objects
+     * Array of layer objects.
+     *
+     * @var ObjectLayer[]
      */
     private array $objectLayers = [];
 
     /**
-     * @var array<Group> Array of group objects
+     * Array of group objects.
+     *
+     * @var Group[]
      */
     private array $groups = [];
 
     /**
-     * @var array<ImageLayer> Array of image layer objects
+     * Array of image layer objects.
+     *
+     * @var ImageLayer[]
      */
     private array $imageLayers = [];
 
+    /**
+     * Get the version of the tmx format.
+     *
+     * @see Map::$version
+     */
     public function getVersion(): ?string
     {
         return $this->version;
     }
 
+    /**
+     * Set the version of the tmx format.
+     *
+     * @param string $version The version as string
+     *
+     * @see Map::$version
+     *
+     * @return $this
+     */
     public function setVersion(string $version): Map
     {
         $this->version = $version;
@@ -126,11 +200,25 @@ class Map implements GroupContainer, PropertyBagHolder
         return $this;
     }
 
+    /**
+     * Get the version of the tiled editor, which saved this map.
+     *
+     * @see Map::$tiledVersion
+     */
     public function getTiledVersion(): ?string
     {
         return $this->tiledVersion;
     }
 
+    /**
+     * Set the tiled version.
+     *
+     * @param ?string $tiledVersion the version as string
+     *
+     * @see Map::$tiledVersion
+     *
+     * @return $this
+     */
     public function setTiledVersion(?string $tiledVersion): Map
     {
         $this->tiledVersion = $tiledVersion;
@@ -138,6 +226,13 @@ class Map implements GroupContainer, PropertyBagHolder
         return $this;
     }
 
+    /**
+     * Returns the orientation as a string.
+     *
+     * The orientation can be: orthogonal, isometric, staggered or hexagonal.
+     *
+     * @see Map::$orientation
+     */
     public function getOrientationAsString(): string
     {
         switch ($this->getOrientation()) {
@@ -154,11 +249,25 @@ class Map implements GroupContainer, PropertyBagHolder
         return 'undefined';
     }
 
+    /**
+     * get orientation as int.
+     *
+     * @see Map::$orientation
+     */
     public function getOrientation(): ?int
     {
         return $this->orientation;
     }
 
+    /**
+     * Set the orientation as int.
+     *
+     * @param int $orientation set the orientation as string, must be between 0-3
+     *
+     * @see Map::$orientation
+     *
+     * @return $this
+     */
     public function setOrientation(int $orientation): Map
     {
         $this->orientation = $orientation;
@@ -166,6 +275,15 @@ class Map implements GroupContainer, PropertyBagHolder
         return $this;
     }
 
+    /**
+     * Set the current orientation with a string.
+     *
+     * @param string $orientation string, either orthogonal, isometric, staggered or hexagonal. Ignored if string is not one of those.
+     *
+     * @see Map::$orientation
+     *
+     * @return $this
+     */
     public function setOrientationAsString(string $orientation): Map
     {
         switch ($orientation) {
@@ -186,6 +304,13 @@ class Map implements GroupContainer, PropertyBagHolder
         return $this;
     }
 
+    /**
+     * Get the rendering order as a string.
+     *
+     * The rendering order can either be: right-down, right-left, top-down, top-left
+     *
+     * @see Map::$renderOrder
+     */
     public function getRenderOrderAsString(): string
     {
         switch ($this->getRenderOrder()) {
@@ -202,11 +327,25 @@ class Map implements GroupContainer, PropertyBagHolder
         return 'undefined';
     }
 
+    /**
+     * Get the rendering order as an int.
+     *
+     * @see Map::$renderOrder
+     */
     public function getRenderOrder(): int
     {
         return $this->renderOrder;
     }
 
+    /**
+     * Get the rendering order as an int.
+     *
+     * @param int $renderOrder Rendering order as an int, see {@see Map::$renderOrder}
+     *
+     * @see Map::$renderOrder
+     *
+     * @return $this
+     */
     public function setRenderOrder(int $renderOrder): Map
     {
         $this->renderOrder = $renderOrder;
@@ -214,6 +353,15 @@ class Map implements GroupContainer, PropertyBagHolder
         return $this;
     }
 
+    /**
+     * Set the rendering order as a string.
+     *
+     * @param string $renderOrder Rendering order right-down, right-left, top-down, top-left
+     *
+     * @see Map::$renderOrder
+     *
+     * @return $this
+     */
     public function setRenderOrderAsString(string $renderOrder): Map
     {
         switch ($renderOrder) {
@@ -307,7 +455,7 @@ class Map implements GroupContainer, PropertyBagHolder
     }
 
     /**
-     * @return array<TileSet>
+     * @return TileSet[]
      */
     public function getTileSets(): array
     {

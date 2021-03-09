@@ -38,7 +38,7 @@ $printer->print($map, 'output.png'); // save map to output.png
 
 ## Documentation
 
-Under development
+See [here](docs/index.md) for additional documentation.
 
 ## About
 

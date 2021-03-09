@@ -147,7 +147,7 @@ class WriterTest extends TmxTest
             $expectedArray[$expectedKey] = (string) $expectedValue;
         }
 
-        if ($expected->getName() === 'tileset') {
+        if ('tileset' === $expected->getName()) {
             if (isset($expectedArray['source'])) {
                 self::assertSame($expectedArray['firstgid'], $actualArray['firstgid']);
 
@@ -158,7 +158,7 @@ class WriterTest extends TmxTest
                     $tileSetArray[$tileSetKey] = (string) $tileSetValue;
                 }
 
-                $map = [ 'name', 'tilewidth', 'tileheight', 'tilecount', 'columns' ];
+                $map = ['name', 'tilewidth', 'tileheight', 'tilecount', 'columns'];
                 foreach ($map as $key) {
                     if (isset($actualArray[$key])) {
                         self::assertArrayHasKey($key, $tileSetArray);
@@ -177,7 +177,7 @@ class WriterTest extends TmxTest
 
         foreach ($expectedArray as $expectedKey => $expectedValue) {
             self::assertArrayHasKey($expectedKey, $actualArray, 'Actual xml element "' . $expected->getName() . '" has no key "' . $expectedKey . '"');
-            if ($expectedKey === 'source') {
+            if ('source' === $expectedKey) {
                 self::assertStringEndsWith(basename($expectedValue), $actualArray[$expectedKey]);
                 continue;
             }
@@ -187,9 +187,7 @@ class WriterTest extends TmxTest
 
     private static function assertXmlChildrenEquals(SimpleXMLElement $expected, string $expectedFile, SimpleXMLElement $actual, string $actualFile): void
     {
-
-        if ($expected->getName() === 'tileset') {
-
+        if ('tileset' === $expected->getName()) {
             $expectedArray = [];
             foreach ($expected->attributes() as $expectedKey => $expectedValue) {
                 $expectedArray[$expectedKey] = (string) $expectedValue;
@@ -197,17 +195,17 @@ class WriterTest extends TmxTest
 
             if (isset($expectedArray['source'])) {
                 $tileSetXml = new SimpleXMLElement(file_get_contents(dirname($expectedFile) . DIRECTORY_SEPARATOR . $expectedArray['source']));
-                for ($i = 0; $i < $tileSetXml->children()->count(); $i++) {
+                for ($i = 0; $i < $tileSetXml->children()->count(); ++$i) {
                     self::assertXmlElementEquals($tileSetXml->children()[$i], $expectedFile, $actual->children()[$i], $actualFile);
                 }
+
                 return;
             }
         }
 
-
         self::assertEquals($expected->children()->count(), $actual->children()->count(), 'xml children have different sizes');
 
-        for ($i = 0; $i < $expected->children()->count(); $i++) {
+        for ($i = 0; $i < $expected->children()->count(); ++$i) {
             self::assertXmlElementEquals($expected->children()[$i], $expectedFile, $actual->children()[$i], $actualFile);
         }
     }

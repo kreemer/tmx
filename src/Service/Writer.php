@@ -12,7 +12,6 @@ namespace Tmx\Service;
 use ComposerLocator;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\Expression\ExpressionEvaluator;
-use JMS\Serializer\GraphNavigatorInterface;
 use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
@@ -50,7 +49,7 @@ class Writer
                 return SerializationContext::create();
             })
             ->addDefaultHandlers()
-            ->configureHandlers(function(HandlerRegistry $registry) {
+            ->configureHandlers(function (HandlerRegistry $registry) {
                 $registry->registerSubscribingHandler(new BooleanAsIntHandler());
             })
             ->setExpressionEvaluator(new ExpressionEvaluator(new ExpressionLanguage()))
@@ -59,7 +58,7 @@ class Writer
 
     public function write(Map $map, string $filename): void
     {
-        $xml = $this->serializer->serialize($map, 'xml', SerializationContext::create()->setGroups(array('tmx')));
+        $xml = $this->serializer->serialize($map, 'xml', SerializationContext::create()->setGroups(['tmx']));
         file_put_contents($filename, $xml);
     }
 }

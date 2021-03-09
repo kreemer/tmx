@@ -9,9 +9,6 @@
 
 namespace Tmx\Tests\Parser\Map;
 
-use Tmx\Group;
-use Tmx\ImageLayer;
-use Tmx\Layer;
 use Tmx\Tests\Parser\ParserTest;
 
 class ImageLayerParserTest extends ParserTest
@@ -53,9 +50,8 @@ class ImageLayerParserTest extends ParserTest
     {
         // then
         self::assertNotNull($imageLayers[0]->getImage()->getSource());
-        self::assertSame(realpath($this->getResourceFolder()  . '_tileSet/door_32x32.png'), $imageLayers[0]->getImage()->getSource());
+        self::assertSame(realpath($this->getResourceFolder() . '_tileSet/door_32x32.png'), $imageLayers[0]->getImage()->getSource());
         self::assertSame(128, $imageLayers[0]->getImage()->getWidth());
         self::assertSame(32, $imageLayers[0]->getImage()->getHeight());
     }
-
 }

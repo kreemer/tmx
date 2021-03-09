@@ -22,6 +22,7 @@ return PhpCsFixer\Config::create()
         'concat_space' => [
             'spacing' => 'one'
         ],
+        'phpdoc_align' => ['align' => 'vertical']
     ))
     ->setFinder($finder)
 ;

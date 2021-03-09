@@ -104,7 +104,8 @@ class MapService
         foreach ($instance->getImageLayers() as $layer) {
             $maxPixel = $maxPixel < $layer->getOffsetX() ? $layer->getOffsetX() : $maxPixel;
         }
-        return round($maxPixel);
+
+        return (int) round($maxPixel);
     }
 
     public static function getMapOffsetY(Map $instance): int
@@ -117,6 +118,7 @@ class MapService
         foreach ($instance->getImageLayers() as $layer) {
             $maxPixel = $maxPixel < $layer->getOffsetY() ? $layer->getOffsetY() : $maxPixel;
         }
-        return round($maxPixel);
+
+        return (int) round($maxPixel);
     }
 }

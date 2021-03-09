@@ -56,7 +56,7 @@ class Parser
                 return SerializationContext::create();
             })
             ->addDefaultHandlers()
-            ->configureHandlers(function(HandlerRegistry $registry) {
+            ->configureHandlers(function (HandlerRegistry $registry) {
                 $registry->registerSubscribingHandler(new BooleanAsIntHandler());
             })
             ->setExpressionEvaluator(new ExpressionEvaluator(new ExpressionLanguage()))
@@ -73,9 +73,8 @@ class Parser
 
         $refreshTileSet = [];
         foreach ($map->getTileSets() as $tileSet) {
-            if ($tileSet->getSource() === null) {
-
-                if ($tileSet->getImage() !== null && $tileSet->getImage()->getSource() !== null) {
+            if (null === $tileSet->getSource()) {
+                if (null !== $tileSet->getImage() && null !== $tileSet->getImage()->getSource()) {
                     $tileSet->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getImage()->getSource()));
                 }
                 $refreshTileSet[] = $tileSet;
@@ -91,6 +90,7 @@ class Parser
             }
             $imageLayer->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $imageLayer->getImage()->getSource()));
         }
+
         return $map;
     }
 

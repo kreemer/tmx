@@ -160,7 +160,10 @@ class Printer
                 $imageLayerImage = $this->manager->make($layer->getImage()->getSource());
 
                 $img->insert(
-                    $imageLayerImage, 'top-left', round($layer->getOffsetX()), round($layer->getOffsetY())
+                    $imageLayerImage,
+                    'top-left',
+                    (int) round($layer->getOffsetX()),
+                    (int) round($layer->getOffsetY())
                 );
             }
         }
@@ -222,6 +225,7 @@ class Printer
         if (null === $currentContext->getTintColor()) {
             $currentContext->setTintColor($layer->getTintColor());
         }
+
         return $currentContext;
     }
 }

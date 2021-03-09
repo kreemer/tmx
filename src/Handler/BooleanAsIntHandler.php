@@ -9,7 +9,6 @@
 
 namespace Tmx\Handler;
 
-
 use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
@@ -40,12 +39,12 @@ class BooleanAsIntHandler implements SubscribingHandlerInterface
     {
         $data = $visitor->visitBoolean($value, $type);
         $data->data = $value ? '1' : '0';
+
         return $data;
     }
 
     public function deserializeIntToBoolean(XmlDeserializationVisitor $visitor, $value, array $type, Context $context)
     {
         return $visitor->visitBoolean($value, $type);
-
     }
 }
