@@ -10,17 +10,16 @@
 <serializer>
     <class name="Tmx\Map" exclusion-policy="ALL" xml-root-name="map">
 
-        <property name="version" serialized-name="version" xml-attribute="true"/>
-        <property name="tiledVersion" serialized-name="tiledversion" xml-attribute="true"/>
-        <property name="orientationAsString" serialized-name="orientation" xml-attribute="true"/>
-        <property name="width" serialized-name="width" xml-attribute="true"/>
-        <property name="height" serialized-name="height" xml-attribute="true"/>
-        <property name="tileWidth" serialized-name="tilewidth" xml-attribute="true"/>
-        <property name="tileHeight" serialized-name="tileheight" xml-attribute="true"/>
-        <property name="infiniteMap" serialized-name="infinite" xml-attribute="true"/>
-        <property name="nextLayerId" serialized-name="nextlayerid" xml-attribute="true"/>
-        <property name="nextObjectId" serialized-name="nextobjectid" xml-attribute="true"/>
-        <property name="backgroundColor" serialized-name="backgroundcolor" xml-attribute="true"/>
+        <property name="version" serialized-name="version" xml-attribute="true" groups="tmx"/>
+        <property name="tiledVersion" serialized-name="tiledversion" xml-attribute="true" groups="tmx"/>
+        <property name="width" serialized-name="width" xml-attribute="true" groups="tmx"/>
+        <property name="height" serialized-name="height" xml-attribute="true" groups="tmx"/>
+        <property name="tileWidth" serialized-name="tilewidth" xml-attribute="true" groups="tmx"/>
+        <property name="tileHeight" serialized-name="tileheight" xml-attribute="true" groups="tmx"/>
+        <property name="infiniteMap" serialized-name="infinite" xml-attribute="true" type="booleanAsInt" groups="tmx"/>
+        <property name="nextLayerId" serialized-name="nextlayerid" xml-attribute="true" groups="tmx"/>
+        <property name="nextObjectId" serialized-name="nextobjectid" xml-attribute="true" groups="tmx"/>
+        <property name="backgroundColor" serialized-name="backgroundcolor" xml-attribute="true" groups="tmx"/>
 
 
         <property
@@ -31,30 +30,42 @@
                 access-type="public_method"
                 accessor-getter="getRenderOrderAsString"
                 accessor-setter="setRenderOrderAsString"
+                groups="tmx"
+        />
+
+        <property
+                name="orientation"
+                type="string"
+                serialized-name="orientation"
+                xml-attribute="true"
+                access-type="public_method"
+                accessor-getter="getOrientationAsString"
+                accessor-setter="setOrientationAsString"
+                groups="tmx"
         />
 
 
-        <property name="propertyBag" serialized-name="properties">
+        <property name="propertyBag" serialized-name="properties" groups="tmx">
             <type>Tmx\PropertyBag</type>
         </property>
 
-        <property name="layers" serialized-name="layer">
+        <property name="layers" serialized-name="layer" groups="tmx">
             <type><![CDATA[array<Tmx\Layer>]]></type>
             <xml-list inline="true" entry-name="layer"/>
         </property>
 
-        <property name="groups" serialized-name="group">
+        <property name="groups" serialized-name="group" groups="tmx">
             <type><![CDATA[array<Tmx\Group>]]></type>
             <xml-list inline="true" entry-name="group"/>
         </property>
 
 
-        <property name="tileSets" serialized-name="tileset">
+        <property name="tileSets" serialized-name="tileset" groups="tmx">
             <type><![CDATA[array<Tmx\TileSet>]]></type>
             <xml-list inline="true" entry-name="tileset"/>
         </property>
 
-        <property name="objectLayers" serialized-name="objectgroup">
+        <property name="objectLayers" serialized-name="objectgroup" groups="tmx">
             <type><![CDATA[array<Tmx\ObjectLayer>]]></type>
             <xml-list inline="true" entry-name="objectgroup"/>
         </property>

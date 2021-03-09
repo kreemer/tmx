@@ -17,21 +17,21 @@
         <discriminator-class value="text">Tmx\Object\Text</discriminator-class>
         <discriminator-class value="rectangle">Tmx\Object\Rectangle</discriminator-class>
 
-        <property name="id" serialized-name="id" xml-attribute="true"/>
+        <property name="id" serialized-name="id" xml-attribute="true" groups="tmx"/>
 
-        <property name="name" serialized-name="name" xml-attribute="true"/>
-        <property name="type" serialized-name="type" xml-attribute="true"/>
+        <property name="name" serialized-name="name" xml-attribute="true" groups="tmx"/>
+        <property name="type" serialized-name="type" xml-attribute="true" groups="tmx"/>
 
-        <property name="width" serialized-name="width" xml-attribute="true"/>
-        <property name="height" serialized-name="height" xml-attribute="true"/>
-        <property name="x" serialized-name="x" xml-attribute="true"/>
-        <property name="y" serialized-name="y" xml-attribute="true"/>
+        <property name="width" serialized-name="width" xml-attribute="true" groups="tmx"/>
+        <property name="height" serialized-name="height" xml-attribute="true" groups="tmx"/>
+        <property name="x" serialized-name="x" xml-attribute="true" groups="tmx"/>
+        <property name="y" serialized-name="y" xml-attribute="true" groups="tmx"/>
 
-        <property name="rotation" serialized-name="rotation" xml-attribute="true"/>
-        <property name="gid" serialized-name="gid" xml-attribute="true"/>
-        <property name="visible" serialized-name="visible" xml-attribute="true"/>
+        <property name="rotation" serialized-name="rotation" xml-attribute="true" groups="tmx"/>
+        <property name="gid" serialized-name="gid" xml-attribute="true" groups="tmx"/>
+        <property name="visible" serialized-name="visible" xml-attribute="true" groups="tmx"/>
 
-        <property name="propertyBag" serialized-name="properties">
+        <property name="propertyBag" serialized-name="properties" groups="tmx">
             <type>Tmx\PropertyBag</type>
         </property>
     </class>

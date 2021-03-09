@@ -9,6 +9,6 @@
 
 <serializer>
     <class name="Tmx\Property\BoolProperty" exclusion-policy="ALL">
-            <property name="value" serialized-name="value" xml-attribute="true"/>
+            <property name="value" serialized-name="value" xml-attribute="true" groups="tmx"/>
     </class>
 </serializer>

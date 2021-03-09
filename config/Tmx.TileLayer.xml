@@ -10,10 +10,10 @@
 <serializer>
     <class name="Tmx\TileLayer" exclusion-policy="ALL">
 
-        <property name="id" serialized-name="id" xml-attribute="true"/>
-        <property name="name" serialized-name="name" xml-attribute="true"/>
-        <property name="opacity" serialized-name="opacity" xml-attribute="true"/>
-        <property name="visible" serialized-name="visible" xml-attribute="true"/>
-        <property name="tintColor" serialized-name="tintcolor" xml-attribute="true"/>
+        <property name="id" serialized-name="id" xml-attribute="true" groups="tmx"/>
+        <property name="name" serialized-name="name" xml-attribute="true" groups="tmx"/>
+        <property name="opacity" serialized-name="opacity" xml-attribute="true" exclude-if="context.getDirection() === 1 and object.getOpacity() === 1.0" groups="tmx"/>
+        <property name="visible" type="booleanAsInt" serialized-name="visible" xml-attribute="true" exclude-if="context.getDirection() === 1 and object.isVisible()" groups="tmx"/>
+        <property name="tintColor" serialized-name="tintcolor" xml-attribute="true" groups="tmx"/>
     </class>
 </serializer>

@@ -18,7 +18,7 @@
             <discriminator-class value="file">Tmx\Property\FileProperty</discriminator-class>
             <discriminator-class value="object">Tmx\Property\ObjectProperty</discriminator-class>
 
-            <property name="name" serialized-name="name" xml-attribute="true"/>
-            <property name="type" serialized-name="type" xml-attribute="true"/>
+            <property name="name" serialized-name="name" xml-attribute="true" groups="tmx"/>
+            <property name="type" serialized-name="type" xml-attribute="true" groups="tmx"/>
     </class>
 </serializer>

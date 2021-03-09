@@ -11,12 +11,17 @@ namespace Tmx\Service;
 
 use ComposerLocator;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\Expression\ExpressionEvaluator;
+use JMS\Serializer\GraphNavigatorInterface;
+use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Tmx\EventSubscriber\LayerEventSubscriber;
 use Tmx\EventSubscriber\MapEventSubscriber;
 use Tmx\EventSubscriber\TileEventSubscriber;
 use Tmx\EventSubscriber\TileSetEventSubscriber;
+use Tmx\Handler\BooleanAsIntHandler;
 use Tmx\Map;
 
 class Writer
@@ -44,12 +49,17 @@ class Writer
             ->setSerializationContextFactory(function () {
                 return SerializationContext::create();
             })
+            ->addDefaultHandlers()
+            ->configureHandlers(function(HandlerRegistry $registry) {
+                $registry->registerSubscribingHandler(new BooleanAsIntHandler());
+            })
+            ->setExpressionEvaluator(new ExpressionEvaluator(new ExpressionLanguage()))
             ->build();
     }
 
     public function write(Map $map, string $filename): void
     {
-        $xml = $this->serializer->serialize($map, 'xml');
+        $xml = $this->serializer->serialize($map, 'xml', SerializationContext::create()->setGroups(array('tmx')));
         file_put_contents($filename, $xml);
     }
 }

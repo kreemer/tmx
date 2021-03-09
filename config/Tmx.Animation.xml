@@ -10,7 +10,7 @@
 <serializer>
     <class name="Tmx\Animation" exclusion-policy="ALL">
 
-        <property name="frames" serialized-name="frame">
+        <property name="frames" serialized-name="frame" groups="tmx">
             <type><![CDATA[array<Tmx\Frame>]]></type>
             <xml-list inline="true" entry-name="frame"/>
         </property>

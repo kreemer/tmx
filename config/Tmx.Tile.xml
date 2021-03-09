@@ -9,20 +9,20 @@
 
 <serializer>
     <class name="Tmx\Tile" exclusion-policy="ALL">
-        <property name="id" serialized-name="id" xml-attribute="true"/>
-        <property name="type" serialized-name="type" xml-attribute="true"/>
-        <property name="probability" serialized-name="probability" xml-attribute="true"/>
+        <property name="id" serialized-name="id" xml-attribute="true" groups="tmx"/>
+        <property name="type" serialized-name="type" xml-attribute="true" groups="tmx"/>
+        <property name="probability" serialized-name="probability" xml-attribute="true" groups="tmx"/>
 
-        <property name="topLeftTerrainId" serialized-name="topLeftTerrainId" xml-attribute="true"/>
-        <property name="topRightTerrainId" serialized-name="topRightTerrainId" xml-attribute="true"/>
-        <property name="bottomLeftTerrainId" serialized-name="bottomLeftTerrainId" xml-attribute="true"/>
-        <property name="bottomRightTerrainId" serialized-name="bottomRightTerrainId" xml-attribute="true"/>
+        <property name="topLeftTerrainId" serialized-name="topLeftTerrainId" xml-attribute="true" groups="tmx"/>
+        <property name="topRightTerrainId" serialized-name="topRightTerrainId" xml-attribute="true" groups="tmx"/>
+        <property name="bottomLeftTerrainId" serialized-name="bottomLeftTerrainId" xml-attribute="true" groups="tmx"/>
+        <property name="bottomRightTerrainId" serialized-name="bottomRightTerrainId" xml-attribute="true" groups="tmx"/>
 
-        <property name="animation" serialized-name="animation">
+        <property name="animation" serialized-name="animation" groups="tmx">
             <type><![CDATA[Tmx\Animation]]></type>
         </property>
 
-        <property name="propertyBag" serialized-name="properties">
+        <property name="propertyBag" serialized-name="properties" groups="tmx">
             <type>Tmx\PropertyBag</type>
         </property>
     </class>

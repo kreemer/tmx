@@ -12,15 +12,19 @@ namespace Tmx\Service;
 use ComposerLocator;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\Expression\ExpressionEvaluator;
+use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Tmx\EventSubscriber\DrawObjectSubscriber;
 use Tmx\EventSubscriber\LayerEventSubscriber;
 use Tmx\EventSubscriber\MapEventSubscriber;
 use Tmx\EventSubscriber\PropertyEventSubscriber;
 use Tmx\EventSubscriber\TileEventSubscriber;
 use Tmx\EventSubscriber\TileSetEventSubscriber;
+use Tmx\Handler\BooleanAsIntHandler;
 use Tmx\Map;
 use Tmx\TileSet;
 
@@ -51,6 +55,11 @@ class Parser
             ->setSerializationContextFactory(function () {
                 return SerializationContext::create();
             })
+            ->addDefaultHandlers()
+            ->configureHandlers(function(HandlerRegistry $registry) {
+                $registry->registerSubscribingHandler(new BooleanAsIntHandler());
+            })
+            ->setExpressionEvaluator(new ExpressionEvaluator(new ExpressionLanguage()))
             ->build();
     }
 
@@ -64,6 +73,10 @@ class Parser
 
         $refreshTileSet = [];
         foreach ($map->getTileSets() as $tileSet) {
+            if ($tileSet->getSource() === null) {
+                $refreshTileSet[] = $tileSet;
+                continue;
+            }
             $refreshTileSet[] = $this->parseTileSet($directory . DIRECTORY_SEPARATOR . $tileSet->getSource(), $tileSet);
         }
         $map->setTileSets($refreshTileSet);

@@ -10,8 +10,8 @@
 <serializer>
     <class name="Tmx\Terrain" exclusion-policy="ALL">
 
-        <property name="name" serialized-name="name" xml-attribute="true"/>
-        <property name="tile" serialized-name="tile" xml-attribute="true"/>
+        <property name="name" serialized-name="name" xml-attribute="true" groups="tmx"/>
+        <property name="tile" serialized-name="tile" xml-attribute="true" groups="tmx"/>
 
 
         <property name="propertyBag" serialized-name="properties">

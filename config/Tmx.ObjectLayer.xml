@@ -9,22 +9,21 @@
 
 <serializer>
     <class name="Tmx\ObjectLayer" exclusion-policy="ALL">
-        <property name="order" serialized-name="order" xml-attribute="true"/>
 
-        <property name="color" serialized-name="color" xml-attribute="true"/>
-        <property name="drawOrder" serialized-name="draworder" xml-attribute="true"/>
+        <property name="color" serialized-name="color" xml-attribute="true" groups="tmx"/>
+        <property name="drawOrder" serialized-name="draworder" xml-attribute="true" groups="tmx"/>
 
-        <property name="width" serialized-name="width" xml-attribute="true"/>
-        <property name="height" serialized-name="height" xml-attribute="true"/>
-        <property name="x" serialized-name="x" xml-attribute="true"/>
-        <property name="y" serialized-name="y" xml-attribute="true"/>
+        <property name="width" serialized-name="width" xml-attribute="true" groups="tmx"/>
+        <property name="height" serialized-name="height" xml-attribute="true" groups="tmx"/>
+        <property name="x" serialized-name="x" xml-attribute="true" groups="tmx"/>
+        <property name="y" serialized-name="y" xml-attribute="true" groups="tmx"/>
 
-        <property name="drawObjects">
+        <property name="drawObjects" groups="tmx">
             <type><![CDATA[array<Tmx\DrawObject>]]></type>
             <xml-list inline="true" entry-name="object"/>
         </property>
 
-        <property name="propertyBag" serialized-name="properties">
+        <property name="propertyBag" serialized-name="properties" groups="tmx">
             <type>Tmx\PropertyBag</type>
         </property>
     </class>

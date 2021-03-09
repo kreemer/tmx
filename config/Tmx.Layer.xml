@@ -9,17 +9,18 @@
 
 <serializer>
     <class name="Tmx\Layer" exclusion-policy="ALL">
-        <property name="order" serialized-name="order" xml-attribute="true"/>
+        <property name="order" serialized-name="order" groups="" xml-attribute="true"/>
 
-        <property name="width" serialized-name="width" xml-attribute="true"/>
-        <property name="height" serialized-name="height" xml-attribute="true"/>
-        <property name="x" serialized-name="x" xml-attribute="true"/>
-        <property name="y" serialized-name="y" xml-attribute="true"/>
+        <property name="width" serialized-name="width" groups="tmx" xml-attribute="true"/>
+        <property name="height" serialized-name="height" groups="tmx" xml-attribute="true"/>
+        <property name="x" serialized-name="x" groups="tmx" xml-attribute="true" exclude-if="context.getDirection() === 1 and object.getX() === 0"/>
+        <property name="y" serialized-name="y" groups="tmx" xml-attribute="true" exclude-if="context.getDirection() === 1 and object.getY() === 0"/>
 
-        <property name="layerData" serialized-name="data">
+
+        <property name="layerData" serialized-name="data" groups="tmx">
             <type>Tmx\LayerData</type>
         </property>
-        <property name="propertyBag" serialized-name="properties">
+        <property name="propertyBag" serialized-name="properties" groups="tmx">
             <type>Tmx\PropertyBag</type>
         </property>
     </class>

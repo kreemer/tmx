@@ -9,34 +9,34 @@
 
 <serializer>
     <class name="Tmx\TileSet" exclusion-policy="ALL">
-        <property name="firstGid" serialized-name="firstgid" xml-attribute="true"/>
-        <property name="source" serialized-name="source" xml-attribute="true"/>
-        <property name="name" serialized-name="name" xml-attribute="true"/>
-        <property name="tileWidth" serialized-name="tilewidth" xml-attribute="true"/>
-        <property name="tileHeight" serialized-name="tileheight" xml-attribute="true"/>
-        <property name="tileCount" serialized-name="tilecount" xml-attribute="true"/>
-        <property name="columns" serialized-name="columns" xml-attribute="true"/>
+        <property name="firstGid" serialized-name="firstgid" xml-attribute="true" groups="tmx"/>
+        <property name="source" serialized-name="source" xml-attribute="true" groups="tmx"/>
+        <property name="name" serialized-name="name" xml-attribute="true" groups="tmx"/>
+        <property name="tileWidth" serialized-name="tilewidth" xml-attribute="true" groups="tmx"/>
+        <property name="tileHeight" serialized-name="tileheight" xml-attribute="true" groups="tmx"/>
+        <property name="tileCount" serialized-name="tilecount" xml-attribute="true" groups="tmx"/>
+        <property name="columns" serialized-name="columns" xml-attribute="true" groups="tmx"/>
 
-        <property name="terrainCollection" serialized-name="terraintypes" type="Tmx\TerrainCollection"/>
+        <property name="terrainCollection" serialized-name="terraintypes" type="Tmx\TerrainCollection" groups="tmx"/>
 
-        <property name="tileOffset" serialized-name="tileoffset">
+        <property name="tileOffset" serialized-name="tileoffset" groups="tmx">
             <type><![CDATA[Tmx\TileOffset]]></type>
         </property>
 
-        <property name="tiles" serialized-name="tile">
+        <property name="tiles" serialized-name="tile" groups="tmx">
             <type><![CDATA[array<Tmx\Tile>]]></type>
             <xml-list inline="true" entry-name="tile"/>
         </property>
 
-        <property name="wangCollection" serialized-name="wangsets">
+        <property name="wangCollection" serialized-name="wangsets" groups="tmx">
             <type><![CDATA[Tmx\WangCollection]]></type>
         </property>
 
-        <property name="image" serialized-name="image">
+        <property name="image" serialized-name="image" groups="tmx">
             <type><![CDATA[Tmx\Image]]></type>
         </property>
 
-        <property name="propertyBag" serialized-name="properties">
+        <property name="propertyBag" serialized-name="properties" groups="tmx">
             <type>Tmx\PropertyBag</type>
         </property>
     </class>

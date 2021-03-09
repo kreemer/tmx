@@ -10,7 +10,7 @@
 <serializer>
     <class name="Tmx\TerrainCollection" exclusion-policy="ALL">
 
-        <property name="terrains" serialized-name="terrain">
+        <property name="terrains" serialized-name="terrain" groups="tmx">
             <type><![CDATA[array<Tmx\Terrain>]]></type>
             <xml-list inline="true" entry-name="terrain"/>
         </property>

@@ -20,14 +20,16 @@
   ],
   "require": {
     "php": ">=7.4",
+    "ext-dom": "*",
     "ext-imagick": "*",
+    "ext-simplexml": "*",
     "intervention/image": "^2.5",
     "jms/serializer-bundle": "^3.8",
     "mindplay/composer-locator": "^2.1",
     "symfony/config": "^5.2",
+    "symfony/expression-language": "^5.2",
     "symfony/property-access": "^5.2",
-    "symfony/serializer": "^5.2",
-    "ext-simplexml": "*"
+    "symfony/serializer": "^5.2"
   },
   "suggest": {
     "ext-zlib": "*",

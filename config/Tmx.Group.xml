@@ -10,17 +10,17 @@
 <serializer>
     <class name="Tmx\Group" exclusion-policy="ALL">
 
-        <property name="layers" serialized-name="layer">
+        <property name="layers" serialized-name="layer" groups="tmx">
             <type><![CDATA[array<Tmx\Layer>]]></type>
             <xml-list inline="true" entry-name="layer"/>
         </property>
 
-        <property name="groups" serialized-name="group">
+        <property name="groups" serialized-name="group" groups="tmx">
             <type><![CDATA[array<Tmx\Group>]]></type>
             <xml-list inline="true" entry-name="group"/>
         </property>
 
-        <property name="propertyBag" serialized-name="properties">
+        <property name="propertyBag" serialized-name="properties" groups="tmx">
             <type>Tmx\PropertyBag</type>
         </property>
     </class>

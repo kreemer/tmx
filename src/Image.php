@@ -11,7 +11,7 @@ namespace Tmx;
 
 class Image
 {
-    private ?string $format;
+    private ?string $format = null;
     private ?string $source;
     private ?int $width;
     private ?int $height;

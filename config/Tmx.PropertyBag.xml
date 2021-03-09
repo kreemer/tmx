@@ -10,7 +10,7 @@
 <serializer>
     <class name="Tmx\PropertyBag" exclusion-policy="ALL">
 
-        <property name="properties">
+        <property name="properties" groups="tmx">
             <type><![CDATA[array<Tmx\Property\AbstractProperty>]]></type>
             <xml-list inline="true" entry-name="property"/>
         </property>

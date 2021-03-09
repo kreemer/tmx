@@ -10,7 +10,7 @@
 <serializer>
     <class name="Tmx\WangCollection" exclusion-policy="ALL">
 
-        <property name="wangSets" serialized-name="wangset">
+        <property name="wangSets" serialized-name="wangset" groups="tmx">
             <type><![CDATA[array<Tmx\WangSet>]]></type>
             <xml-list inline="true" entry-name="wangset"/>
         </property>

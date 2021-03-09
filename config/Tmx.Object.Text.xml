@@ -9,19 +9,19 @@
 
 <serializer>
     <class name="Tmx\Object\Text" exclusion-policy="ALL">
-        <property name="fontFamily" serialized-name="fontfamily" xml-attribute="true"/>
-        <property name="pixelSize" serialized-name="pixelsize" xml-attribute="true"/>
-        <property name="wrap" serialized-name="wrap" xml-attribute="true"/>
-        <property name="color" serialized-name="color" xml-attribute="true"/>
-        <property name="bold" serialized-name="bold" xml-attribute="true"/>
-        <property name="italic" serialized-name="italic" xml-attribute="true"/>
-        <property name="underline" serialized-name="underline" xml-attribute="true"/>
-        <property name="strikeout" serialized-name="strikeout" xml-attribute="true"/>
-        <property name="kerning" serialized-name="kerning" xml-attribute="true"/>
-        <property name="hAlign" serialized-name="halign" xml-attribute="true"/>
-        <property name="vAlign" serialized-name="valign" xml-attribute="true"/>
+        <property name="fontFamily" serialized-name="fontfamily" xml-attribute="true" groups="tmx"/>
+        <property name="pixelSize" serialized-name="pixelsize" xml-attribute="true" groups="tmx"/>
+        <property name="wrap" serialized-name="wrap" xml-attribute="true" groups="tmx"/>
+        <property name="color" serialized-name="color" xml-attribute="true" groups="tmx"/>
+        <property name="bold" serialized-name="bold" xml-attribute="true" groups="tmx"/>
+        <property name="italic" serialized-name="italic" xml-attribute="true" groups="tmx"/>
+        <property name="underline" serialized-name="underline" xml-attribute="true" groups="tmx"/>
+        <property name="strikeout" serialized-name="strikeout" xml-attribute="true" groups="tmx"/>
+        <property name="kerning" serialized-name="kerning" xml-attribute="true" groups="tmx"/>
+        <property name="hAlign" serialized-name="halign" xml-attribute="true" groups="tmx"/>
+        <property name="vAlign" serialized-name="valign" xml-attribute="true" groups="tmx"/>
 
-        <property name="text" xml-attribute="true" />
+        <property name="text" xml-attribute="true" groups="tmx" />
 
     </class>
 </serializer>

@@ -9,6 +9,6 @@
 
 <serializer>
     <class name="Tmx\Object\Polyline" exclusion-policy="ALL">
-        <property name="points" serialized-name="polypoints" xml-attribute="true"/>
+        <property name="points" serialized-name="polypoints" xml-attribute="true" groups="tmx"/>
     </class>
 </serializer>

@@ -10,11 +10,11 @@
 <serializer>
     <class name="Tmx\Chunk" exclusion-policy="ALL">
 
-        <property name="x" serialized-name="x" xml-attribute="true"/>
-        <property name="y" serialized-name="y" xml-attribute="true"/>
-        <property name="width" serialized-name="width" xml-attribute="true"/>
-        <property name="height" serialized-name="height" xml-attribute="true"/>
+        <property name="x" serialized-name="x" xml-attribute="true" groups="tmx"/>
+        <property name="y" serialized-name="y" xml-attribute="true" groups="tmx"/>
+        <property name="width" serialized-name="width" xml-attribute="true" groups="tmx"/>
+        <property name="height" serialized-name="height" xml-attribute="true" groups="tmx"/>
 
-        <property name="data" xml-value="true"/>
+        <property name="data" xml-value="true" groups="tmx"/>
     </class>
 </serializer>

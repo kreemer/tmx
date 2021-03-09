@@ -11,10 +11,12 @@ namespace Tmx\Tests\Service;
 
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
+use SimpleXMLElement;
 use Tmx\Image;
 use Tmx\Layer;
 use Tmx\LayerData;
 use Tmx\Map;
+use Tmx\Service\Parser;
 use Tmx\Service\Writer;
 use Tmx\Tests\TmxTest;
 use Tmx\TileSet;
@@ -23,8 +25,17 @@ class WriterTest extends TmxTest
 {
     private vfsStreamDirectory $root;
     private Writer $writer;
+    private Parser $parser;
 
-    public function testSaveSimpleMap(): void
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->root = vfsStream::setup();
+        $this->writer = new Writer();
+        $this->parser = new Parser();
+    }
+
+    public function testSaveSimpleMap(): string
     {
         // given
         $map = new Map();
@@ -63,12 +74,133 @@ class WriterTest extends TmxTest
 
         // then
         self::assertFileExists(vfsStream::url('root') . DIRECTORY_SEPARATOR . 'testmap.tmx');
+
+        return file_get_contents(vfsStream::url('root') . DIRECTORY_SEPARATOR . 'testmap.tmx');
     }
 
-    protected function setUp(): void
+    /**
+     * @depends testSaveSimpleMap
+     */
+    public function testSavedMapCanBeParsed(string $fileContent): void
     {
-        parent::setUp();
-        $this->root = vfsStream::setup();
-        $this->writer = new Writer();
+        // given
+        file_put_contents(vfsStream::url('root') . DIRECTORY_SEPARATOR . 'testmap.tmx', $fileContent);
+
+        // when
+        $map = $this->parser->parse(vfsStream::url('root') . DIRECTORY_SEPARATOR . 'testmap.tmx');
+
+        // then
+        self::assertSame(1, $map->getHeight());
+        self::assertSame(2, $map->getWidth());
+        self::assertCount(1, $map->getTileSets());
+        self::assertSame('png', $map->getTileSets()[0]->getImage()->getFormat());
+        self::assertCount(1, $map->getLayers());
+        self::assertSame(1, $map->getLayers()[0]->getHeight());
+        self::assertSame(2, $map->getLayers()[0]->getWidth());
+    }
+
+    /**
+     * @dataProvider mapOutputProvider
+     */
+    public function testWritingMaps(string $mapName, bool $debug = false): void
+    {
+        // given
+        $actualMapPath = $debug ?
+            __DIR__ . DIRECTORY_SEPARATOR . $mapName . '-saved.tmx' :
+            vfsStream::url('root') . DIRECTORY_SEPARATOR . $mapName . '-saved.tmx';
+        $map = $this->parser->parse($this->getMapPath($mapName));
+
+        // when
+        $this->writer->write($map, $actualMapPath);
+
+        // then
+        self::assertMapIsEqual($this->getMapPath($mapName), $actualMapPath);
+    }
+
+    private static function assertMapIsEqual(string $fileExpected, string $fileActual): void
+    {
+        self::assertFileExists($fileExpected);
+        self::assertFileExists($fileActual);
+
+        $xml1 = new SimpleXMLElement(file_get_contents($fileExpected));
+        $xml2 = new SimpleXMLElement(file_get_contents($fileActual));
+
+        self::assertXmlElementEquals($xml1, $xml2);
+    }
+
+    private static function assertXmlElementEquals(SimpleXMLElement $expected, SimpleXMLElement $actual): void
+    {
+        self::assertEquals($expected->getName(), $actual->getName(), 'xml name is different');
+        self::assertXmlAttributesEquals($expected, $actual);
+        self::assertXmlChildrenEquals($expected, $actual);
+    }
+
+    private static function assertXmlAttributesEquals(SimpleXMLElement $expected, SimpleXMLElement $actual): void
+    {
+        if ($expected->getName() === 'tileset') {
+            return;
+        }
+        $actualArray = [];
+        $expectedArray = [];
+
+        foreach ($actual->attributes() as $actualKey => $actualValue) {
+            $actualArray[$actualKey] = (string) $actualValue;
+        }
+        foreach ($expected->attributes() as $expectedKey => $expectedValue) {
+            $expectedArray[$expectedKey] = (string) $expectedValue;
+        }
+
+        self::assertEquals(
+            count($expectedArray), count($actualArray),
+            'xml attributes within element "' . $expected->getName() . '" have different sizes, expectedKeys: ' . implode(', ', array_keys($expectedArray)) . '. actual: ' . implode(', ', array_keys($actualArray))
+        );
+
+        foreach ($expectedArray as $expectedKey => $expectedValue) {
+            self::assertArrayHasKey($expectedKey, $actualArray, 'Actual xml element "' . $expected->getName() . '" has no key "' . $expectedKey . '"');
+            self::assertEquals((string) $expectedValue, $actualArray[$expectedKey], 'Actual xml element "' . $expected->getName() . '" has different value for "' . $expectedKey . '"');
+        }
+    }
+
+    private static function assertXmlChildrenEquals(SimpleXMLElement $expected, SimpleXMLElement $actual): void
+    {
+        if ($expected->getName() === 'tileset') {
+            return;
+        }
+
+        self::assertEquals($expected->children()->count(), $actual->children()->count(), 'xml children have different sizes');
+
+        for ($i = 0; $i < $expected->children()->count(); $i++) {
+            self::assertXmlElementEquals($expected->children()[$i], $actual->children()[$i]);
+        }
+    }
+
+    public function mapOutputProvider(): array
+    {
+        return [
+            'map-1' => ['map-1'],
+            'map-2' => ['map-2'],
+            'map-3' => ['map-3'],
+            'map-5' => ['map-5'],
+            'map-7' => ['map-7'],
+            'map-8' => ['map-8'],
+            'background' => ['background'],
+            'tileoffset' => ['tileoffset'],
+            'opacity' => ['opacity'],
+            'opacity2' => ['opacity2'],
+            'visible' => ['visible'],
+            'base64-saved' => ['base64-saved'],
+            'base64-saved-zlib' => ['base64-saved-zlib'],
+            'base64-saved-zstd' => ['base64-saved-zstd'],
+            'infinite' => ['infinite'],
+            'infinite-base64' => ['infinite-base64'],
+            'group-layer-simple' => ['group-layer-simple'],
+            'group-layer-multiple' => ['group-layer-multiple'],
+            'group-layer-nested' => ['group-layer-nested'],
+            'group-layer-opacity' => ['group-layer-opacity'],
+            'group-layer-visible' => ['group-layer-visible'],
+            // 'group-infinite' => ['group-infinite'],
+            // 'layer-tint' => ['layer-tint', true],
+            // 'group-layer-tint' => ['group-layer-tint'],
+        ];
     }
 }

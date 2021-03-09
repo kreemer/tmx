@@ -10,7 +10,7 @@
 <serializer>
     <class name="Tmx\TileOffset" exclusion-policy="ALL">
 
-        <property name="x" serialized-name="x" xml-attribute="true"/>
-        <property name="y" serialized-name="y" xml-attribute="true"/>
+        <property name="x" serialized-name="x" xml-attribute="true" groups="tmx"/>
+        <property name="y" serialized-name="y" xml-attribute="true" groups="tmx"/>
     </class>
 </serializer>
