@@ -15,5 +15,9 @@
         <property name="opacity" serialized-name="opacity" xml-attribute="true" exclude-if="context.getDirection() === 1 and object.getOpacity() === 1.0" groups="tmx"/>
         <property name="visible" type="booleanAsInt" serialized-name="visible" xml-attribute="true" exclude-if="context.getDirection() === 1 and object.isVisible()" groups="tmx"/>
         <property name="tintColor" serialized-name="tintcolor" xml-attribute="true" groups="tmx"/>
+
+        <property name="offsetX" serialized-name="offsetx" groups="tmx" xml-attribute="true" exclude-if="context.getDirection() === 1 and object.getOffsetX() === 0.0"/>
+        <property name="offsetY" serialized-name="offsety" groups="tmx" xml-attribute="true" exclude-if="context.getDirection() === 1 and object.getOffsetY() === 0.0"/>
+
     </class>
 </serializer>

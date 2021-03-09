@@ -11,7 +11,7 @@
     <class name="Tmx\Tile" exclusion-policy="ALL">
         <property name="id" serialized-name="id" xml-attribute="true" groups="tmx"/>
         <property name="type" serialized-name="type" xml-attribute="true" groups="tmx"/>
-        <property name="probability" serialized-name="probability" xml-attribute="true" groups="tmx"/>
+        <property name="probability" serialized-name="probability" xml-attribute="true" groups="tmx" exclude-if="context.getDirection() === 1 and object.getProbability() === 1.0"/>
 
         <property name="topLeftTerrainId" serialized-name="topLeftTerrainId" xml-attribute="true" groups="tmx"/>
         <property name="topRightTerrainId" serialized-name="topRightTerrainId" xml-attribute="true" groups="tmx"/>

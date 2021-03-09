@@ -12,6 +12,8 @@ namespace Tmx\Service;
 use Intervention\Image\Image as InterventionImage;
 use Intervention\Image\ImageManager;
 use Tmx\GroupContainer;
+use Tmx\ImageLayer;
+use Tmx\Layer;
 use Tmx\Map;
 use Tmx\Service\Context\PrintContext;
 use Tmx\Service\LayerData\Base64DataParser;
@@ -19,6 +21,7 @@ use Tmx\Service\LayerData\CsvDataParser;
 use Tmx\Service\LayerData\PlainCompression;
 use Tmx\Service\LayerData\ZlibCompression;
 use Tmx\Service\LayerData\ZstdCompression;
+use Tmx\TileLayer;
 use Tmx\TileSet;
 
 class Printer
@@ -54,8 +57,8 @@ class Printer
             return $this->manager->canvas(1, 1, null);
         }
 
-        $widthPixel = MapService::getCalculatedWidth($map) * $map->getTileWidth();
-        $heightPixel = MapService::getCalculatedHeight($map) * $map->getTileHeight();
+        $widthPixel = MapService::getCalculatedWidth($map) * $map->getTileWidth() + MapService::getMapOffsetX($map);
+        $heightPixel = MapService::getCalculatedHeight($map) * $map->getTileHeight() + MapService::getMapOffsetX($map);
 
         $img = $this->manager->canvas($widthPixel, $heightPixel, $map->getBackgroundColor());
 
@@ -93,57 +96,72 @@ class Printer
 
         $layerArray = $this->extractLayersInOrder($map);
         foreach ($layerArray as $layerRow) {
+            /** @var TileLayer $layer */
             $layer = $layerRow['layer'];
+
             /** @var PrintContext $context */
             $context = $layerRow['context'];
             if (false === $context->isVisible()) {
                 continue;
             }
-            $layerData = $layer->getLayerData();
-            $dataMap = $this->layerDataReader->readLayerData($layerData);
-            foreach ($dataMap as $keyLine => $line) {
-                foreach ($line as $keyTile => $tile) {
-                    if (!isset($cacheArray[$tile])) {
-                        // ERROR
-                        continue;
-                    }
-                    $tileSource = $tileSetImage[$cacheArray[$tile]['source']];
-                    $id = uniqid();
-                    $tileSource->backup($id);
-                    $tileSource->crop(
-                        $cacheArray[$tile]['width'],
-                        $cacheArray[$tile]['height'],
-                        $cacheArray[$tile]['x'],
-                        $cacheArray[$tile]['y']
-                    );
 
-                    /** @var TileSet $tileSet */
-                    $tileSet = $cacheArray[$tile]['tileSet'];
-                    $offsetX = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getX() ?
-                        $tileSet->getTileOffset()->getX() :
-                        0;
-                    $offsetY = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getY() ?
-                        $tileSet->getTileOffset()->getY() :
-                        0;
-
-                    if (null !== $context->getOpacity()) {
-                        $tileSource->opacity(intval($context->getOpacity() * 100));
-                    }
-
-                    if (null !== $context->getTintColor()) {
-                        $tileSource->colorize(
-                            (hexdec(substr($context->getTintColor(), 1, 2)) / 255 * 200) - 100,
-                             (hexdec(substr($context->getTintColor(), 3, 2)) / 255 * 200) - 100,
-                            (hexdec(substr($context->getTintColor(), 5, 2)) / 255 * 200) - 100
+            if ($layer instanceof Layer) {
+                $layerData = $layer->getLayerData();
+                $dataMap = $this->layerDataReader->readLayerData($layerData);
+                foreach ($dataMap as $keyLine => $line) {
+                    foreach ($line as $keyTile => $tile) {
+                        if (!isset($cacheArray[$tile])) {
+                            // ERROR
+                            continue;
+                        }
+                        $tileSource = $tileSetImage[$cacheArray[$tile]['source']];
+                        $id = uniqid();
+                        $tileSource->backup($id);
+                        $tileSource->crop(
+                            $cacheArray[$tile]['width'],
+                            $cacheArray[$tile]['height'],
+                            $cacheArray[$tile]['x'],
+                            $cacheArray[$tile]['y']
                         );
+
+                        /** @var TileSet $tileSet */
+                        $tileSet = $cacheArray[$tile]['tileSet'];
+                        $offsetX = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getX() ?
+                            $tileSet->getTileOffset()->getX() :
+                            0;
+                        $offsetY = null !== $tileSet->getTileOffset() && null !== $tileSet->getTileOffset()->getY() ?
+                            $tileSet->getTileOffset()->getY() :
+                            0;
+
+                        if (null !== $context->getOpacity()) {
+                            $tileSource->opacity(intval($context->getOpacity() * 100));
+                        }
+
+                        if (null !== $context->getTintColor()) {
+                            $tileSource->colorize(
+                                (hexdec(substr($context->getTintColor(), 1, 2)) / 255 * 200) - 100,
+                                (hexdec(substr($context->getTintColor(), 3, 2)) / 255 * 200) - 100,
+                                (hexdec(substr($context->getTintColor(), 5, 2)) / 255 * 200) - 100
+                            );
+                        }
+
+                        $img->insert(
+                            $tileSource, 'top-left', $keyTile * $map->getTileWidth() + $offsetX, $keyLine * $map->getTileHeight() + $offsetY
+                        );
+
+                        $tileSource->reset($id);
                     }
-
-                    $img->insert(
-                        $tileSource, 'top-left', $keyTile * $map->getTileWidth() + $offsetX, $keyLine * $map->getTileHeight() + $offsetY
-                    );
-
-                    $tileSource->reset($id);
                 }
+            } elseif ($layer instanceof ImageLayer) {
+                /** @var ImageLayer $layer */
+                if (null === $layer->getImage()) {
+                    continue;
+                }
+                $imageLayerImage = $this->manager->make($layer->getImage()->getSource());
+
+                $img->insert(
+                    $imageLayerImage, 'top-left', round($layer->getOffsetX()), round($layer->getOffsetY())
+                );
             }
         }
 
@@ -157,19 +175,19 @@ class Printer
             $context = new PrintContext();
         }
         foreach ($container->getLayers() as $layer) {
-            $currentContext = clone $context;
-            if (null === $currentContext->isVisible()) {
-                $currentContext->setVisible($layer->isVisible());
-            }
-            if (null === $currentContext->getOpacity()) {
-                $currentContext->setOpacity($layer->getOpacity());
-            }
-            if (null === $currentContext->getTintColor()) {
-                $currentContext->setTintColor($layer->getTintColor());
-            }
+            $currentContext = $this->initializeContext($context, $layer);
             $layers[$layer->getOrder()] =
                 [
                     'layer' => $layer,
+                    'context' => $currentContext,
+                ];
+        }
+
+        foreach ($container->getImageLayers() as $imageLayer) {
+            $currentContext = $this->initializeContext($context, $imageLayer);
+            $layers[$imageLayer->getOrder()] =
+                [
+                    'layer' => $imageLayer,
                     'context' => $currentContext,
                 ];
         }
@@ -190,5 +208,20 @@ class Printer
         }
 
         return $layers;
+    }
+
+    private function initializeContext(?PrintContext $context, TileLayer $layer): PrintContext
+    {
+        $currentContext = clone $context;
+        if (null === $currentContext->isVisible()) {
+            $currentContext->setVisible($layer->isVisible());
+        }
+        if (null === $currentContext->getOpacity()) {
+            $currentContext->setOpacity($layer->getOpacity());
+        }
+        if (null === $currentContext->getTintColor()) {
+            $currentContext->setTintColor($layer->getTintColor());
+        }
+        return $currentContext;
     }
 }

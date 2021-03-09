@@ -74,6 +74,10 @@ class Parser
         $refreshTileSet = [];
         foreach ($map->getTileSets() as $tileSet) {
             if ($tileSet->getSource() === null) {
+
+                if ($tileSet->getImage() !== null && $tileSet->getImage()->getSource() !== null) {
+                    $tileSet->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getImage()->getSource()));
+                }
                 $refreshTileSet[] = $tileSet;
                 continue;
             }
@@ -81,6 +85,12 @@ class Parser
         }
         $map->setTileSets($refreshTileSet);
 
+        foreach ($map->getImageLayers() as $imageLayer) {
+            if (null === $imageLayer->getImage()) {
+                continue;
+            }
+            $imageLayer->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $imageLayer->getImage()->getSource()));
+        }
         return $map;
     }
 

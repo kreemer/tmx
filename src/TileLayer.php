@@ -18,8 +18,8 @@ abstract class TileLayer
     private bool $visible = true;
     private ?string $tintColor = null;
 
-    private int $offsetX = 0;
-    private int $offsetY = 0;
+    private float $offsetX = 0.0;
+    private float $offsetY = 0.0;
 
     private ?Map $map;
 
@@ -83,24 +83,24 @@ abstract class TileLayer
         return $this;
     }
 
-    public function getOffsetX(): int
+    public function getOffsetX(): float
     {
         return $this->offsetX;
     }
 
-    public function setOffsetX(int $offsetX): TileLayer
+    public function setOffsetX(float $offsetX): TileLayer
     {
         $this->offsetX = $offsetX;
 
         return $this;
     }
 
-    public function getOffsetY(): int
+    public function getOffsetY(): float
     {
         return $this->offsetY;
     }
 
-    public function setOffsetY(int $offsetY): TileLayer
+    public function setOffsetY(float $offsetY): TileLayer
     {
         $this->offsetY = $offsetY;
 

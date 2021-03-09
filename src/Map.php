@@ -109,6 +109,11 @@ class Map implements GroupContainer, PropertyBagHolder
      */
     private array $groups = [];
 
+    /**
+     * @var array<ImageLayer> Array of image layer objects
+     */
+    private array $imageLayers = [];
+
     public function getVersion(): ?string
     {
         return $this->version;
@@ -241,7 +246,7 @@ class Map implements GroupContainer, PropertyBagHolder
         return $this;
     }
 
-    public function getTileWidth(): int
+    public function getTileWidth(): ?int
     {
         return $this->tileWidth;
     }
@@ -253,7 +258,7 @@ class Map implements GroupContainer, PropertyBagHolder
         return $this;
     }
 
-    public function getTileHeight(): int
+    public function getTileHeight(): ?int
     {
         return $this->tileHeight;
     }
@@ -436,6 +441,30 @@ class Map implements GroupContainer, PropertyBagHolder
     {
         if (in_array($objectLayer, $this->objectLayers)) {
             $this->objectLayers = array_diff($this->objectLayers, [$objectLayer]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return array<ImageLayer>
+     */
+    public function getImageLayers(): array
+    {
+        return $this->imageLayers;
+    }
+
+    public function addImageLayer(ImageLayer $imageLayer): self
+    {
+        $this->imageLayers[] = $imageLayer;
+
+        return $this;
+    }
+
+    public function removeImageLayer(ImageLayer $imageLayer): self
+    {
+        if (in_array($imageLayer, $this->imageLayers)) {
+            $this->imageLayers = array_diff($this->imageLayers, [$imageLayer]);
         }
 
         return $this;

@@ -52,6 +52,9 @@ class MapEventSubscriber implements EventSubscriberInterface
         if ('layer' === $element->getName()) {
             $element->addAttribute('order', (string) $this->layerOrder);
             ++$this->layerOrder;
+        } elseif ('imagelayer' === $element->getName()) {
+            $element->addAttribute('order', (string) $this->layerOrder);
+            ++$this->layerOrder;
         } elseif ('group' === $element->getName()) {
             foreach ($element->children() as $child) {
                 $this->searchLayer($child);

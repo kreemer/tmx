@@ -93,4 +93,30 @@ class MapService
 
         return 0;
     }
+
+    public static function getMapOffsetX(Map $instance): int
+    {
+        $maxPixel = 0;
+        foreach ($instance->getLayers() as $layer) {
+            $maxPixel = $maxPixel < $layer->getOffsetX() ? $layer->getOffsetX() : $maxPixel;
+        }
+
+        foreach ($instance->getImageLayers() as $layer) {
+            $maxPixel = $maxPixel < $layer->getOffsetX() ? $layer->getOffsetX() : $maxPixel;
+        }
+        return round($maxPixel);
+    }
+
+    public static function getMapOffsetY(Map $instance): int
+    {
+        $maxPixel = 0;
+        foreach ($instance->getLayers() as $layer) {
+            $maxPixel = $maxPixel < $layer->getOffsetY() ? $layer->getOffsetY() : $maxPixel;
+        }
+
+        foreach ($instance->getImageLayers() as $layer) {
+            $maxPixel = $maxPixel < $layer->getOffsetY() ? $layer->getOffsetY() : $maxPixel;
+        }
+        return round($maxPixel);
+    }
 }

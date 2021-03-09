@@ -151,6 +151,9 @@ class PrinterTest extends TmxTest
             'group-infinite' => ['group-infinite'],
             // 'layer-tint' => ['layer-tint', true],
             // 'group-layer-tint' => ['group-layer-tint'],
+            'embedded-tileset' => ['embedded-tileset'],
+            'image-layer' => ['image-layer'],
+            'image-layer-multiple' => ['image-layer-multiple'],
         ];
     }
 

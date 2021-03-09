@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\ImageLayer" exclusion-policy="ALL">
+        <property name="order" serialized-name="order" groups="" xml-attribute="true"/>
+
+
+        <property name="image" serialized-name="image" groups="tmx">
+            <type><![CDATA[Tmx\Image]]></type>
+        </property>
+
+        <property name="propertyBag" serialized-name="properties" groups="tmx">
+            <type>Tmx\PropertyBag</type>
+        </property>
+    </class>
+</serializer>

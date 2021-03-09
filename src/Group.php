@@ -29,6 +29,11 @@ class Group extends TileLayer implements GroupContainer, PropertyBagHolder
     private array $objectLayers = [];
 
     /**
+     * @var array<ImageLayer> Array of image layer objects
+     */
+    private array $imageLayers = [];
+
+    /**
      * @return array<Layer>
      */
     public function getLayers(): array
@@ -95,6 +100,30 @@ class Group extends TileLayer implements GroupContainer, PropertyBagHolder
     {
         if (in_array($objectLayer, $this->objectLayers)) {
             $this->objectLayers = array_diff($this->objectLayers, [$objectLayer]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return array<ImageLayer>
+     */
+    public function getImageLayers(): array
+    {
+        return $this->imageLayers;
+    }
+
+    public function addImageLayer(ImageLayer $imageLayer): self
+    {
+        $this->imageLayers[] = $imageLayer;
+
+        return $this;
+    }
+
+    public function removeImageLayer(ImageLayer $imageLayer): self
+    {
+        if (in_array($imageLayer, $this->imageLayers)) {
+            $this->imageLayers = array_diff($this->imageLayers, [$imageLayer]);
         }
 
         return $this;

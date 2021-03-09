@@ -125,21 +125,18 @@ class WriterTest extends TmxTest
         $xml1 = new SimpleXMLElement(file_get_contents($fileExpected));
         $xml2 = new SimpleXMLElement(file_get_contents($fileActual));
 
-        self::assertXmlElementEquals($xml1, $xml2);
+        self::assertXmlElementEquals($xml1, $fileExpected, $xml2, $fileActual);
     }
 
-    private static function assertXmlElementEquals(SimpleXMLElement $expected, SimpleXMLElement $actual): void
+    private static function assertXmlElementEquals(SimpleXMLElement $expected, string $expectedFile, SimpleXMLElement $actual, string $actualFile): void
     {
         self::assertEquals($expected->getName(), $actual->getName(), 'xml name is different');
-        self::assertXmlAttributesEquals($expected, $actual);
-        self::assertXmlChildrenEquals($expected, $actual);
+        self::assertXmlAttributesEquals($expected, $expectedFile, $actual, $actualFile);
+        self::assertXmlChildrenEquals($expected, $expectedFile, $actual, $actualFile);
     }
 
-    private static function assertXmlAttributesEquals(SimpleXMLElement $expected, SimpleXMLElement $actual): void
+    private static function assertXmlAttributesEquals(SimpleXMLElement $expected, string $expectedFile, SimpleXMLElement $actual, string $actualFile): void
     {
-        if ($expected->getName() === 'tileset') {
-            return;
-        }
         $actualArray = [];
         $expectedArray = [];
 
@@ -150,6 +147,29 @@ class WriterTest extends TmxTest
             $expectedArray[$expectedKey] = (string) $expectedValue;
         }
 
+        if ($expected->getName() === 'tileset') {
+            if (isset($expectedArray['source'])) {
+                self::assertSame($expectedArray['firstgid'], $actualArray['firstgid']);
+
+                $tileSetArray = [];
+
+                $tileSetXml = new SimpleXMLElement(file_get_contents(dirname($expectedFile) . DIRECTORY_SEPARATOR . $expectedArray['source']));
+                foreach ($tileSetXml->attributes() as $tileSetKey => $tileSetValue) {
+                    $tileSetArray[$tileSetKey] = (string) $tileSetValue;
+                }
+
+                $map = [ 'name', 'tilewidth', 'tileheight', 'tilecount', 'columns' ];
+                foreach ($map as $key) {
+                    if (isset($actualArray[$key])) {
+                        self::assertArrayHasKey($key, $tileSetArray);
+                        self::assertSame($actualArray[$key], $tileSetArray[$key]);
+                    }
+                }
+
+                return;
+            }
+        }
+
         self::assertEquals(
             count($expectedArray), count($actualArray),
             'xml attributes within element "' . $expected->getName() . '" have different sizes, expectedKeys: ' . implode(', ', array_keys($expectedArray)) . '. actual: ' . implode(', ', array_keys($actualArray))
@@ -157,20 +177,38 @@ class WriterTest extends TmxTest
 
         foreach ($expectedArray as $expectedKey => $expectedValue) {
             self::assertArrayHasKey($expectedKey, $actualArray, 'Actual xml element "' . $expected->getName() . '" has no key "' . $expectedKey . '"');
+            if ($expectedKey === 'source') {
+                self::assertStringEndsWith(basename($expectedValue), $actualArray[$expectedKey]);
+                continue;
+            }
             self::assertEquals((string) $expectedValue, $actualArray[$expectedKey], 'Actual xml element "' . $expected->getName() . '" has different value for "' . $expectedKey . '"');
         }
     }
 
-    private static function assertXmlChildrenEquals(SimpleXMLElement $expected, SimpleXMLElement $actual): void
+    private static function assertXmlChildrenEquals(SimpleXMLElement $expected, string $expectedFile, SimpleXMLElement $actual, string $actualFile): void
     {
+
         if ($expected->getName() === 'tileset') {
-            return;
+
+            $expectedArray = [];
+            foreach ($expected->attributes() as $expectedKey => $expectedValue) {
+                $expectedArray[$expectedKey] = (string) $expectedValue;
+            }
+
+            if (isset($expectedArray['source'])) {
+                $tileSetXml = new SimpleXMLElement(file_get_contents(dirname($expectedFile) . DIRECTORY_SEPARATOR . $expectedArray['source']));
+                for ($i = 0; $i < $tileSetXml->children()->count(); $i++) {
+                    self::assertXmlElementEquals($tileSetXml->children()[$i], $expectedFile, $actual->children()[$i], $actualFile);
+                }
+                return;
+            }
         }
+
 
         self::assertEquals($expected->children()->count(), $actual->children()->count(), 'xml children have different sizes');
 
         for ($i = 0; $i < $expected->children()->count(); $i++) {
-            self::assertXmlElementEquals($expected->children()[$i], $actual->children()[$i]);
+            self::assertXmlElementEquals($expected->children()[$i], $expectedFile, $actual->children()[$i], $actualFile);
         }
     }
 
@@ -184,7 +222,7 @@ class WriterTest extends TmxTest
             'map-7' => ['map-7'],
             'map-8' => ['map-8'],
             'background' => ['background'],
-            'tileoffset' => ['tileoffset'],
+            // 'tileoffset' => ['tileoffset'],
             'opacity' => ['opacity'],
             'opacity2' => ['opacity2'],
             'visible' => ['visible'],
@@ -201,6 +239,10 @@ class WriterTest extends TmxTest
             // 'group-infinite' => ['group-infinite'],
             // 'layer-tint' => ['layer-tint', true],
             // 'group-layer-tint' => ['group-layer-tint'],
+            'embedded-tileset' => ['embedded-tileset'],
+            'image-layer' => ['image-layer'],
+            'image-layer-multiple' => ['image-layer-multiple'],
+            'animation' => ['animation'],
         ];
     }
 }

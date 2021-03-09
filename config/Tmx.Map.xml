@@ -59,6 +59,10 @@
             <xml-list inline="true" entry-name="group"/>
         </property>
 
+        <property name="imageLayers" serialized-name="imagelayer" groups="tmx">
+            <type><![CDATA[array<Tmx\ImageLayer>]]></type>
+            <xml-list inline="true" entry-name="imagelayer"/>
+        </property>
 
         <property name="tileSets" serialized-name="tileset" groups="tmx">
             <type><![CDATA[array<Tmx\TileSet>]]></type>
