@@ -33,6 +33,11 @@
                 accessor-setter="setRenderOrderAsString"
         />
 
+
+        <property name="propertyBag" serialized-name="properties">
+            <type>Tmx\PropertyBag</type>
+        </property>
+
         <property name="layers" serialized-name="layer">
             <type><![CDATA[array<Tmx\Layer>]]></type>
             <xml-list inline="true" entry-name="layer"/>

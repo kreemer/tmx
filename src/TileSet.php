@@ -9,8 +9,10 @@
 
 namespace Tmx;
 
-class TileSet
+class TileSet implements PropertyBagHolder
 {
+    use PropertyBagTrait;
+
     private ?int $firstGid = null;
     private ?string $source = null;
     private ?string $name = null;

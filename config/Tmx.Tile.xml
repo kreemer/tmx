@@ -21,5 +21,9 @@
         <property name="animation" serialized-name="animation">
             <type><![CDATA[Tmx\Animation]]></type>
         </property>
+
+        <property name="propertyBag" serialized-name="properties">
+            <type>Tmx\PropertyBag</type>
+        </property>
     </class>
 </serializer>

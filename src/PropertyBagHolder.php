@@ -9,6 +9,7 @@
 
 namespace Tmx;
 
-interface Printable
+interface PropertyBagHolder
 {
+    public function getPropertyBag(): ?PropertyBag;
 }

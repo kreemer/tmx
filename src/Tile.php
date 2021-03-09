@@ -9,8 +9,10 @@
 
 namespace Tmx;
 
-class Tile
+class Tile implements PropertyBagHolder
 {
+    use PropertyBagTrait;
+
     private ?int $id = null;
     private ?string $type = null;
     private ?int $topLeftTerrainId = null;

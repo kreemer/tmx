@@ -153,18 +153,18 @@ class Printer
     private function extractLayersInOrder(GroupContainer $container, $context = null): array
     {
         $layers = [];
-        if ($context === null) {
+        if (null === $context) {
             $context = new PrintContext();
         }
         foreach ($container->getLayers() as $layer) {
             $currentContext = clone $context;
-            if ($currentContext->isVisible() === null) {
+            if (null === $currentContext->isVisible()) {
                 $currentContext->setVisible($layer->isVisible());
             }
-            if ($currentContext->getOpacity() === null) {
+            if (null === $currentContext->getOpacity()) {
                 $currentContext->setOpacity($layer->getOpacity());
             }
-            if ($currentContext->getTintColor() === null) {
+            if (null === $currentContext->getTintColor()) {
                 $currentContext->setTintColor($layer->getTintColor());
             }
             $layers[$layer->getOrder()] =

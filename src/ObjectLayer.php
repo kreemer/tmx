@@ -9,8 +9,10 @@
 
 namespace Tmx;
 
-class ObjectLayer extends TileLayer implements Printable
+class ObjectLayer extends TileLayer implements Printable, PropertyBagHolder
 {
+    use PropertyBagTrait;
+
     private int $order = 0;
 
     private ?string $color = null;

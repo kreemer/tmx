@@ -20,5 +20,8 @@
             <xml-list inline="true" entry-name="group"/>
         </property>
 
+        <property name="propertyBag" serialized-name="properties">
+            <type>Tmx\PropertyBag</type>
+        </property>
     </class>
 </serializer>

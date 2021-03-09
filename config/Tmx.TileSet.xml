@@ -35,5 +35,9 @@
         <property name="image" serialized-name="image">
             <type><![CDATA[Tmx\Image]]></type>
         </property>
+
+        <property name="propertyBag" serialized-name="properties">
+            <type>Tmx\PropertyBag</type>
+        </property>
     </class>
 </serializer>

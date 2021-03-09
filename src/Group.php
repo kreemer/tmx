@@ -9,8 +9,10 @@
 
 namespace Tmx;
 
-class Group extends TileLayer implements GroupContainer
+class Group extends TileLayer implements GroupContainer, PropertyBagHolder
 {
+    use PropertyBagTrait;
+
     /**
      * @var array<Layer> Array of layer objects
      */

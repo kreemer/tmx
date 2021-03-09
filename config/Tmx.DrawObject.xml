@@ -31,5 +31,8 @@
         <property name="gid" serialized-name="gid" xml-attribute="true"/>
         <property name="visible" serialized-name="visible" xml-attribute="true"/>
 
+        <property name="propertyBag" serialized-name="properties">
+            <type>Tmx\PropertyBag</type>
+        </property>
     </class>
 </serializer>

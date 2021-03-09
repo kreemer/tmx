@@ -9,8 +9,10 @@
 
 namespace Tmx;
 
-abstract class DrawObject
+abstract class DrawObject implements PropertyBagHolder
 {
+    use PropertyBagTrait;
+
     private ?int $id = null;
     private ?string $name = null;
     private ?string $type = null;

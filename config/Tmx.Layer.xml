@@ -19,5 +19,8 @@
         <property name="layerData" serialized-name="data">
             <type>Tmx\LayerData</type>
         </property>
+        <property name="propertyBag" serialized-name="properties">
+            <type>Tmx\PropertyBag</type>
+        </property>
     </class>
 </serializer>

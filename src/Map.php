@@ -13,8 +13,10 @@ namespace Tmx;
 /**
  * Class Map.
  */
-class Map implements GroupContainer
+class Map implements GroupContainer, PropertyBagHolder
 {
+    use PropertyBagTrait;
+
     /**
      * Rendering map from right / down.
      */

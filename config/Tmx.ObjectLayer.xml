@@ -23,5 +23,9 @@
             <type><![CDATA[array<Tmx\DrawObject>]]></type>
             <xml-list inline="true" entry-name="object"/>
         </property>
+
+        <property name="propertyBag" serialized-name="properties">
+            <type>Tmx\PropertyBag</type>
+        </property>
     </class>
 </serializer>

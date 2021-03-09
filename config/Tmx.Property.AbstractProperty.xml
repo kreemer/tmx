@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\Property\AbstractProperty" exclusion-policy="ALL" discriminator-field-name="type" discriminator-disabled="false">
+            <xml-discriminator attribute="true" />
+            <discriminator-class value="string">Tmx\Property\StringProperty</discriminator-class>
+            <discriminator-class value="int">Tmx\Property\IntProperty</discriminator-class>
+            <discriminator-class value="float">Tmx\Property\FloatProperty</discriminator-class>
+            <discriminator-class value="bool">Tmx\Property\BoolProperty</discriminator-class>
+            <discriminator-class value="color">Tmx\Property\ColorProperty</discriminator-class>
+            <discriminator-class value="file">Tmx\Property\FileProperty</discriminator-class>
+            <discriminator-class value="object">Tmx\Property\ObjectProperty</discriminator-class>
+
+            <property name="name" serialized-name="name" xml-attribute="true"/>
+            <property name="type" serialized-name="type" xml-attribute="true"/>
+    </class>
+</serializer>

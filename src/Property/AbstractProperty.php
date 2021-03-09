@@ -7,35 +7,20 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx;
+namespace Tmx\Property;
 
-class Terrain implements PropertyBagHolder
+abstract class AbstractProperty
 {
-    use PropertyBagTrait;
-
     private ?string $name = null;
-    private ?int $tile = null;
 
     public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function setName(?string $name): Terrain
+    public function setName(?string $name): AbstractProperty
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getTile(): ?int
-    {
-        return $this->tile;
-    }
-
-    public function setTile(?int $tile): Terrain
-    {
-        $this->tile = $tile;
 
         return $this;
     }
