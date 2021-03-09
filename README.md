@@ -38,7 +38,7 @@ $printer->print($map, 'output.png'); // save map to output.png
 
 ## Documentation
 
-See [here](docs/index.md) for additional documentation.
+See [here](https://kreemer.github.io/tmx) for additional documentation.
 
 ## About
 
