@@ -10,6 +10,9 @@
 namespace Tmx\Service;
 
 use ComposerLocator;
+use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\SerializationContext;
+use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
@@ -19,15 +22,22 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Tmx\EventSubscriber\LayerEventSubscriber;
+use Tmx\EventSubscriber\MapEventSubscriber;
+use Tmx\EventSubscriber\TileEventSubscriber;
+use Tmx\EventSubscriber\TileSetEventSubscriber;
 use Tmx\Map;
 use Tmx\Normalizer\TileNormalizer;
 use Tmx\TileSet;
 
 class Writer
 {
-    private ClassMetadataFactory $classMetadataFactory;
-    private MetadataAwareNameConverter $metadataAwareNameConverter;
-    private Serializer $serializer;
+
+
+    /**
+     * @var \JMS\Serializer\Serializer
+     */
+    private $serializer;
 
     /**
      * Parser constructor.
@@ -35,28 +45,24 @@ class Writer
     public function __construct()
     {
         $projectRootPath = ComposerLocator::getRootPath();
-        $configFile = $projectRootPath . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'parserDefinition.xml';
-        $this->classMetadataFactory = new ClassMetadataFactory(new XmlFileLoader($configFile));
-        $this->metadataAwareNameConverter = new MetadataAwareNameConverter($this->classMetadataFactory);
-
-        $normalizer = new ObjectNormalizer($this->classMetadataFactory, $this->metadataAwareNameConverter, null, new ReflectionExtractor());
-
-        $tileNormalizer = new TileNormalizer();
-
-        $this->serializer = new Serializer(
-            [$tileNormalizer, $normalizer, new ArrayDenormalizer()],
-            ['xml' => new XmlEncoder()]
-        );
+        $configDir = $projectRootPath . DIRECTORY_SEPARATOR . 'config';
+        $this->serializer =  SerializerBuilder::create()
+            ->addMetadataDir($configDir)
+            ->configureListeners(function(EventDispatcher $dispatcher) {
+                $dispatcher->addSubscriber(new MapEventSubscriber());
+                $dispatcher->addSubscriber(new LayerEventSubscriber());
+                $dispatcher->addSubscriber(new TileSetEventSubscriber());
+                $dispatcher->addSubscriber(new TileEventSubscriber());
+            })
+            ->setSerializationContextFactory(function () {
+                return SerializationContext::create();
+            })
+            ->build();
     }
 
     public function write(Map $map, string $filename): void
     {
-        $xml = $this->serializer->serialize($map, 'xml', [
-            'xml_format_output' => true,
-            'xml_encoding' => 'utf-8',
-            'xml_root_node_name' => 'map',
-            'groups' => 'tmx'
-        ]);
+        $xml = $this->serializer->serialize($map, 'xml');
         file_put_contents($filename, $xml);
     }
 }

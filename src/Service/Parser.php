@@ -10,24 +10,29 @@
 namespace Tmx\Service;
 
 use ComposerLocator;
-use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
-use Symfony\Component\Serializer\Mapping\Loader\XmlFileLoader;
-use Symfony\Component\Serializer\NameConverter\MetadataAwareNameConverter;
+use JMS\Serializer\DeserializationContext;
+use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\Handler\HandlerRegistry;
+use JMS\Serializer\SerializationContext;
+use JMS\Serializer\Serializer;
+use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
-use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
+use Tmx\EventSubscriber\LayerEventSubscriber;
+use Tmx\EventSubscriber\MapEventSubscriber;
+use Tmx\EventSubscriber\TileEventSubscriber;
+use Tmx\EventSubscriber\TileSetEventSubscriber;
+use Tmx\Handler\TileTerrainHandler;
 use Tmx\Map;
-use Tmx\Normalizer\TileNormalizer;
 use Tmx\TileSet;
 
 class Parser
 {
-    private ClassMetadataFactory $classMetadataFactory;
-    private MetadataAwareNameConverter $metadataAwareNameConverter;
-    private Serializer $serializer;
+
+    /**
+     * @var Serializer
+     */
+    private $serializer;
 
     /**
      * Parser constructor.
@@ -35,18 +40,19 @@ class Parser
     public function __construct()
     {
         $projectRootPath = ComposerLocator::getRootPath();
-        $configFile = $projectRootPath . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'parserDefinition.xml';
-        $this->classMetadataFactory = new ClassMetadataFactory(new XmlFileLoader($configFile));
-        $this->metadataAwareNameConverter = new MetadataAwareNameConverter($this->classMetadataFactory);
-
-        $normalizer = new ObjectNormalizer($this->classMetadataFactory, $this->metadataAwareNameConverter, null, new ReflectionExtractor());
-
-        $tileNormalizer = new TileNormalizer();
-
-        $this->serializer = new Serializer(
-            [$tileNormalizer, $normalizer, new ArrayDenormalizer()],
-            ['xml' => new XmlEncoder()]
-        );
+        $configDir = $projectRootPath . DIRECTORY_SEPARATOR . 'config';
+        $this->serializer =  SerializerBuilder::create()
+            ->addMetadataDir($configDir)
+            ->configureListeners(function(EventDispatcher $dispatcher) {
+                $dispatcher->addSubscriber(new MapEventSubscriber());
+                $dispatcher->addSubscriber(new LayerEventSubscriber());
+                $dispatcher->addSubscriber(new TileSetEventSubscriber());
+                $dispatcher->addSubscriber(new TileEventSubscriber());
+            })
+            ->setSerializationContextFactory(function () {
+                return SerializationContext::create();
+            })
+            ->build();
     }
 
     public function parse(string $file): Map
@@ -55,14 +61,13 @@ class Parser
         $fileContents = file_get_contents($file);
 
         /** @var Map $map */
-        $map = $this->serializer->deserialize($fileContents, Map::class, 'xml', [
-            ObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true,
-            'groups' => 'tmx'
-        ]);
+        $map = $this->serializer->deserialize($fileContents, Map::class, 'xml');
 
+        $refreshTileSet = [];
         foreach ($map->getTileSets() as $tileSet) {
-            $this->parseTileSet($directory . DIRECTORY_SEPARATOR . $tileSet->getSource(), $tileSet);
+            $refreshTileSet[] = $this->parseTileSet($directory . DIRECTORY_SEPARATOR . $tileSet->getSource(), $tileSet);
         }
+        $map->setTileSets($refreshTileSet);
 
         return $map;
     }
@@ -73,22 +78,13 @@ class Parser
         $fileContents = file_get_contents($file);
 
         if (null !== $tileSet) {
-            $tileSet = $this->serializer->deserialize($fileContents, TileSet::class, 'xml', [
-                AbstractNormalizer::OBJECT_TO_POPULATE => $tileSet,
-                'groups' => 'tmx'
-            ]);
-
+            $tileSet = $this->serializer->deserialize($fileContents, TileSet::class, 'xml', DeserializationContext::create()->setAttribute('tileSet', $tileSet));
             $tileSet->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getSource()));
             $tileSet->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getImage()->getSource()));
 
             return $tileSet;
         }
-
-        $tileSet = $this->serializer->deserialize($fileContents, TileSet::class, 'xml', [
-            ObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true,
-            'groups' => 'tmx'
-        ]);
-
+        $tileSet = $this->serializer->deserialize($fileContents, TileSet::class, 'xml');
         $tileSet->setSource(realpath($directory . DIRECTORY_SEPARATOR . $file));
         $tileSet->getImage()->setSource(realpath($directory . DIRECTORY_SEPARATOR . $tileSet->getImage()->getSource()));
 

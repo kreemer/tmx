@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\WangColor" exclusion-policy="ALL">
+        <property name="name"   serialized-name="name"  xml-attribute="true" />
+        <property name="tileId"   serialized-name="tile"  xml-attribute="true" />
+        <property name="color"   serialized-name="color"  xml-attribute="true" />
+        <property name="probability"   serialized-name="probability"  xml-attribute="true" />
+    </class>
+</serializer>

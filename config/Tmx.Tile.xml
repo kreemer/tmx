@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\Tile" exclusion-policy="ALL">
+        <property name="id"   serialized-name="id"  xml-attribute="true" />
+        <property name="type"   serialized-name="type"  xml-attribute="true" />
+        <property name="probability"   serialized-name="probability"  xml-attribute="true" />
+
+        <property name="topLeftTerrainId" serialized-name="topLeftTerrainId" xml-attribute="true" />
+        <property name="topRightTerrainId" serialized-name="topRightTerrainId" xml-attribute="true" />
+        <property name="bottomLeftTerrainId" serialized-name="bottomLeftTerrainId" xml-attribute="true" />
+        <property name="bottomRightTerrainId" serialized-name="bottomRightTerrainId" xml-attribute="true" />
+
+        <property name="animation" serialized-name="animation">
+            <type><![CDATA[Tmx\Animation]]></type>
+        </property>
+    </class>
+</serializer>

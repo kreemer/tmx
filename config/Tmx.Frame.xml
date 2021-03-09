@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\Frame" exclusion-policy="ALL">
+
+        <property name="tileId"   serialized-name="tileid"  xml-attribute="true" />
+        <property name="duration"   serialized-name="duration"  xml-attribute="true" />
+    </class>
+</serializer>

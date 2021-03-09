@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\Map" exclusion-policy="ALL" xml-root-name="map">
+
+        <property name="version"                serialized-name="version"           xml-attribute="true" />
+        <property name="tiledVersion"           serialized-name="tiledversion"      xml-attribute="true" />
+        <property name="orientationAsString"    serialized-name="orientation"       xml-attribute="true" />
+        <property name="width"                  serialized-name="width"             xml-attribute="true" />
+        <property name="height"                 serialized-name="height"            xml-attribute="true" />
+        <property name="tileWidth"              serialized-name="tilewidth"         xml-attribute="true" />
+        <property name="tileHeight"             serialized-name="tileheight"        xml-attribute="true" />
+        <property name="infiniteMap"            serialized-name="infinite"          xml-attribute="true" />
+        <property name="nextLayerId"            serialized-name="nextlayerid"       xml-attribute="true" />
+        <property name="nextObjectId"           serialized-name="nextobjectid"      xml-attribute="true" />
+        <property name="backgroundColor"        serialized-name="backgroundcolor"   xml-attribute="true" />
+
+
+        <property
+                name="renderOrder"
+                type="string"
+                serialized-name="renderorder"
+                xml-attribute="true"
+                access-type="public_method"
+                accessor-getter="getRenderOrderAsString"
+                accessor-setter="setRenderOrderAsString"
+        />
+
+        <property name="layers" serialized-name="layer">
+            <type><![CDATA[array<Tmx\Layer>]]></type>
+            <xml-list inline="true" entry-name="layer" />
+        </property>
+
+        <property name="tileSets" serialized-name="tileset">
+            <type><![CDATA[array<Tmx\TileSet>]]></type>
+            <xml-list inline="true" entry-name="tileset" />
+        </property>
+    </class>
+
+
+
+</serializer>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\WangSet" exclusion-policy="ALL">
+
+        <property name="name"   serialized-name="name"  xml-attribute="true" />
+        <property name="tileId"   serialized-name="tile"  xml-attribute="true" />
+
+        <property name="wangEdgeColors" serialized-name="wangedgecolor">
+            <type><![CDATA[array<Tmx\WangEdgeColor>]]></type>
+            <xml-list inline="true" entry-name="wangedgecolor" />
+        </property>
+        <property name="wangCornerColors" serialized-name="wangcornercolor">
+            <type><![CDATA[array<Tmx\WangCornerColor>]]></type>
+            <xml-list inline="true" entry-name="wangcornercolor" />
+        </property>
+        <property name="wangTiles" serialized-name="wangtile">
+            <type><![CDATA[array<Tmx\WangTile>]]></type>
+            <xml-list inline="true" entry-name="wangtile" />
+        </property>
+    </class>
+</serializer>

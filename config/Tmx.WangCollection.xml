@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Tmx package.
+  ~ (c) kreemer <kreemer@me.com>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<serializer>
+    <class name="Tmx\WangCollection" exclusion-policy="ALL">
+
+        <property name="wangSets" serialized-name="wangset">
+            <type><![CDATA[array<Tmx\WangSet>]]></type>
+            <xml-list inline="true" entry-name="wangset" />
+        </property>
+    </class>
+</serializer>

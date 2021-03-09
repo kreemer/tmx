@@ -10,6 +10,7 @@
 
 namespace Tmx;
 
+
 /**
  * Class Map.
  */
@@ -52,24 +53,48 @@ class Map
      */
     const ORIENTATION_HEXAGONAL = 4;
 
+    /**
+     * @var string|null
+     */
     private ?string $version = null;
 
+    /**
+     * @var string|null
+     */
     private ?string $tiledVersion = null;
 
     private ?int $orientation = self::ORIENTATION_ORTHOGONAL;
 
     private int $renderOrder = self::RENDER_ORDER_RIGHT_DOWN;
 
+    /**
+     * @var float|null
+     */
     private ?float $compressionLevel = null;
 
+    /**
+     * @var int|null
+     */
     private ?int $width = null;
 
+    /**
+     * @var int|null
+     */
     private ?int $height = null;
 
+    /**
+     * @var int|null
+     */
     private ?int $tileWidth = null;
 
+    /**
+     * @var int|null
+     */
     private ?int $tileHeight = null;
 
+    /**
+     * @var string|null
+     */
     private ?string $backgroundColor = null;
 
     /**
@@ -331,6 +356,13 @@ class Map
     public function getTileSets(): array
     {
         return $this->tileSets;
+    }
+
+    public function setTileSets(array $tileSets): Map
+    {
+        $this->tileSets = $tileSets;
+
+        return $this;
     }
 
     public function addTileSet(TileSet $tileSet): Map
