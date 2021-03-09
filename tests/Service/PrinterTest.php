@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tmx\Tests;
+namespace Tmx\Tests\Service;
 
 use Intervention\Image\ImageManager;
 use org\bovigo\vfs\vfsStream;
@@ -18,6 +18,7 @@ use Tmx\LayerData;
 use Tmx\Map;
 use Tmx\Service\Parser;
 use Tmx\Service\Printer;
+use Tmx\Tests\TmxTest;
 use Tmx\TileSet;
 
 class PrinterTest extends TmxTest

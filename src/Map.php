@@ -56,7 +56,7 @@ class Map
 
     private ?string $tiledVersion = null;
 
-    private ?int $orientation = null;
+    private ?int $orientation = self::ORIENTATION_ORTHOGONAL;
 
     private int $renderOrder = self::RENDER_ORDER_RIGHT_DOWN;
 
@@ -97,7 +97,7 @@ class Map
      */
     private array $layers = [];
 
-    public function getVersion(): string
+    public function getVersion(): ?string
     {
         return $this->version;
     }
@@ -121,7 +121,7 @@ class Map
         return $this;
     }
 
-    public function getOrientation(): int
+    public function getOrientation(): ?int
     {
         return $this->orientation;
     }
@@ -289,7 +289,7 @@ class Map
         return $this;
     }
 
-    public function getNextLayerId(): string
+    public function getNextLayerId(): ?string
     {
         return $this->nextLayerId;
     }
@@ -301,7 +301,7 @@ class Map
         return $this;
     }
 
-    public function getNextObjectId(): string
+    public function getNextObjectId(): ?string
     {
         return $this->nextObjectId;
     }

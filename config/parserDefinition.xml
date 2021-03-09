@@ -13,120 +13,265 @@
         https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
 >
     <class name="Tmx\Map">
-        <attribute name="version" serialized-name="@version" />
-        <attribute name="tiledVersion" serialized-name="@tiledversion" />
-        <attribute name="orientationAsString" serialized-name="@orientation" />
-        <attribute name="renderOrderAsString" serialized-name="@renderorder" />
-        <attribute name="width" serialized-name="@width" />
-        <attribute name="height" serialized-name="@height" />
-        <attribute name="tileWidth" serialized-name="@tilewidth" />
-        <attribute name="tileHeight" serialized-name="@tileheight" />
-        <attribute name="infiniteMap" serialized-name="@infinite" />
-        <attribute name="nextLayerId" serialized-name="@nextlayerid" />
-        <attribute name="nextObjectId" serialized-name="@nextobjectid" />
-        <attribute name="tileSets" serialized-name="tileset" />
-        <attribute name="layers" serialized-name="layer" />
-        <attribute name="backgroundColor" serialized-name="@backgroundcolor" />
+        <attribute name="version" serialized-name="@version">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tiledVersion" serialized-name="@tiledversion">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="orientationAsString" serialized-name="@orientation">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="renderOrderAsString" serialized-name="@renderorder">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="width" serialized-name="@width">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="height" serialized-name="@height">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileWidth" serialized-name="@tilewidth">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileHeight" serialized-name="@tileheight">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="infiniteMap" serialized-name="@infinite">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="nextLayerId" serialized-name="@nextlayerid">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="nextObjectId" serialized-name="@nextobjectid">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileSets" serialized-name="tileset">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="layers" serialized-name="layer">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="backgroundColor" serialized-name="@backgroundcolor">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\TileSet">
-        <attribute name="firstGid" serialized-name="@firstgid" />
-        <attribute name="source" serialized-name="@source" />
-        <attribute name="name" serialized-name="@name" />
-        <attribute name="tileWidth" serialized-name="@tilewidth" />
-        <attribute name="tileHeight" serialized-name="@tileheight" />
-        <attribute name="tileCount" serialized-name="@tilecount" />
-        <attribute name="columns" serialized-name="@columns" />
-        <attribute name="terrainCollection" serialized-name="terraintypes" />
-        <attribute name="tiles" serialized-name="tile" />
-        <attribute name="wangCollection" serialized-name="wangsets" />
+        <attribute name="firstGid" serialized-name="@firstgid">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="source" serialized-name="@source">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="name" serialized-name="@name">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileWidth" serialized-name="@tilewidth">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileHeight" serialized-name="@tileheight">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileCount" serialized-name="@tilecount">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="columns" serialized-name="@columns">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="terrainCollection" serialized-name="terraintypes">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tiles" serialized-name="tile">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="wangCollection" serialized-name="wangsets">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="image" serialized-name="image">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\WangCollection">
-        <attribute name="wangSets" serialized-name="wangset" />
+        <attribute name="wangSets" serialized-name="wangset">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\WangSet">
-        <attribute name="name" serialized-name="@name" />
-        <attribute name="tileId" serialized-name="@tile" />
-        <attribute name="wangEdgeColors" serialized-name="wangedgecolor" />
-        <attribute name="wangCornerColors" serialized-name="wangcornercolor" />
-        <attribute name="wangTiles" serialized-name="wangtile" />
+        <attribute name="name" serialized-name="@name">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileId" serialized-name="@tile">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="wangEdgeColors" serialized-name="wangedgecolor">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="wangCornerColors" serialized-name="wangcornercolor">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="wangTiles" serialized-name="wangtile">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\WangTile">
-        <attribute name="wangId" serialized-name="@wangid" />
-        <attribute name="tileId" serialized-name="@tileid" />
+        <attribute name="wangId" serialized-name="@wangid">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileId" serialized-name="@tileid">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\WangEdgeColor">
-        <attribute name="name" serialized-name="@name" />
-        <attribute name="tileId" serialized-name="@tile" />
-        <attribute name="color" serialized-name="@color" />
-        <attribute name="probability" serialized-name="@probability" />
+        <attribute name="name" serialized-name="@name">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileId" serialized-name="@tile">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="color" serialized-name="@color">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="probability" serialized-name="@probability">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\WangCornerColor">
-        <attribute name="name" serialized-name="@name" />
-        <attribute name="tileId" serialized-name="@tile" />
-        <attribute name="color" serialized-name="@color" />
-        <attribute name="probability" serialized-name="@probability" />
+        <attribute name="name" serialized-name="@name">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tileId" serialized-name="@tile">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="color" serialized-name="@color">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="probability" serialized-name="@probability">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\TerrainCollection">
-        <attribute name="terrains" serialized-name="terrain" />
+        <attribute name="terrains" serialized-name="terrain">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\TileOffset">
-        <attribute name="x" serialized-name="@x" />
-        <attribute name="y" serialized-name="@y" />
+        <attribute name="x" serialized-name="@x">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="y" serialized-name="@y">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\Terrain">
-        <attribute name="name" serialized-name="@name" />
-        <attribute name="tile" serialized-name="@tile" />
+        <attribute name="name" serialized-name="@name">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="tile" serialized-name="@tile">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\Image">
-        <attribute name="source" serialized-name="@source" />
-        <attribute name="width" serialized-name="@width" />
-        <attribute name="height" serialized-name="@height" />
+        <attribute name="source" serialized-name="@source">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="width" serialized-name="@width">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="height" serialized-name="@height">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\Layer">
-        <attribute name="id" serialized-name="@id" />
-        <attribute name="name" serialized-name="@name" />
-        <attribute name="width" serialized-name="@width" />
-        <attribute name="height" serialized-name="@height" />
-        <attribute name="x" serialized-name="@x" />
-        <attribute name="y" serialized-name="@y" />
-        <attribute name="opacity" serialized-name="@opacity" />
-        <attribute name="visible" serialized-name="@visible" />
-        <attribute name="layerData" serialized-name="data" />
+        <attribute name="id" serialized-name="@id">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="name" serialized-name="@name">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="width" serialized-name="@width">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="height" serialized-name="@height">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="x" serialized-name="@x">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="y" serialized-name="@y">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="opacity" serialized-name="@opacity">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="visible" serialized-name="@visible">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="layerData" serialized-name="data">
+            <group>tmx</group>
+        </attribute>
+
+        <attribute name="map" ignore="true" />
     </class>
 
     <class name="Tmx\LayerData">
-        <attribute name="encoding" serialized-name="@encoding" />
-        <attribute name="compression" serialized-name="@compression" />
-        <attribute name="chunks" serialized-name="chunk" />
-        <attribute name="data" serialized-name="#" />
+        <attribute name="encoding" serialized-name="@encoding">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="compression" serialized-name="@compression">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="chunks" serialized-name="chunk">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="data" serialized-name="#">
+            <group>tmx</group>
+        </attribute>
+
+        <attribute name="layer" ignore="true" />
     </class>
 
     <class name="Tmx\Chunk">
-        <attribute name="x" serialized-name="@x" />
-        <attribute name="y" serialized-name="@y" />
-        <attribute name="width" serialized-name="@width" />
-        <attribute name="height" serialized-name="@height" />
+        <attribute name="x" serialized-name="@x">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="y" serialized-name="@y">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="width" serialized-name="@width">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="height" serialized-name="@height">
+            <group>tmx</group>
+        </attribute>
 
-        <attribute name="data" serialized-name="#" />
+        <attribute name="data" serialized-name="#">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\Animation">
-        <attribute name="frames" serialized-name="frame" />
+        <attribute name="frames" serialized-name="frame">
+            <group>tmx</group>
+        </attribute>
     </class>
 
     <class name="Tmx\Frame">
-        <attribute name="tileId" serialized-name="@tileid" />
-        <attribute name="duration" serialized-name="@duration" />
+        <attribute name="tileId" serialized-name="@tileid">
+            <group>tmx</group>
+        </attribute>
+        <attribute name="duration" serialized-name="@duration">
+            <group>tmx</group>
+        </attribute>
     </class>
 </serializer>

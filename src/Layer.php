@@ -11,8 +11,8 @@ namespace Tmx;
 
 class Layer
 {
-    private ?int $id;
-    private ?string $name;
+    private ?int $id = null;
+    private ?string $name = null;
 
     private int $x = 0;
     private int $y = 0;
