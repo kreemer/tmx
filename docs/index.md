@@ -4,6 +4,8 @@
 - [Installation](#installation)
 - [Core Concepts](#core-concepts)
 - [Parsing](#parsing)
+  - [Parsing data of a layer](#parsing-data-of-a-layer)
+  - [Find all layers](#find-all-layers)
 - [Printing](#printing)
 - [Saving](#saving)
 - [API](#api)
@@ -42,6 +44,63 @@ $map = $parser->parse('filename.tmx');
 ```
 
 The `$map` object contains about the parsed data. You can browse the api [here](api/classes/Tmx-Map.html).
+
+## Parsing data of a layer
+
+If you wan't to parse the data of a layer, you will soon find out that this library just saves the raw data in the `LayerData` object. Because of the different encodings and compressions, which can be used, this library provides a  `LayerDataReader` service class to read this data and returns them as 2 dimensional array:
+
+
+```php
+<?php
+
+use Tmx\Service\Parser;
+use Tmx\Service\LayerDataReader;
+
+$layerDataReader = LayerDataReader::getDefaultLayerDataReader();
+
+$parser = new Parser();
+$map = $parser->parse('filename.tmx');
+
+foreach ($map->getLayers() as $layer) {
+    $tiles = $layerDataReader->readLayerData($layer->getLayerData());
+    
+    // process tiles array
+    // $tiles = [
+    //   [ 
+    //     0, 0, 0, 1, 2, 3, ...
+    //   ],
+    //   [ 
+    //     0, 0, 0, 1, 2, 3, ...
+    //   ],
+    //   ...
+    // ]
+}
+```
+
+In the previous example, the tiles array contains all tile ids, which this layer contains.
+
+
+## Find all layers
+
+In the previous chapter we looped through all layers of a map. But the map object is not the only object which can contain layers. Also group layers can contain layers (but also nested group layers). To get all layers from all maps and groups, you can use the map service class:
+
+
+```php
+<?php
+
+use Tmx\Service\Parser;
+use Tmx\Service\MapService;
+
+$parser = new Parser();
+$map = $parser->parse('filename.tmx');
+
+$layers = MapService::findLayers($map);
+
+foreach ($layers as $layer) {
+  // loop through every layer
+}
+```
+
 
 # Creating maps manually
 
@@ -124,7 +183,7 @@ $printer = new Writer();
 $printer->write($map, 'filename.tmx');
 ```
 
-The generated file will include the map and the embedded tileset. 
+The generated file will include the map and the embedded tileset.
 
 # API
 

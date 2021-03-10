@@ -40,10 +40,7 @@ class Printer
     public function __construct()
     {
         $this->manager = new ImageManager(['driver' => 'imagick']);
-        $this->layerDataReader = new LayerDataReader(
-            [new CsvDataParser(), new Base64DataParser()],
-            [new PlainCompression(), new ZlibCompression(), new ZstdCompression()]
-        );
+        $this->layerDataReader = LayerDataReader::getDefaultLayerDataReader();
     }
 
     /**

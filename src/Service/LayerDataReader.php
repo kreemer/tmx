@@ -11,8 +11,13 @@ namespace Tmx\Service;
 
 use RuntimeException;
 use Tmx\LayerData;
+use Tmx\Service\LayerData\Base64DataParser;
 use Tmx\Service\LayerData\CompressionInterface;
+use Tmx\Service\LayerData\CsvDataParser;
 use Tmx\Service\LayerData\DataParserInterface;
+use Tmx\Service\LayerData\PlainCompression;
+use Tmx\Service\LayerData\ZlibCompression;
+use Tmx\Service\LayerData\ZstdCompression;
 
 /**
  * Service class for reading the encoded and/or compressed data.
@@ -146,5 +151,18 @@ class LayerDataReader
         }
 
         return $responsibleCompression;
+    }
+
+    /**
+     * Get the default layerDataReader
+     *
+     * @return LayerDataReader
+     */
+    public static function getDefaultLayerDataReader(): LayerDataReader
+    {
+        return new LayerDataReader(
+            [new CsvDataParser(), new Base64DataParser()],
+            [new PlainCompression(), new ZlibCompression(), new ZstdCompression()]
+        );
     }
 }
