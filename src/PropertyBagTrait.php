@@ -9,8 +9,17 @@
 
 namespace Tmx;
 
+/**
+ * Trait to implement all properties.
+ *
+ * @see PropertyBag
+ */
 trait PropertyBagTrait
 {
+    /**
+     * @see PropertyBagTrait::getPropertyBag()
+     * @see PropertyBagTrait::setPropertyBag()
+     */
     private ?PropertyBag $propertyBag = null;
 
     public function getPropertyBag(): ?PropertyBag

@@ -9,9 +9,27 @@
 
 namespace Tmx;
 
+/**
+ * Represents the tileOffset object.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#tileoffset Documentation
+ */
 class TileOffset
 {
+    /**
+     * Horizontal offset in pixels.
+     *
+     * @see TileOffset::getX()
+     * @see TileOffset::setX()
+     */
     private ?int $x = null;
+
+    /**
+     * Vertical offset in pixels.
+     *
+     * @see TileOffset::getY()
+     * @see TileOffset::setY()
+     */
     private ?int $y = null;
 
     public function getX(): ?int

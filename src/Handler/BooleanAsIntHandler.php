@@ -15,6 +15,9 @@ use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\XmlDeserializationVisitor;
 use JMS\Serializer\XmlSerializationVisitor;
 
+/**
+ * @internal
+ */
 class BooleanAsIntHandler implements SubscribingHandlerInterface
 {
     public static function getSubscribingMethods(): array
@@ -35,6 +38,9 @@ class BooleanAsIntHandler implements SubscribingHandlerInterface
         ];
     }
 
+    /**
+     * serialize the boolean and write either '1' or '0'.
+     */
     public function serializeBooleanToInt(XmlSerializationVisitor $visitor, $value, array $type, Context $context)
     {
         $data = $visitor->visitBoolean($value, $type);
@@ -43,6 +49,9 @@ class BooleanAsIntHandler implements SubscribingHandlerInterface
         return $data;
     }
 
+    /**
+     * returns either true or false if the value is 1 or 0.
+     */
     public function deserializeIntToBoolean(XmlDeserializationVisitor $visitor, $value, array $type, Context $context)
     {
         return $visitor->visitBoolean($value, $type);

@@ -9,6 +9,11 @@
 
 namespace Tmx;
 
+/**
+ * WangCornerColor object.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#wangcornercolor Documentation
+ */
 class WangCornerColor extends WangColor
 {
 }

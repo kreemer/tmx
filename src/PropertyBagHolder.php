@@ -9,7 +9,13 @@
 
 namespace Tmx;
 
+/**
+ * Interface for all elements, which contains properties.
+ */
 interface PropertyBagHolder
 {
+    /**
+     * get the property bag.
+     */
     public function getPropertyBag(): ?PropertyBag;
 }

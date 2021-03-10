@@ -9,12 +9,17 @@
 
 namespace Tmx;
 
+/**
+ * Represents the wangsets.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#wangsets Documentation
+ */
 class WangCollection
 {
     private array $wangSets = [];
 
     /**
-     * @return array<WangSet>
+     * @return WangSet[]
      */
     public function getWangSets(): array
     {

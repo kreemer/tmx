@@ -23,6 +23,11 @@ use Tmx\EventSubscriber\TileSetEventSubscriber;
 use Tmx\Handler\BooleanAsIntHandler;
 use Tmx\Map;
 
+/**
+ * Service class writer writes a map to a tmx file.
+ *
+ * The writer processes a map object and saves the map as tmx output.
+ */
 class Writer
 {
     /**
@@ -56,6 +61,9 @@ class Writer
             ->build();
     }
 
+    /**
+     * Write a map object to the filename.
+     */
     public function write(Map $map, string $filename): void
     {
         $xml = $this->serializer->serialize($map, 'xml', SerializationContext::create()->setGroups(['tmx']));

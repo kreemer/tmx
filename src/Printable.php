@@ -9,6 +9,9 @@
 
 namespace Tmx;
 
+/**
+ * Marks something as a printable layer.
+ */
 interface Printable
 {
 }

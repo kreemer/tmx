@@ -28,6 +28,11 @@ use Tmx\Handler\BooleanAsIntHandler;
 use Tmx\Map;
 use Tmx\TileSet;
 
+/**
+ * Service class for parsing tmx files.
+ *
+ * The parser deserialize the tmx file into an object graph
+ */
 class Parser
 {
     /**
@@ -63,6 +68,11 @@ class Parser
             ->build();
     }
 
+    /**
+     * Parses a file and returns the map object representation.
+     *
+     * @param string $file Path to the tmx file
+     */
     public function parse(string $file): Map
     {
         $directory = dirname($file);
@@ -94,6 +104,12 @@ class Parser
         return $map;
     }
 
+    /**
+     * Parses a tileSet file (tsx) and returns the corresponding element.
+     *
+     * @param string       $file    the path to the tile set file
+     * @param TileSet|null $tileSet TileSet object which will be populated. if null, a new tileset object will be made
+     */
     public function parseTileSet(string $file, TileSet $tileSet = null): TileSet
     {
         $directory = dirname($file);

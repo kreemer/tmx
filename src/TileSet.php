@@ -9,30 +9,126 @@
 
 namespace Tmx;
 
+/**
+ * Represents the tileOffset object.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#tileset Documentation
+ */
 class TileSet implements PropertyBagHolder
 {
     use PropertyBagTrait;
 
+    /**
+     * The first global tile ID of this tileset (this global ID maps to the first tile in this tileset).
+     *
+     * @see TileSet::getFirstGid()
+     * @see TileSet::setFirstGid()
+     */
     private ?int $firstGid = null;
+
+    /**
+     * If this tileset is stored in an external TSX (Tile Set XML) file, this attribute refers to that file.
+     *
+     * @see TileSet::getSource()
+     * @see TileSet::setSource()
+     */
     private ?string $source = null;
+
+    /**
+     * The name of this tileset.
+     *
+     * @see TileSet::getName()
+     * @see TileSet::setName()
+     */
     private ?string $name = null;
 
+    /**
+     *  The (maximum) width of the tiles in this tileset.
+     *
+     * @see TileSet::getTileWidth()
+     * @see TileSet::setTileWidth()
+     */
     private ?int $tileWidth = null;
+
+    /**
+     * The (maximum) height of the tiles in this tileset.
+     *
+     * @see TileSet::getTileHeight()
+     * @see TileSet::setTileHeight()
+     */
     private ?int $tileHeight = null;
 
+    /**
+     * The spacing in pixels between the tiles in this tileset.
+     *
+     * @see TileSet::getSpacing()
+     * @see TileSet::setSpacing()
+     */
     private ?int $spacing = null;
+
+    /**
+     * The margin around the tiles in this tileset.
+     *
+     * @see TileSet::getMargin()
+     * @see TileSet::setMargin()
+     */
     private ?int $margin = null;
+
+    /**
+     * The number of tiles in this tileset.
+     *
+     * @see TileSet::getTileCount()
+     * @see TileSet::setTileCount()
+     */
     private ?int $tileCount = null;
+
+    /**
+     * The number of tile columns in the tileset.
+     * For image collection tilesets it is editable and is used when displaying the tileset.
+     *
+     * @see TileSet::getColumns()
+     * @see TileSet::setColumns()
+     */
     private ?int $columns = null;
+
+    /**
+     * Controls the alignment for tile objects.
+     *
+     * @see TileSet::getObjectAlignment()
+     * @see TileSet::setObjectAlignment()
+     */
     private ?string $objectAlignment = null;
 
+    /**
+     * @see TileSet::getImage()
+     * @see TileSet::setImage()
+     */
     private ?Image $image = null;
+
+    /**
+     * @see TileSet::getTileOffset()
+     * @see TileSet::setTileOffset()
+     */
     private ?TileOffset $tileOffset = null;
+
+    /**
+     * @see TileSet::getTerrainCollection()
+     * @see TileSet::setTerrainCollection()
+     */
     private ?TerrainCollection $terrainCollection = null;
+
+    /**
+     * @see TileSet::getWangCollection()
+     * @see TileSet::setWangCollection()
+     */
     private ?WangCollection $wangCollection = null;
 
     /**
-     * @var array<Tile>
+     * @var Tile[]
+     *
+     * @see TileSet::getTiles()
+     * @see TileSet::addTile()
+     * @see TileSet::removeTile()
      */
     private array $tiles = [];
 
@@ -193,7 +289,7 @@ class TileSet implements PropertyBagHolder
     }
 
     /**
-     * @return array<Tile>
+     * @return Tile[]
      */
     public function getTiles(): array
     {

@@ -9,16 +9,70 @@
 
 namespace Tmx;
 
+/**
+ * Represents tiles in a tileSet.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#terrain Documentation
+ */
 class Tile implements PropertyBagHolder
 {
     use PropertyBagTrait;
 
+    /**
+     * The local tile ID within its tile set.
+     *
+     * @see Tile::getId()
+     * @see Tile::setId()
+     */
     private ?int $id = null;
+
+    /**
+     * The type of the tile. Refers to an object type and is used by tile objects.
+     *
+     * @see Tile::getType()
+     * @see Tile::setType()
+     */
     private ?string $type = null;
+
+    /**
+     * Defines the terrain type of top left corner of the tile.
+     *
+     * @see Tile::getTopLeftTerrainId()
+     * @see Tile::setTopLeftTerrainId()
+     */
     private ?int $topLeftTerrainId = null;
+
+    /**
+     * Defines the terrain type of top right corner of the tile.
+     *
+     * @see Tile::getTopRightTerrainId()
+     * @see Tile::setTopRightTerrainId()
+     */
     private ?int $topRightTerrainId = null;
+
+    /**
+     * Defines the terrain type of bottom left corner of the tile.
+     *
+     * @see Tile::getBottomLeftTerrainId()
+     * @see Tile::setBottomLeftTerrainId()
+     */
     private ?int $bottomLeftTerrainId = null;
+
+    /**
+     * Defines the terrain type of bottom right corner of the tile.
+     *
+     * @see Tile::getBottomRightTerrainId()
+     * @see Tile::setBottomRightTerrainId()
+     */
     private ?int $bottomRightTerrainId = null;
+
+    /**
+     * A percentage indicating the probability that this tile is chosen when it competes
+     * with others while editing with the terrain tool.
+     *
+     * @see Tile::getProbability()
+     * @see Tile::setProbability()
+     */
     private float $probability = 1.0;
 
     private ?Animation $animation = null;

@@ -9,15 +9,26 @@
 
 namespace Tmx;
 
+/**
+ * Representation of an animation.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#animation Documentation
+ */
 class Animation
 {
     /**
-     * @var array<Frame>
+     * All frames within this animation.
+     *
+     * @var Frame[]
+     *
+     * @see Animation::getFrames()
+     * @see Animation::addFrame()
+     * @see Animation::removeFrame()
      */
     private array $frames = [];
 
     /**
-     * @return array<Frame>
+     * @return Frame[]
      */
     public function getFrames(): array
     {

@@ -9,32 +9,37 @@
 
 namespace Tmx;
 
+/**
+ * A group layer, used to organize the layers of the map in a hierarchy.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#group Documentation
+ */
 class Group extends TileLayer implements GroupContainer, PropertyBagHolder
 {
     use PropertyBagTrait;
 
     /**
-     * @var array<Layer> Array of layer objects
+     * @var Layer[] Array of layer objects
      */
     private array $layers = [];
 
     /**
-     * @var array<Group> Array of group objects
+     * @var Group[] Array of group objects
      */
     private array $groups = [];
 
     /**
-     * @var array<ObjectLayer> Array of object layer objects
+     * @var ObjectLayer[] Array of object layer objects
      */
     private array $objectLayers = [];
 
     /**
-     * @var array<ImageLayer> Array of image layer objects
+     * @var ImageLayer[] Array of image layer objects
      */
     private array $imageLayers = [];
 
     /**
-     * @return array<Layer>
+     * @return Layer[]
      */
     public function getLayers(): array
     {
@@ -58,7 +63,7 @@ class Group extends TileLayer implements GroupContainer, PropertyBagHolder
     }
 
     /**
-     * @return array<Group>
+     * @return Group[]
      */
     public function getGroups(): array
     {
@@ -82,7 +87,7 @@ class Group extends TileLayer implements GroupContainer, PropertyBagHolder
     }
 
     /**
-     * @return array<ObjectLayer>
+     * @return ObjectLayer[]
      */
     public function getObjectLayers(): array
     {
@@ -106,7 +111,7 @@ class Group extends TileLayer implements GroupContainer, PropertyBagHolder
     }
 
     /**
-     * @return array<ImageLayer>
+     * @return ImageLayer[]
      */
     public function getImageLayers(): array
     {

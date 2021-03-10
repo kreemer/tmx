@@ -12,6 +12,11 @@ namespace Tmx\EventSubscriber;
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 
+/**
+ * Subscriber for draw objects.
+ *
+ * @internal
+ */
 class DrawObjectSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
@@ -26,6 +31,9 @@ class DrawObjectSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * Parses the xml element and set the child properties of the draw object.
+     */
     public function onPreDeserialize(PreDeserializeEvent $event): void
     {
         /** @var \SimpleXMLElement $data */

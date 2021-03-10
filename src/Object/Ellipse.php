@@ -11,6 +11,13 @@ namespace Tmx\Object;
 
 use Tmx\DrawObject;
 
+/**
+ * Representation of an ellipse inside a object layer.
+ *
+ * This class represents an ellipse inside an object layer
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#ellipse Documentation
+ */
 class Ellipse extends DrawObject
 {
 }

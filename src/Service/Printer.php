@@ -24,6 +24,11 @@ use Tmx\Service\LayerData\ZstdCompression;
 use Tmx\TileLayer;
 use Tmx\TileSet;
 
+/**
+ * Service class printer prints a map to an image file.
+ *
+ * The printer processes a map object and saves the map as image output.
+ */
 class Printer
 {
     private ImageManager $manager;
@@ -41,6 +46,9 @@ class Printer
         );
     }
 
+    /**
+     * Process a map and save its output to an image file.
+     */
     public function print(Map $map, string $filename): void
     {
         $img = $this->render($map);
@@ -51,6 +59,11 @@ class Printer
         @file_put_contents($filename, $imagick->getImageBlob());
     }
 
+    /**
+     * Processes a map object and returns the image as InterventionImage object.
+     *
+     * @see http://image.intervention.io Documentation
+     */
     public function render(Map $map): InterventionImage
     {
         if (0 == $map->getWidth() || 0 == $map->getHeight()) {

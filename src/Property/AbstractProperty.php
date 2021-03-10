@@ -9,15 +9,32 @@
 
 namespace Tmx\Property;
 
+/**
+ * Base class for all properties.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#property Documentation
+ */
 abstract class AbstractProperty
 {
+    /**
+     * The name of the property.
+     *
+     * @see AbstractProperty::getName()
+     * @see AbstractProperty::setName()
+     */
     private ?string $name = null;
 
+    /**
+     * @see AbstractProperty::name
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @see AbstractProperty::name
+     */
     public function setName(?string $name): AbstractProperty
     {
         $this->name = $name;

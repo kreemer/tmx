@@ -13,6 +13,9 @@ use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\ObjectEvent;
 use Tmx\Layer;
 
+/**
+ * @internal
+ */
 class LayerEventSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
@@ -27,6 +30,11 @@ class LayerEventSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * Set the layer within the child object LayerData.
+     *
+     * @see Layer::$layerData
+     */
     public function onPostDeserialize(ObjectEvent $event): void
     {
         if (!$event->getObject() instanceof Layer) {

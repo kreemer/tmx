@@ -12,6 +12,9 @@ namespace Tmx\EventSubscriber;
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 
+/**
+ * @internal
+ */
 class PropertyEventSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
@@ -26,6 +29,9 @@ class PropertyEventSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * Add the missing type property if the property is string.
+     */
     public function onPreDeserialize(PreDeserializeEvent $event): void
     {
         /** @var \SimpleXMLElement $data */

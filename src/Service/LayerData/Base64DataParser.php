@@ -13,6 +13,11 @@ use Tmx\DataInterface;
 use Tmx\LayerData;
 use Tmx\Service\ReaderException;
 
+/**
+ * This class parses all base64 encoded maps.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#data Documentation
+ */
 class Base64DataParser implements DataParserInterface
 {
     public function getData(DataInterface $dataInterface): string

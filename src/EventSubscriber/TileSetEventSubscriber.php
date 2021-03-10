@@ -13,6 +13,9 @@ use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\ObjectEvent;
 use Tmx\TileSet;
 
+/**
+ * @internal
+ */
 class TileSetEventSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
@@ -27,6 +30,9 @@ class TileSetEventSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * If the context holds an tileSet, it will take the firstGid and source parameter from it.
+     */
     public function onPostDeserialize(ObjectEvent $event): void
     {
         if (!$event->getObject() instanceof TileSet) {

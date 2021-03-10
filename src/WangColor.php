@@ -9,11 +9,44 @@
 
 namespace Tmx;
 
+/**
+ * Abstract class which are used by wangCornerColor and wangEdgeColor.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#wangcornercolor Documentation
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#wangedgecolor Documentation
+ */
 abstract class WangColor
 {
+    /**
+     * The name of this color.
+     *
+     * @see WangColor::getName()
+     * @see WangColor::setName()
+     */
     private ?string $name = null;
+
+    /**
+     * The color in #RRGGBB format.
+     *
+     * @see WangColor::getColor()
+     * @see WangColor::setColor()
+     */
     private ?string $color = null;
+
+    /**
+     * The tile ID of the tile representing this color.
+     *
+     * @see WangColor::getTileId()
+     * @see WangColor::setTileId()
+     */
     private ?int $tileId = null;
+
+    /**
+     * The relative probability that this color is chosen over others in case of multiple options.
+     *
+     * @see WangColor::getProbability()
+     * @see WangColor::setProbability()
+     */
     private float $probability = 1.0;
 
     public function getName(): ?string

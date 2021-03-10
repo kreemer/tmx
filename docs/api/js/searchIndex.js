@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\Tmx\\Animation",
             "name": "Animation",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020an\u0020animation.",
             "url": "classes/Tmx-Animation.html"
         },                {
             "fqsen": "\\Tmx\\Animation\u003A\u003AgetFrames\u0028\u0029",
@@ -23,12 +23,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Animation\u003A\u003A\u0024frames",
             "name": "frames",
-            "summary": "",
+            "summary": "All\u0020frames\u0020within\u0020this\u0020animation.",
             "url": "classes/Tmx-Animation.html#property_frames"
         },                {
             "fqsen": "\\Tmx\\Chunk",
             "name": "Chunk",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020a\u0020chunk.",
             "url": "classes/Tmx-Chunk.html"
         },                {
             "fqsen": "\\Tmx\\Chunk\u003A\u003AgetX\u0028\u0029",
@@ -83,32 +83,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Chunk\u003A\u003A\u0024x",
             "name": "x",
-            "summary": "",
+            "summary": "The\u0020x\u0020coordinate\u0020of\u0020the\u0020chunk\u0020in\u0020tiles.",
             "url": "classes/Tmx-Chunk.html#property_x"
         },                {
             "fqsen": "\\Tmx\\Chunk\u003A\u003A\u0024y",
             "name": "y",
-            "summary": "",
+            "summary": "The\u0020y\u0020coordinate\u0020of\u0020the\u0020chunk\u0020in\u0020tiles.",
             "url": "classes/Tmx-Chunk.html#property_y"
         },                {
             "fqsen": "\\Tmx\\Chunk\u003A\u003A\u0024width",
             "name": "width",
-            "summary": "",
+            "summary": "The\u0020width\u0020of\u0020the\u0020chunk\u0020in\u0020tiles.",
             "url": "classes/Tmx-Chunk.html#property_width"
         },                {
             "fqsen": "\\Tmx\\Chunk\u003A\u003A\u0024height",
             "name": "height",
-            "summary": "",
+            "summary": "The\u0020height\u0020of\u0020the\u0020chunk\u0020in\u0020tiles.",
             "url": "classes/Tmx-Chunk.html#property_height"
         },                {
             "fqsen": "\\Tmx\\Chunk\u003A\u003A\u0024data",
             "name": "data",
-            "summary": "",
+            "summary": "The\u0020contents\u0020of\u0020a\u0020chunk\u0020element\u0020is\u0020same\u0020as\u0020that\u0020of\u0020the\u0020data\u0020element,\nexcept\u0020it\u0020stores\u0020the\u0020data\u0020of\u0020the\u0020area\u0020specified\u0020in\u0020the\u0020attributes.",
             "url": "classes/Tmx-Chunk.html#property_data"
         },                {
             "fqsen": "\\Tmx\\DataInterface",
             "name": "DataInterface",
-            "summary": "",
+            "summary": "DataInterfaces\u0020are\u0020all\u0020objects,\u0020which\u0020can\u0020contain\u0020data.",
             "url": "classes/Tmx-DataInterface.html"
         },                {
             "fqsen": "\\Tmx\\DataInterface\u003A\u003AgetData\u0028\u0029",
@@ -118,7 +118,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\DrawObject",
             "name": "DrawObject",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020an\u0020object.",
             "url": "classes/Tmx-DrawObject.html"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003AgetId\u0028\u0029",
@@ -223,172 +223,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024id",
             "name": "id",
-            "summary": "",
+            "summary": "Unique\u0020ID\u0020of\u0020the\u0020object.",
             "url": "classes/Tmx-DrawObject.html#property_id"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024name",
             "name": "name",
-            "summary": "",
+            "summary": "The\u0020name\u0020of\u0020the\u0020object.",
             "url": "classes/Tmx-DrawObject.html#property_name"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024type",
             "name": "type",
-            "summary": "",
+            "summary": "The\u0020type\u0020of\u0020the\u0020object.",
             "url": "classes/Tmx-DrawObject.html#property_type"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024x",
             "name": "x",
-            "summary": "",
+            "summary": "The\u0020x\u0020coordinate\u0020of\u0020the\u0020object\u0020in\u0020pixels.",
             "url": "classes/Tmx-DrawObject.html#property_x"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024y",
             "name": "y",
-            "summary": "",
+            "summary": "The\u0020y\u0020coordinate\u0020of\u0020the\u0020object\u0020in\u0020pixels.",
             "url": "classes/Tmx-DrawObject.html#property_y"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024width",
             "name": "width",
-            "summary": "",
+            "summary": "The\u0020width\u0020of\u0020the\u0020object\u0020in\u0020pixels.",
             "url": "classes/Tmx-DrawObject.html#property_width"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024height",
             "name": "height",
-            "summary": "",
+            "summary": "The\u0020height\u0020of\u0020the\u0020object\u0020in\u0020pixels.",
             "url": "classes/Tmx-DrawObject.html#property_height"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024rotation",
             "name": "rotation",
-            "summary": "",
+            "summary": "The\u0020rotation\u0020of\u0020the\u0020object\u0020in\u0020degrees\u0020clockwise\u0020around\u0020\u0028x,\u0020y\u0029.",
             "url": "classes/Tmx-DrawObject.html#property_rotation"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024gid",
             "name": "gid",
-            "summary": "",
+            "summary": "A\u0020reference\u0020to\u0020a\u0020tile.",
             "url": "classes/Tmx-DrawObject.html#property_gid"
         },                {
             "fqsen": "\\Tmx\\DrawObject\u003A\u003A\u0024visible",
             "name": "visible",
-            "summary": "",
+            "summary": "Whether\u0020the\u0020object\u0020is\u0020shown\u0020\u00281\u0029\u0020or\u0020hidden\u0020\u00280\u0029.",
             "url": "classes/Tmx-DrawObject.html#property_visible"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\DrawObjectSubscriber",
-            "name": "DrawObjectSubscriber",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-DrawObjectSubscriber.html"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\DrawObjectSubscriber\u003A\u003AgetSubscribedEvents\u0028\u0029",
-            "name": "getSubscribedEvents",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-DrawObjectSubscriber.html#method_getSubscribedEvents"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\DrawObjectSubscriber\u003A\u003AonPreDeserialize\u0028\u0029",
-            "name": "onPreDeserialize",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-DrawObjectSubscriber.html#method_onPreDeserialize"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\DrawObjectSubscriber\u003A\u003AenumerateDrawObjectType\u0028\u0029",
-            "name": "enumerateDrawObjectType",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-DrawObjectSubscriber.html#method_enumerateDrawObjectType"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\LayerEventSubscriber",
-            "name": "LayerEventSubscriber",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-LayerEventSubscriber.html"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\LayerEventSubscriber\u003A\u003AgetSubscribedEvents\u0028\u0029",
-            "name": "getSubscribedEvents",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-LayerEventSubscriber.html#method_getSubscribedEvents"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\LayerEventSubscriber\u003A\u003AonPostDeserialize\u0028\u0029",
-            "name": "onPostDeserialize",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-LayerEventSubscriber.html#method_onPostDeserialize"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\MapEventSubscriber",
-            "name": "MapEventSubscriber",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-MapEventSubscriber.html"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\MapEventSubscriber\u003A\u003AgetSubscribedEvents\u0028\u0029",
-            "name": "getSubscribedEvents",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-MapEventSubscriber.html#method_getSubscribedEvents"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\MapEventSubscriber\u003A\u003AonPreDeserialize\u0028\u0029",
-            "name": "onPreDeserialize",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-MapEventSubscriber.html#method_onPreDeserialize"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\MapEventSubscriber\u003A\u003AsearchLayer\u0028\u0029",
-            "name": "searchLayer",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-MapEventSubscriber.html#method_searchLayer"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\MapEventSubscriber\u003A\u003AonPostDeserialize\u0028\u0029",
-            "name": "onPostDeserialize",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-MapEventSubscriber.html#method_onPostDeserialize"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\MapEventSubscriber\u003A\u003AinitializeMapWithinGroup\u0028\u0029",
-            "name": "initializeMapWithinGroup",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-MapEventSubscriber.html#method_initializeMapWithinGroup"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\MapEventSubscriber\u003A\u003A\u0024layerOrder",
-            "name": "layerOrder",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-MapEventSubscriber.html#property_layerOrder"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\PropertyEventSubscriber",
-            "name": "PropertyEventSubscriber",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-PropertyEventSubscriber.html"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\PropertyEventSubscriber\u003A\u003AgetSubscribedEvents\u0028\u0029",
-            "name": "getSubscribedEvents",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-PropertyEventSubscriber.html#method_getSubscribedEvents"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\PropertyEventSubscriber\u003A\u003AonPreDeserialize\u0028\u0029",
-            "name": "onPreDeserialize",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-PropertyEventSubscriber.html#method_onPreDeserialize"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\TileEventSubscriber",
-            "name": "TileEventSubscriber",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-TileEventSubscriber.html"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\TileEventSubscriber\u003A\u003AgetSubscribedEvents\u0028\u0029",
-            "name": "getSubscribedEvents",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-TileEventSubscriber.html#method_getSubscribedEvents"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\TileEventSubscriber\u003A\u003AonPreDeserialize\u0028\u0029",
-            "name": "onPreDeserialize",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-TileEventSubscriber.html#method_onPreDeserialize"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\TileSetEventSubscriber",
-            "name": "TileSetEventSubscriber",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-TileSetEventSubscriber.html"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\TileSetEventSubscriber\u003A\u003AgetSubscribedEvents\u0028\u0029",
-            "name": "getSubscribedEvents",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-TileSetEventSubscriber.html#method_getSubscribedEvents"
-        },                {
-            "fqsen": "\\Tmx\\EventSubscriber\\TileSetEventSubscriber\u003A\u003AonPostDeserialize\u0028\u0029",
-            "name": "onPostDeserialize",
-            "summary": "",
-            "url": "classes/Tmx-EventSubscriber-TileSetEventSubscriber.html#method_onPostDeserialize"
         },                {
             "fqsen": "\\Tmx\\Frame",
             "name": "Frame",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020a\u0020frame.",
             "url": "classes/Tmx-Frame.html"
         },                {
             "fqsen": "\\Tmx\\Frame\u003A\u003AgetTileId\u0028\u0029",
@@ -413,17 +298,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Frame\u003A\u003A\u0024tileId",
             "name": "tileId",
-            "summary": "",
+            "summary": "The\u0020local\u0020ID\u0020of\u0020a\u0020tile\u0020within\u0020the\u0020parent\u0020\u007B\u0040see\u0020TileSet\u007D.",
             "url": "classes/Tmx-Frame.html#property_tileId"
         },                {
             "fqsen": "\\Tmx\\Frame\u003A\u003A\u0024duration",
             "name": "duration",
-            "summary": "",
+            "summary": "How\u0020long\u0020\u0028in\u0020milliseconds\u0029\u0020this\u0020frame\u0020should\u0020be\u0020displayed\u0020before\u0020advancing\u0020to\u0020the\u0020next\u0020frame.",
             "url": "classes/Tmx-Frame.html#property_duration"
         },                {
             "fqsen": "\\Tmx\\Group",
             "name": "Group",
-            "summary": "",
+            "summary": "A\u0020group\u0020layer,\u0020used\u0020to\u0020organize\u0020the\u0020layers\u0020of\u0020the\u0020map\u0020in\u0020a\u0020hierarchy.",
             "url": "classes/Tmx-Group.html"
         },                {
             "fqsen": "\\Tmx\\Group\u003A\u003AgetLayers\u0028\u0029",
@@ -508,7 +393,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\GroupContainer",
             "name": "GroupContainer",
-            "summary": "",
+            "summary": "A\u0020group\u0020container\u0020provides\u0020different\u0020data\u0020holder\u0020objects.",
             "url": "classes/Tmx-GroupContainer.html"
         },                {
             "fqsen": "\\Tmx\\GroupContainer\u003A\u003AgetGroups\u0028\u0029",
@@ -531,29 +416,9 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tmx-GroupContainer.html#method_getImageLayers"
         },                {
-            "fqsen": "\\Tmx\\Handler\\BooleanAsIntHandler",
-            "name": "BooleanAsIntHandler",
-            "summary": "",
-            "url": "classes/Tmx-Handler-BooleanAsIntHandler.html"
-        },                {
-            "fqsen": "\\Tmx\\Handler\\BooleanAsIntHandler\u003A\u003AgetSubscribingMethods\u0028\u0029",
-            "name": "getSubscribingMethods",
-            "summary": "",
-            "url": "classes/Tmx-Handler-BooleanAsIntHandler.html#method_getSubscribingMethods"
-        },                {
-            "fqsen": "\\Tmx\\Handler\\BooleanAsIntHandler\u003A\u003AserializeBooleanToInt\u0028\u0029",
-            "name": "serializeBooleanToInt",
-            "summary": "",
-            "url": "classes/Tmx-Handler-BooleanAsIntHandler.html#method_serializeBooleanToInt"
-        },                {
-            "fqsen": "\\Tmx\\Handler\\BooleanAsIntHandler\u003A\u003AdeserializeIntToBoolean\u0028\u0029",
-            "name": "deserializeIntToBoolean",
-            "summary": "",
-            "url": "classes/Tmx-Handler-BooleanAsIntHandler.html#method_deserializeIntToBoolean"
-        },                {
             "fqsen": "\\Tmx\\Image",
             "name": "Image",
-            "summary": "",
+            "summary": "Represents\u0020an\u0020image.",
             "url": "classes/Tmx-Image.html"
         },                {
             "fqsen": "\\Tmx\\Image\u003A\u003AgetFormat\u0028\u0029",
@@ -598,27 +463,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Image\u003A\u003A\u0024format",
             "name": "format",
-            "summary": "",
+            "summary": "Used\u0020for\u0020embedded\u0020images,\u0020in\u0020combination\u0020with\u0020a\u0020data\u0020child\u0020element.",
             "url": "classes/Tmx-Image.html#property_format"
         },                {
             "fqsen": "\\Tmx\\Image\u003A\u003A\u0024source",
             "name": "source",
-            "summary": "",
+            "summary": "The\u0020reference\u0020to\u0020the\u0020tileset\u0020image\u0020file\u0020\u0028Tiled\u0020supports\u0020most\u0020common\u0020image\u0020formats\u0029.",
             "url": "classes/Tmx-Image.html#property_source"
         },                {
             "fqsen": "\\Tmx\\Image\u003A\u003A\u0024width",
             "name": "width",
-            "summary": "",
+            "summary": "The\u0020image\u0020width\u0020in\u0020pixels\u0020\u0028optional\u0029.",
             "url": "classes/Tmx-Image.html#property_width"
         },                {
             "fqsen": "\\Tmx\\Image\u003A\u003A\u0024height",
             "name": "height",
-            "summary": "",
+            "summary": "The\u0020image\u0020height\u0020in\u0020pixels\u0020\u0028optional\u0029.",
             "url": "classes/Tmx-Image.html#property_height"
         },                {
             "fqsen": "\\Tmx\\ImageLayer",
             "name": "ImageLayer",
-            "summary": "",
+            "summary": "Represents\u0020an\u0020image\u0020layer.",
             "url": "classes/Tmx-ImageLayer.html"
         },                {
             "fqsen": "\\Tmx\\ImageLayer\u003A\u003AgetOrder\u0028\u0029",
@@ -643,17 +508,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\ImageLayer\u003A\u003A\u0024order",
             "name": "order",
-            "summary": "",
+            "summary": "Which\u0020order\u0020in\u0020the\u0020map\u0020should\u0020this\u0020tileLayer\u0020be\u0020rendered.",
             "url": "classes/Tmx-ImageLayer.html#property_order"
         },                {
             "fqsen": "\\Tmx\\ImageLayer\u003A\u003A\u0024image",
             "name": "image",
-            "summary": "",
+            "summary": "An\u0020image\u0020object\u0020to\u0020draw.",
             "url": "classes/Tmx-ImageLayer.html#property_image"
         },                {
             "fqsen": "\\Tmx\\Layer",
             "name": "Layer",
-            "summary": "",
+            "summary": "Represents\u0020a\u0020layer.",
             "url": "classes/Tmx-Layer.html"
         },                {
             "fqsen": "\\Tmx\\Layer\u003A\u003AgetOrder\u0028\u0029",
@@ -718,37 +583,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Layer\u003A\u003A\u0024order",
             "name": "order",
-            "summary": "",
+            "summary": "Which\u0020order\u0020in\u0020the\u0020map\u0020should\u0020this\u0020tileLayer\u0020be\u0020rendered.",
             "url": "classes/Tmx-Layer.html#property_order"
         },                {
             "fqsen": "\\Tmx\\Layer\u003A\u003A\u0024x",
             "name": "x",
-            "summary": "",
+            "summary": "The\u0020x\u0020coordinate\u0020of\u0020the\u0020layer\u0020in\u0020tiles.",
             "url": "classes/Tmx-Layer.html#property_x"
         },                {
             "fqsen": "\\Tmx\\Layer\u003A\u003A\u0024y",
             "name": "y",
-            "summary": "",
+            "summary": "The\u0020y\u0020coordinate\u0020of\u0020the\u0020layer\u0020in\u0020tiles.",
             "url": "classes/Tmx-Layer.html#property_y"
         },                {
             "fqsen": "\\Tmx\\Layer\u003A\u003A\u0024width",
             "name": "width",
-            "summary": "",
+            "summary": "The\u0020width\u0020of\u0020the\u0020layer\u0020in\u0020tiles.\u0020Always\u0020the\u0020same\u0020as\u0020the\u0020map\u0020width\u0020for\u0020fixed\u002Dsize\u0020maps.",
             "url": "classes/Tmx-Layer.html#property_width"
         },                {
             "fqsen": "\\Tmx\\Layer\u003A\u003A\u0024height",
             "name": "height",
-            "summary": "",
+            "summary": "The\u0020height\u0020of\u0020the\u0020layer\u0020in\u0020tiles.\u0020Always\u0020the\u0020same\u0020as\u0020the\u0020map\u0020height\u0020for\u0020fixed\u002Dsize\u0020maps.",
             "url": "classes/Tmx-Layer.html#property_height"
         },                {
             "fqsen": "\\Tmx\\Layer\u003A\u003A\u0024layerData",
             "name": "layerData",
-            "summary": "",
+            "summary": "Data\u0020which\u0020are\u0020under\u0020this\u0020layer.",
             "url": "classes/Tmx-Layer.html#property_layerData"
         },                {
             "fqsen": "\\Tmx\\LayerData",
             "name": "LayerData",
-            "summary": "",
+            "summary": "Represents\u0020the\u0020data\u0020of\u0020a\u0020layer.",
             "url": "classes/Tmx-LayerData.html"
         },                {
             "fqsen": "\\Tmx\\LayerData\u003A\u003AgetEncoding\u0028\u0029",
@@ -808,27 +673,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\LayerData\u003A\u003A\u0024encoding",
             "name": "encoding",
-            "summary": "",
+            "summary": "The\u0020encoding\u0020used\u0020to\u0020encode\u0020the\u0020tile\u0020layer\u0020data.",
             "url": "classes/Tmx-LayerData.html#property_encoding"
         },                {
             "fqsen": "\\Tmx\\LayerData\u003A\u003A\u0024compression",
             "name": "compression",
-            "summary": "",
+            "summary": "The\u0020compression\u0020used\u0020to\u0020compress\u0020the\u0020tile\u0020layer\u0020data.",
             "url": "classes/Tmx-LayerData.html#property_compression"
         },                {
             "fqsen": "\\Tmx\\LayerData\u003A\u003A\u0024data",
             "name": "data",
-            "summary": "",
+            "summary": "The\u0020actual\u0020data\u0020of\u0020this\u0020data\u0020layer.",
             "url": "classes/Tmx-LayerData.html#property_data"
         },                {
             "fqsen": "\\Tmx\\LayerData\u003A\u003A\u0024chunks",
             "name": "chunks",
-            "summary": "",
+            "summary": "If\u0020map\u0020is\u0020infinite,\u0020this\u0020holds\u0020all\u0020the\u0020chunks\u0020of\u0020the\u0020layer.",
             "url": "classes/Tmx-LayerData.html#property_chunks"
         },                {
             "fqsen": "\\Tmx\\LayerData\u003A\u003A\u0024layer",
             "name": "layer",
-            "summary": "",
+            "summary": "To\u0020which\u0020layer\u0020does\u0020this\u0020data\u0020layer\u0020belong.",
             "url": "classes/Tmx-LayerData.html#property_layer"
         },                {
             "fqsen": "\\Tmx\\Map",
@@ -898,172 +763,172 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetCompressionLevel\u0028\u0029",
             "name": "getCompressionLevel",
-            "summary": "",
+            "summary": "get\u0020the\u0020compression\u0020level.",
             "url": "classes/Tmx-Map.html#method_getCompressionLevel"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetCompressionLevel\u0028\u0029",
             "name": "setCompressionLevel",
-            "summary": "",
+            "summary": "set\u0020the\u0020compression\u0020level.",
             "url": "classes/Tmx-Map.html#method_setCompressionLevel"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetTileWidth\u0028\u0029",
             "name": "getTileWidth",
-            "summary": "",
+            "summary": "get\u0020the\u0020tiles\u0020width\u0020in\u0020pixel.",
             "url": "classes/Tmx-Map.html#method_getTileWidth"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetTileWidth\u0028\u0029",
             "name": "setTileWidth",
-            "summary": "",
+            "summary": "set\u0020the\u0020tile\u0020width\u0020in\u0020pixel.",
             "url": "classes/Tmx-Map.html#method_setTileWidth"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetTileHeight\u0028\u0029",
             "name": "getTileHeight",
-            "summary": "",
+            "summary": "get\u0020the\u0020tile\u0020height\u0020in\u0020pixel.",
             "url": "classes/Tmx-Map.html#method_getTileHeight"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetTileHeight\u0028\u0029",
             "name": "setTileHeight",
-            "summary": "",
+            "summary": "set\u0020the\u0020tile\u0020height\u0020in\u0020pixel.",
             "url": "classes/Tmx-Map.html#method_setTileHeight"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetBackgroundColor\u0028\u0029",
             "name": "getBackgroundColor",
-            "summary": "",
+            "summary": "get\u0020the\u0020background\u0020color\u0020in\u0020the\u0020format\u0020\u0023000000.",
             "url": "classes/Tmx-Map.html#method_getBackgroundColor"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetBackgroundColor\u0028\u0029",
             "name": "setBackgroundColor",
-            "summary": "",
+            "summary": "set\u0020the\u0020background\u0020color\u0020in\u0020the\u0020format\u0020\u0023000000.",
             "url": "classes/Tmx-Map.html#method_setBackgroundColor"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetNextLayerId\u0028\u0029",
             "name": "getNextLayerId",
-            "summary": "",
+            "summary": "get\u0020the\u0020next\u0020layer\u0020id.",
             "url": "classes/Tmx-Map.html#method_getNextLayerId"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetNextLayerId\u0028\u0029",
             "name": "setNextLayerId",
-            "summary": "",
+            "summary": "set\u0020the\u0020next\u0020layer\u0020id\u0020as\u0020string.",
             "url": "classes/Tmx-Map.html#method_setNextLayerId"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetNextObjectId\u0028\u0029",
             "name": "getNextObjectId",
-            "summary": "",
+            "summary": "Get\u0020the\u0020next\u0020objectId.",
             "url": "classes/Tmx-Map.html#method_getNextObjectId"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetNextObjectId\u0028\u0029",
             "name": "setNextObjectId",
-            "summary": "",
+            "summary": "set\u0020the\u0020next\u0020object\u0020id.",
             "url": "classes/Tmx-Map.html#method_setNextObjectId"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetTileSets\u0028\u0029",
             "name": "getTileSets",
-            "summary": "",
+            "summary": "get\u0020all\u0020tileSets\u0020as\u0020array.",
             "url": "classes/Tmx-Map.html#method_getTileSets"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetTileSets\u0028\u0029",
             "name": "setTileSets",
-            "summary": "",
+            "summary": "Set\u0020the\u0020tileSet.",
             "url": "classes/Tmx-Map.html#method_setTileSets"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AaddTileSet\u0028\u0029",
             "name": "addTileSet",
-            "summary": "",
+            "summary": "Add\u0020a\u0020tileSet\u0020to\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_addTileSet"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AremoveTileSet\u0028\u0029",
             "name": "removeTileSet",
-            "summary": "",
+            "summary": "Remove\u0020a\u0020tileSet\u0020from\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_removeTileSet"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetLayers\u0028\u0029",
             "name": "getLayers",
-            "summary": "",
+            "summary": "get\u0020all\u0020map\u0020layers\u0020of\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_getLayers"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AaddLayer\u0028\u0029",
             "name": "addLayer",
-            "summary": "",
+            "summary": "Add\u0020a\u0020layer\u0020to\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_addLayer"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AremoveLayer\u0028\u0029",
             "name": "removeLayer",
-            "summary": "",
+            "summary": "Remove\u0020a\u0020layer\u0020from\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_removeLayer"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetGroups\u0028\u0029",
             "name": "getGroups",
-            "summary": "",
+            "summary": "get\u0020all\u0020groups.",
             "url": "classes/Tmx-Map.html#method_getGroups"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AaddGroup\u0028\u0029",
             "name": "addGroup",
-            "summary": "",
+            "summary": "Add\u0020a\u0020group\u0020to\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_addGroup"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AremoveGroup\u0028\u0029",
             "name": "removeGroup",
-            "summary": "",
+            "summary": "Remove\u0020a\u0020group\u0020from\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_removeGroup"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AisInfiniteMap\u0028\u0029",
             "name": "isInfiniteMap",
-            "summary": "",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020map\u0020is\u0020infinite.",
             "url": "classes/Tmx-Map.html#method_isInfiniteMap"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetInfiniteMap\u0028\u0029",
             "name": "setInfiniteMap",
-            "summary": "",
+            "summary": "Set\u0020if\u0020this\u0020map\u0020is\u0020infinite.",
             "url": "classes/Tmx-Map.html#method_setInfiniteMap"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetWidth\u0028\u0029",
             "name": "getWidth",
-            "summary": "",
+            "summary": "get\u0020the\u0020width\u0020\u0028in\u0020tiles\u0029\u0020of\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_getWidth"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetWidth\u0028\u0029",
             "name": "setWidth",
-            "summary": "",
+            "summary": "set\u0020the\u0020width\u0020in\u0020amount\u0020of\u0020tiles.",
             "url": "classes/Tmx-Map.html#method_setWidth"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetHeight\u0028\u0029",
             "name": "getHeight",
-            "summary": "",
+            "summary": "get\u0020the\u0020height\u0020in\u0020amount\u0020of\u0020tiles.",
             "url": "classes/Tmx-Map.html#method_getHeight"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AsetHeight\u0028\u0029",
             "name": "setHeight",
-            "summary": "",
+            "summary": "set\u0020the\u0020height\u0020in\u0020amount\u0020of\u0020tiles.",
             "url": "classes/Tmx-Map.html#method_setHeight"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetObjectLayers\u0028\u0029",
             "name": "getObjectLayers",
-            "summary": "",
+            "summary": "Get\u0020all\u0020object\u0020layers\u0020as\u0020an\u0020array.",
             "url": "classes/Tmx-Map.html#method_getObjectLayers"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AaddObjectLayer\u0028\u0029",
             "name": "addObjectLayer",
-            "summary": "",
+            "summary": "Add\u0020an\u0020object\u0020layer\u0020to\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_addObjectLayer"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AremoveObjectLayer\u0028\u0029",
             "name": "removeObjectLayer",
-            "summary": "",
+            "summary": "Remove\u0020an\u0020object\u0020layer\u0020from\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_removeObjectLayer"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AgetImageLayers\u0028\u0029",
             "name": "getImageLayers",
-            "summary": "",
+            "summary": "get\u0020the\u0020image\u0020layers.",
             "url": "classes/Tmx-Map.html#method_getImageLayers"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AaddImageLayer\u0028\u0029",
             "name": "addImageLayer",
-            "summary": "",
+            "summary": "Add\u0020an\u0020image\u0020layer\u0020to\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_addImageLayer"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003AremoveImageLayer\u0028\u0029",
             "name": "removeImageLayer",
-            "summary": "",
+            "summary": "Remove\u0020an\u0020image\u0020layer\u0020from\u0020this\u0020map.",
             "url": "classes/Tmx-Map.html#method_removeImageLayer"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003ARENDER_ORDER_RIGHT_DOWN",
@@ -1128,7 +993,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003A\u0024compressionLevel",
             "name": "compressionLevel",
-            "summary": "How\u0020the\u0020compression\u0020is\u0020used.",
+            "summary": "The\u0020compression\u0020level\u0020to\u0020use\u0020for\u0020tile\u0020layer\u0020data\u0020\u0028defaults\u0020to\u0020\u002D1,\u0020which\u0020means\u0020to\u0020use\u0020the\u0020algorithm\u0020default.",
             "url": "classes/Tmx-Map.html#property_compressionLevel"
         },                {
             "fqsen": "\\Tmx\\Map\u003A\u003A\u0024width",
@@ -1198,17 +1063,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Object\\Ellipse",
             "name": "Ellipse",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020an\u0020ellipse\u0020inside\u0020a\u0020object\u0020layer.",
             "url": "classes/Tmx-Object-Ellipse.html"
         },                {
             "fqsen": "\\Tmx\\Object\\Point",
             "name": "Point",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020a\u0020point\u0020inside\u0020a\u0020object\u0020layer.",
             "url": "classes/Tmx-Object-Point.html"
         },                {
             "fqsen": "\\Tmx\\Object\\Polygon",
             "name": "Polygon",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020a\u0020polygon\u0020inside\u0020a\u0020object\u0020layer.",
             "url": "classes/Tmx-Object-Polygon.html"
         },                {
             "fqsen": "\\Tmx\\Object\\Polygon\u003A\u003AgetPoints\u0028\u0029",
@@ -1223,12 +1088,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Object\\Polygon\u003A\u003A\u0024points",
             "name": "points",
-            "summary": "",
+            "summary": "A\u0020list\u0020of\u0020x,y\u0020coordinates\u0020in\u0020pixels.",
             "url": "classes/Tmx-Object-Polygon.html#property_points"
         },                {
             "fqsen": "\\Tmx\\Object\\Polyline",
             "name": "Polyline",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020a\u0020polyline\u0020inside\u0020a\u0020object\u0020layer.",
             "url": "classes/Tmx-Object-Polyline.html"
         },                {
             "fqsen": "\\Tmx\\Object\\Polyline\u003A\u003AgetPoints\u0028\u0029",
@@ -1243,17 +1108,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Object\\Polyline\u003A\u003A\u0024points",
             "name": "points",
-            "summary": "",
+            "summary": "A\u0020list\u0020of\u0020x,y\u0020coordinates\u0020in\u0020pixels.",
             "url": "classes/Tmx-Object-Polyline.html#property_points"
         },                {
             "fqsen": "\\Tmx\\Object\\Rectangle",
             "name": "Rectangle",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020a\u0020rectangle\u0020inside\u0020a\u0020object\u0020layer.",
             "url": "classes/Tmx-Object-Rectangle.html"
         },                {
             "fqsen": "\\Tmx\\Object\\Text",
             "name": "Text",
-            "summary": "",
+            "summary": "Representation\u0020of\u0020a\u0020text\u0020inside\u0020a\u0020object\u0020layer.",
             "url": "classes/Tmx-Object-Text.html"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003AgetFontFamily\u0028\u0029",
@@ -1378,67 +1243,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024fontFamily",
             "name": "fontFamily",
-            "summary": "",
+            "summary": "The\u0020font\u0020family\u0020used\u0020\u0028defaults\u0020to\u0020\u201Csans\u002Dserif\u201D\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_fontFamily"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024pixelSize",
             "name": "pixelSize",
-            "summary": "",
+            "summary": "The\u0020size\u0020of\u0020the\u0020font\u0020in\u0020pixels\u0020\u0028not\u0020using\u0020points,\u0020because\u0020other\u0020sizes\u0020in\u0020the\u0020TMX\u0020format\u0020are\u0020also\u0020using\u0020pixels\u0029\u0020\u0028defaults\u0020to\u002016\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_pixelSize"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024wrap",
             "name": "wrap",
-            "summary": "",
+            "summary": "Whether\u0020word\u0020wrapping\u0020is\u0020enabled\u0020\u00281\u0029\u0020or\u0020disabled\u0020\u00280\u0029.\u0020\u0028defaults\u0020to\u00200\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_wrap"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024color",
             "name": "color",
-            "summary": "",
+            "summary": "Color\u0020of\u0020the\u0020text\u0020in\u0020\u0023AARRGGBB\u0020or\u0020\u0023RRGGBB\u0020format\u0020\u0028defaults\u0020to\u0020\u0023000000\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_color"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024bold",
             "name": "bold",
-            "summary": "",
+            "summary": "Whether\u0020the\u0020font\u0020is\u0020bold\u0020\u00281\u0029\u0020or\u0020not\u0020\u00280\u0029.\u0020\u0028defaults\u0020to\u00200\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_bold"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024italic",
             "name": "italic",
-            "summary": "",
+            "summary": "Whether\u0020the\u0020font\u0020is\u0020italic\u0020\u00281\u0029\u0020or\u0020not\u0020\u00280\u0029.\u0020\u0028defaults\u0020to\u00200\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_italic"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024underline",
             "name": "underline",
-            "summary": "",
+            "summary": "Whether\u0020a\u0020line\u0020should\u0020be\u0020drawn\u0020below\u0020the\u0020text\u0020\u00281\u0029\u0020or\u0020not\u0020\u00280\u0029.\u0020\u0028defaults\u0020to\u00200\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_underline"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024strikeOut",
             "name": "strikeOut",
-            "summary": "",
+            "summary": "Whether\u0020a\u0020line\u0020should\u0020be\u0020drawn\u0020through\u0020the\u0020text\u0020\u00281\u0029\u0020or\u0020not\u0020\u00280\u0029.\u0020\u0028defaults\u0020to\u00200\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_strikeOut"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024kerning",
             "name": "kerning",
-            "summary": "",
+            "summary": "Whether\u0020kerning\u0020should\u0020be\u0020used\u0020while\u0020rendering\u0020the\u0020text\u0020\u00281\u0029\u0020or\u0020not\u0020\u00280\u0029.\u0020\u0028defaults\u0020to\u00201\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_kerning"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024hAlign",
             "name": "hAlign",
-            "summary": "",
+            "summary": "Horizontal\u0020alignment\u0020of\u0020the\u0020text\u0020within\u0020the\u0020object\u0020\u0028left,\u0020center,\u0020right\u0020or\u0020justify,\u0020defaults\u0020to\u0020left\u0029\u0020\u0028since\u0020Tiled\u00201.2.1\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_hAlign"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024vAlign",
             "name": "vAlign",
-            "summary": "",
+            "summary": "Vertical\u0020alignment\u0020of\u0020the\u0020text\u0020within\u0020the\u0020object\u0020\u0028top\u0020,\u0020center\u0020or\u0020bottom,\u0020defaults\u0020to\u0020top\u0029.",
             "url": "classes/Tmx-Object-Text.html#property_vAlign"
         },                {
             "fqsen": "\\Tmx\\Object\\Text\u003A\u003A\u0024text",
             "name": "text",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020actual\u0020text\u0020as\u0020character\u0020data.",
             "url": "classes/Tmx-Object-Text.html#property_text"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer",
             "name": "ObjectLayer",
-            "summary": "",
+            "summary": "Represents\u0020an\u0020object\u0020group.",
             "url": "classes/Tmx-ObjectLayer.html"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003AgetOrder\u0028\u0029",
@@ -1528,52 +1393,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003A\u0024order",
             "name": "order",
-            "summary": "",
+            "summary": "Which\u0020order\u0020in\u0020the\u0020map\u0020should\u0020this\u0020tileLayer\u0020be\u0020rendered.",
             "url": "classes/Tmx-ObjectLayer.html#property_order"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003A\u0024color",
             "name": "color",
-            "summary": "",
+            "summary": "The\u0020color\u0020used\u0020to\u0020display\u0020the\u0020objects\u0020in\u0020this\u0020group.",
             "url": "classes/Tmx-ObjectLayer.html#property_color"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003A\u0024x",
             "name": "x",
-            "summary": "",
+            "summary": "The\u0020x\u0020coordinate\u0020of\u0020the\u0020layer\u0020in\u0020tiles.",
             "url": "classes/Tmx-ObjectLayer.html#property_x"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003A\u0024y",
             "name": "y",
-            "summary": "",
+            "summary": "The\u0020y\u0020coordinate\u0020of\u0020the\u0020layer\u0020in\u0020tiles.",
             "url": "classes/Tmx-ObjectLayer.html#property_y"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003A\u0024width",
             "name": "width",
-            "summary": "",
+            "summary": "The\u0020width\u0020of\u0020the\u0020layer\u0020in\u0020tiles.\u0020Always\u0020the\u0020same\u0020as\u0020the\u0020map\u0020width\u0020for\u0020fixed\u002Dsize\u0020maps.",
             "url": "classes/Tmx-ObjectLayer.html#property_width"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003A\u0024height",
             "name": "height",
-            "summary": "",
+            "summary": "The\u0020height\u0020of\u0020the\u0020layer\u0020in\u0020tiles.\u0020Always\u0020the\u0020same\u0020as\u0020the\u0020map\u0020height\u0020for\u0020fixed\u002Dsize\u0020maps.",
             "url": "classes/Tmx-ObjectLayer.html#property_height"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003A\u0024drawOrder",
             "name": "drawOrder",
-            "summary": "",
+            "summary": "With\u0020which\u0020algorithm\u0020should\u0020the\u0020objects\u0020be\u0020drawn\u003F",
             "url": "classes/Tmx-ObjectLayer.html#property_drawOrder"
         },                {
             "fqsen": "\\Tmx\\ObjectLayer\u003A\u003A\u0024drawObjects",
             "name": "drawObjects",
-            "summary": "",
+            "summary": "All\u0020the\u0020objects\u0020in\u0020this\u0020layer.",
             "url": "classes/Tmx-ObjectLayer.html#property_drawObjects"
         },                {
             "fqsen": "\\Tmx\\Printable",
             "name": "Printable",
-            "summary": "",
+            "summary": "Marks\u0020something\u0020as\u0020a\u0020printable\u0020layer.",
             "url": "classes/Tmx-Printable.html"
         },                {
             "fqsen": "\\Tmx\\Property\\AbstractProperty",
             "name": "AbstractProperty",
-            "summary": "",
+            "summary": "Base\u0020class\u0020for\u0020all\u0020properties.",
             "url": "classes/Tmx-Property-AbstractProperty.html"
         },                {
             "fqsen": "\\Tmx\\Property\\AbstractProperty\u003A\u003AgetName\u0028\u0029",
@@ -1588,12 +1453,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Property\\AbstractProperty\u003A\u003A\u0024name",
             "name": "name",
-            "summary": "",
+            "summary": "The\u0020name\u0020of\u0020the\u0020property.",
             "url": "classes/Tmx-Property-AbstractProperty.html#property_name"
         },                {
             "fqsen": "\\Tmx\\Property\\BoolProperty",
             "name": "BoolProperty",
-            "summary": "",
+            "summary": "Bool\u0020type\u0020property.",
             "url": "classes/Tmx-Property-BoolProperty.html"
         },                {
             "fqsen": "\\Tmx\\Property\\BoolProperty\u003A\u003AisValue\u0028\u0029",
@@ -1608,12 +1473,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Property\\BoolProperty\u003A\u003A\u0024value",
             "name": "value",
-            "summary": "",
+            "summary": "The\u0020value\u0020of\u0020the\u0020property.",
             "url": "classes/Tmx-Property-BoolProperty.html#property_value"
         },                {
             "fqsen": "\\Tmx\\Property\\ColorProperty",
             "name": "ColorProperty",
-            "summary": "",
+            "summary": "Color\u0020type\u0020property.",
             "url": "classes/Tmx-Property-ColorProperty.html"
         },                {
             "fqsen": "\\Tmx\\Property\\ColorProperty\u003A\u003AgetValue\u0028\u0029",
@@ -1628,12 +1493,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Property\\ColorProperty\u003A\u003A\u0024value",
             "name": "value",
-            "summary": "",
+            "summary": "The\u0020value\u0020of\u0020the\u0020property.",
             "url": "classes/Tmx-Property-ColorProperty.html#property_value"
         },                {
             "fqsen": "\\Tmx\\Property\\FileProperty",
             "name": "FileProperty",
-            "summary": "",
+            "summary": "File\u0020type\u0020property.",
             "url": "classes/Tmx-Property-FileProperty.html"
         },                {
             "fqsen": "\\Tmx\\Property\\FileProperty\u003A\u003AgetValue\u0028\u0029",
@@ -1648,12 +1513,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Property\\FileProperty\u003A\u003A\u0024value",
             "name": "value",
-            "summary": "",
+            "summary": "The\u0020value\u0020of\u0020the\u0020property.",
             "url": "classes/Tmx-Property-FileProperty.html#property_value"
         },                {
             "fqsen": "\\Tmx\\Property\\FloatProperty",
             "name": "FloatProperty",
-            "summary": "",
+            "summary": "Float\u0020type\u0020property.",
             "url": "classes/Tmx-Property-FloatProperty.html"
         },                {
             "fqsen": "\\Tmx\\Property\\FloatProperty\u003A\u003AgetValue\u0028\u0029",
@@ -1668,12 +1533,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Property\\FloatProperty\u003A\u003A\u0024value",
             "name": "value",
-            "summary": "",
+            "summary": "The\u0020value\u0020of\u0020the\u0020property.",
             "url": "classes/Tmx-Property-FloatProperty.html#property_value"
         },                {
             "fqsen": "\\Tmx\\Property\\IntProperty",
             "name": "IntProperty",
-            "summary": "",
+            "summary": "Int\u0020type\u0020property.",
             "url": "classes/Tmx-Property-IntProperty.html"
         },                {
             "fqsen": "\\Tmx\\Property\\IntProperty\u003A\u003AgetValue\u0028\u0029",
@@ -1688,12 +1553,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Property\\IntProperty\u003A\u003A\u0024value",
             "name": "value",
-            "summary": "",
+            "summary": "The\u0020value\u0020of\u0020the\u0020property.",
             "url": "classes/Tmx-Property-IntProperty.html#property_value"
         },                {
             "fqsen": "\\Tmx\\Property\\ObjectProperty",
             "name": "ObjectProperty",
-            "summary": "",
+            "summary": "Object\u0020type\u0020property.",
             "url": "classes/Tmx-Property-ObjectProperty.html"
         },                {
             "fqsen": "\\Tmx\\Property\\ObjectProperty\u003A\u003AgetValue\u0028\u0029",
@@ -1708,12 +1573,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Property\\ObjectProperty\u003A\u003A\u0024value",
             "name": "value",
-            "summary": "",
+            "summary": "The\u0020value\u0020of\u0020the\u0020property.",
             "url": "classes/Tmx-Property-ObjectProperty.html#property_value"
         },                {
             "fqsen": "\\Tmx\\Property\\StringProperty",
             "name": "StringProperty",
-            "summary": "",
+            "summary": "String\u0020type\u0020property.",
             "url": "classes/Tmx-Property-StringProperty.html"
         },                {
             "fqsen": "\\Tmx\\Property\\StringProperty\u003A\u003AgetValue\u0028\u0029",
@@ -1728,12 +1593,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Property\\StringProperty\u003A\u003A\u0024value",
             "name": "value",
-            "summary": "",
+            "summary": "The\u0020value\u0020of\u0020the\u0020property.",
             "url": "classes/Tmx-Property-StringProperty.html#property_value"
         },                {
             "fqsen": "\\Tmx\\PropertyBag",
             "name": "PropertyBag",
-            "summary": "",
+            "summary": "Represents\u0020properties.",
             "url": "classes/Tmx-PropertyBag.html"
         },                {
             "fqsen": "\\Tmx\\PropertyBag\u003A\u003AgetProperties\u0028\u0029",
@@ -1753,22 +1618,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\PropertyBag\u003A\u003A\u0024properties",
             "name": "properties",
-            "summary": "",
+            "summary": "Wraps\u0020any\u0020number\u0020of\u0020custom\u0020properties.",
             "url": "classes/Tmx-PropertyBag.html#property_properties"
         },                {
             "fqsen": "\\Tmx\\PropertyBagHolder",
             "name": "PropertyBagHolder",
-            "summary": "",
+            "summary": "Interface\u0020for\u0020all\u0020elements,\u0020which\u0020contains\u0020properties.",
             "url": "classes/Tmx-PropertyBagHolder.html"
         },                {
             "fqsen": "\\Tmx\\PropertyBagHolder\u003A\u003AgetPropertyBag\u0028\u0029",
             "name": "getPropertyBag",
-            "summary": "",
+            "summary": "get\u0020the\u0020property\u0020bag.",
             "url": "classes/Tmx-PropertyBagHolder.html#method_getPropertyBag"
         },                {
             "fqsen": "\\Tmx\\PropertyBagTrait",
             "name": "PropertyBagTrait",
-            "summary": "",
+            "summary": "Trait\u0020to\u0020implement\u0020all\u0020properties.",
             "url": "classes/Tmx-PropertyBagTrait.html"
         },                {
             "fqsen": "\\Tmx\\PropertyBagTrait\u003A\u003AgetPropertyBag\u0028\u0029",
@@ -1786,189 +1651,139 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tmx-PropertyBagTrait.html#property_propertyBag"
         },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext",
-            "name": "PrintContext",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003AisVisible\u0028\u0029",
-            "name": "isVisible",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#method_isVisible"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003AsetVisible\u0028\u0029",
-            "name": "setVisible",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#method_setVisible"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003AgetOpacity\u0028\u0029",
-            "name": "getOpacity",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#method_getOpacity"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003AsetOpacity\u0028\u0029",
-            "name": "setOpacity",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#method_setOpacity"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003AgetTintColor\u0028\u0029",
-            "name": "getTintColor",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#method_getTintColor"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003AsetTintColor\u0028\u0029",
-            "name": "setTintColor",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#method_setTintColor"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003A\u0024visible",
-            "name": "visible",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#property_visible"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003A\u0024opacity",
-            "name": "opacity",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#property_opacity"
-        },                {
-            "fqsen": "\\Tmx\\Service\\Context\\PrintContext\u003A\u003A\u0024tintColor",
-            "name": "tintColor",
-            "summary": "",
-            "url": "classes/Tmx-Service-Context-PrintContext.html#property_tintColor"
-        },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\Base64DataParser",
             "name": "Base64DataParser",
-            "summary": "",
+            "summary": "This\u0020class\u0020parses\u0020all\u0020base64\u0020encoded\u0020maps.",
             "url": "classes/Tmx-Service-LayerData-Base64DataParser.html"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\Base64DataParser\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
-            "summary": "",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020raw\u0020string.",
             "url": "classes/Tmx-Service-LayerData-Base64DataParser.html#method_getData"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\Base64DataParser\u003A\u003ApostCompress\u0028\u0029",
             "name": "postCompress",
-            "summary": "",
+            "summary": "After\u0020the\u0020compression\u0020algorithm\u0020decompresses\u0020the\u0020data,\u0020postCompile\u0020it.",
             "url": "classes/Tmx-Service-LayerData-Base64DataParser.html#method_postCompress"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\Base64DataParser\u003A\u003AisResponsible\u0028\u0029",
             "name": "isResponsible",
-            "summary": "",
+            "summary": "returns\u0020true\u0020if\u0020this\u0020parser\u0020is\u0020responsible\u0020for\u0020this\u0020layerData\u0020object.",
             "url": "classes/Tmx-Service-LayerData-Base64DataParser.html#method_isResponsible"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\CompressionInterface",
             "name": "CompressionInterface",
-            "summary": "",
+            "summary": "Interface\u0020for\u0020data\u0020compression\u0020readers.",
             "url": "classes/Tmx-Service-LayerData-CompressionInterface.html"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\CompressionInterface\u003A\u003AunpackData\u0028\u0029",
             "name": "unpackData",
-            "summary": "",
+            "summary": "Unpack\u0020the\u0020compressed\u0020data\u0020and\u0020return\u0020it\u0020as\u0020string.",
             "url": "classes/Tmx-Service-LayerData-CompressionInterface.html#method_unpackData"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\CompressionInterface\u003A\u003AisResponsible\u0028\u0029",
             "name": "isResponsible",
-            "summary": "",
+            "summary": "returns\u0020true\u0020if\u0020this\u0020compression\u0020reader\u0020is\u0020responsible\u0020for\u0020this\u0020layerData\u0020object.",
             "url": "classes/Tmx-Service-LayerData-CompressionInterface.html#method_isResponsible"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\CsvDataParser",
             "name": "CsvDataParser",
-            "summary": "",
+            "summary": "Parser\u0020for\u0020CSV\u0020encoded\u0020data.",
             "url": "classes/Tmx-Service-LayerData-CsvDataParser.html"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\CsvDataParser\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
-            "summary": "",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020raw\u0020string.",
             "url": "classes/Tmx-Service-LayerData-CsvDataParser.html#method_getData"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\CsvDataParser\u003A\u003ApostCompress\u0028\u0029",
             "name": "postCompress",
-            "summary": "",
+            "summary": "After\u0020the\u0020compression\u0020algorithm\u0020decompresses\u0020the\u0020data,\u0020postCompile\u0020it.",
             "url": "classes/Tmx-Service-LayerData-CsvDataParser.html#method_postCompress"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\CsvDataParser\u003A\u003AisResponsible\u0028\u0029",
             "name": "isResponsible",
-            "summary": "",
+            "summary": "returns\u0020true\u0020if\u0020this\u0020parser\u0020is\u0020responsible\u0020for\u0020this\u0020layerData\u0020object.",
             "url": "classes/Tmx-Service-LayerData-CsvDataParser.html#method_isResponsible"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\DataParserInterface",
             "name": "DataParserInterface",
-            "summary": "",
+            "summary": "Interface\u0020for\u0020data\u0020parsers.",
             "url": "classes/Tmx-Service-LayerData-DataParserInterface.html"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\DataParserInterface\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
-            "summary": "",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020raw\u0020string.",
             "url": "classes/Tmx-Service-LayerData-DataParserInterface.html#method_getData"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\DataParserInterface\u003A\u003ApostCompress\u0028\u0029",
             "name": "postCompress",
-            "summary": "",
+            "summary": "After\u0020the\u0020compression\u0020algorithm\u0020decompresses\u0020the\u0020data,\u0020postCompile\u0020it.",
             "url": "classes/Tmx-Service-LayerData-DataParserInterface.html#method_postCompress"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\DataParserInterface\u003A\u003AisResponsible\u0028\u0029",
             "name": "isResponsible",
-            "summary": "",
+            "summary": "returns\u0020true\u0020if\u0020this\u0020parser\u0020is\u0020responsible\u0020for\u0020this\u0020layerData\u0020object.",
             "url": "classes/Tmx-Service-LayerData-DataParserInterface.html#method_isResponsible"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\PlainCompression",
             "name": "PlainCompression",
-            "summary": "",
+            "summary": "Plain\u0020\u0028no\u0029\u0020compression\u0020reader.",
             "url": "classes/Tmx-Service-LayerData-PlainCompression.html"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\PlainCompression\u003A\u003AunpackData\u0028\u0029",
             "name": "unpackData",
-            "summary": "",
+            "summary": "Unpack\u0020the\u0020compressed\u0020data\u0020and\u0020return\u0020it\u0020as\u0020string.",
             "url": "classes/Tmx-Service-LayerData-PlainCompression.html#method_unpackData"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\PlainCompression\u003A\u003AisResponsible\u0028\u0029",
             "name": "isResponsible",
-            "summary": "",
+            "summary": "returns\u0020true\u0020if\u0020this\u0020compression\u0020reader\u0020is\u0020responsible\u0020for\u0020this\u0020layerData\u0020object.",
             "url": "classes/Tmx-Service-LayerData-PlainCompression.html#method_isResponsible"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\ZlibCompression",
             "name": "ZlibCompression",
-            "summary": "",
+            "summary": "ZLIB\u0020compression\u0020reader.",
             "url": "classes/Tmx-Service-LayerData-ZlibCompression.html"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\ZlibCompression\u003A\u003AunpackData\u0028\u0029",
             "name": "unpackData",
-            "summary": "",
+            "summary": "Unpack\u0020the\u0020compressed\u0020data\u0020and\u0020return\u0020it\u0020as\u0020string.",
             "url": "classes/Tmx-Service-LayerData-ZlibCompression.html#method_unpackData"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\ZlibCompression\u003A\u003AisResponsible\u0028\u0029",
             "name": "isResponsible",
-            "summary": "",
+            "summary": "returns\u0020true\u0020if\u0020this\u0020compression\u0020reader\u0020is\u0020responsible\u0020for\u0020this\u0020layerData\u0020object.",
             "url": "classes/Tmx-Service-LayerData-ZlibCompression.html#method_isResponsible"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\ZstdCompression",
             "name": "ZstdCompression",
-            "summary": "",
+            "summary": "Zstd\u0020compression\u0020reader.",
             "url": "classes/Tmx-Service-LayerData-ZstdCompression.html"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\ZstdCompression\u003A\u003AunpackData\u0028\u0029",
             "name": "unpackData",
-            "summary": "",
+            "summary": "Unpack\u0020the\u0020compressed\u0020data\u0020and\u0020return\u0020it\u0020as\u0020string.",
             "url": "classes/Tmx-Service-LayerData-ZstdCompression.html#method_unpackData"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerData\\ZstdCompression\u003A\u003AisResponsible\u0028\u0029",
             "name": "isResponsible",
-            "summary": "",
+            "summary": "returns\u0020true\u0020if\u0020this\u0020compression\u0020reader\u0020is\u0020responsible\u0020for\u0020this\u0020layerData\u0020object.",
             "url": "classes/Tmx-Service-LayerData-ZstdCompression.html#method_isResponsible"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerDataReader",
             "name": "LayerDataReader",
-            "summary": "",
+            "summary": "Service\u0020class\u0020for\u0020reading\u0020the\u0020encoded\u0020and\/or\u0020compressed\u0020data.",
             "url": "classes/Tmx-Service-LayerDataReader.html"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerDataReader\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "LayerDataReader\u0020constructor.",
             "url": "classes/Tmx-Service-LayerDataReader.html#method___construct"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerDataReader\u003A\u003AreadLayerData\u0028\u0029",
             "name": "readLayerData",
-            "summary": "",
+            "summary": "Method\u0020reads\u0020an\u0020encoded\u0020and\u0020\/\u0020or\u0020compressed\u0020layer\u0020data.",
             "url": "classes/Tmx-Service-LayerDataReader.html#method_readLayerData"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerDataReader\u003A\u003AgetResponsibleParser\u0028\u0029",
@@ -1983,57 +1798,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Service\\LayerDataReader\u003A\u003A\u0024parsers",
             "name": "parsers",
-            "summary": "",
+            "summary": "All\u0020DataParserInterface\u0020objects,\u0020which\u0020can\u0020be\u0020used\u0020by\u0020this\u0020reader.",
             "url": "classes/Tmx-Service-LayerDataReader.html#property_parsers"
         },                {
             "fqsen": "\\Tmx\\Service\\LayerDataReader\u003A\u003A\u0024compressions",
             "name": "compressions",
-            "summary": "",
+            "summary": "All\u0020the\u0020compression\u0020algorithms,\u0020which\u0020can\u0020be\u0020used\u0020by\u0020this\u0020reader.",
             "url": "classes/Tmx-Service-LayerDataReader.html#property_compressions"
         },                {
             "fqsen": "\\Tmx\\Service\\MapService",
             "name": "MapService",
-            "summary": "",
+            "summary": "Service\u0020class\u0020for\u0020maps.",
             "url": "classes/Tmx-Service-MapService.html"
         },                {
             "fqsen": "\\Tmx\\Service\\MapService\u003A\u003AfindLayers\u0028\u0029",
             "name": "findLayers",
-            "summary": "",
+            "summary": "Find\u0020all\u0020layers\u0020within\u0020the\u0020container\u0020as\u0020ordered\u0020array.",
             "url": "classes/Tmx-Service-MapService.html#method_findLayers"
         },                {
             "fqsen": "\\Tmx\\Service\\MapService\u003A\u003AgetCalculatedHeight\u0028\u0029",
             "name": "getCalculatedHeight",
-            "summary": "",
+            "summary": "calculate\u0020the\u0020total\u0020height\u0020of\u0020a\u0020map\u0020in\u0020tiles.",
             "url": "classes/Tmx-Service-MapService.html#method_getCalculatedHeight"
         },                {
             "fqsen": "\\Tmx\\Service\\MapService\u003A\u003AgetCalculatedWidth\u0028\u0029",
             "name": "getCalculatedWidth",
-            "summary": "",
+            "summary": "Calculate\u0020the\u0020width\u0020of\u0020a\u0020map\u0020in\u0020tiles.",
             "url": "classes/Tmx-Service-MapService.html#method_getCalculatedWidth"
         },                {
             "fqsen": "\\Tmx\\Service\\MapService\u003A\u003AgetInfiniteMapOffsetX\u0028\u0029",
             "name": "getInfiniteMapOffsetX",
-            "summary": "",
+            "summary": "get\u0020the\u0020offset\u0020x\u0020of\u0020an\u0020infinite\u0020map.",
             "url": "classes/Tmx-Service-MapService.html#method_getInfiniteMapOffsetX"
         },                {
             "fqsen": "\\Tmx\\Service\\MapService\u003A\u003AgetInfiniteMapOffsetY\u0028\u0029",
             "name": "getInfiniteMapOffsetY",
-            "summary": "",
+            "summary": "get\u0020the\u0020total\u0020offset\u0020y\u0020of\u0020an\u0020infinite\u0020map.",
             "url": "classes/Tmx-Service-MapService.html#method_getInfiniteMapOffsetY"
         },                {
             "fqsen": "\\Tmx\\Service\\MapService\u003A\u003AgetMapOffsetX\u0028\u0029",
             "name": "getMapOffsetX",
-            "summary": "",
+            "summary": "Get\u0020the\u0020largest\u0020offset\u0020x\u0020of\u0020an\u0020map\u0020from\u0020all\u0020layers.",
             "url": "classes/Tmx-Service-MapService.html#method_getMapOffsetX"
         },                {
             "fqsen": "\\Tmx\\Service\\MapService\u003A\u003AgetMapOffsetY\u0028\u0029",
             "name": "getMapOffsetY",
-            "summary": "",
+            "summary": "Get\u0020the\u0020largest\u0020offset\u0020y\u0020of\u0020an\u0020map\u0020from\u0020all\u0020layers.",
             "url": "classes/Tmx-Service-MapService.html#method_getMapOffsetY"
         },                {
             "fqsen": "\\Tmx\\Service\\Parser",
             "name": "Parser",
-            "summary": "",
+            "summary": "Service\u0020class\u0020for\u0020parsing\u0020tmx\u0020files.",
             "url": "classes/Tmx-Service-Parser.html"
         },                {
             "fqsen": "\\Tmx\\Service\\Parser\u003A\u003A__construct\u0028\u0029",
@@ -2043,12 +1858,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Service\\Parser\u003A\u003Aparse\u0028\u0029",
             "name": "parse",
-            "summary": "",
+            "summary": "Parses\u0020a\u0020file\u0020and\u0020returns\u0020the\u0020map\u0020object\u0020representation.",
             "url": "classes/Tmx-Service-Parser.html#method_parse"
         },                {
             "fqsen": "\\Tmx\\Service\\Parser\u003A\u003AparseTileSet\u0028\u0029",
             "name": "parseTileSet",
-            "summary": "",
+            "summary": "Parses\u0020a\u0020tileSet\u0020file\u0020\u0028tsx\u0029\u0020and\u0020returns\u0020the\u0020corresponding\u0020element.",
             "url": "classes/Tmx-Service-Parser.html#method_parseTileSet"
         },                {
             "fqsen": "\\Tmx\\Service\\Parser\u003A\u003A\u0024serializer",
@@ -2058,7 +1873,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Service\\Printer",
             "name": "Printer",
-            "summary": "",
+            "summary": "Service\u0020class\u0020printer\u0020prints\u0020a\u0020map\u0020to\u0020an\u0020image\u0020file.",
             "url": "classes/Tmx-Service-Printer.html"
         },                {
             "fqsen": "\\Tmx\\Service\\Printer\u003A\u003A__construct\u0028\u0029",
@@ -2068,12 +1883,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Service\\Printer\u003A\u003Aprint\u0028\u0029",
             "name": "print",
-            "summary": "",
+            "summary": "Process\u0020a\u0020map\u0020and\u0020save\u0020its\u0020output\u0020to\u0020an\u0020image\u0020file.",
             "url": "classes/Tmx-Service-Printer.html#method_print"
         },                {
             "fqsen": "\\Tmx\\Service\\Printer\u003A\u003Arender\u0028\u0029",
             "name": "render",
-            "summary": "",
+            "summary": "Processes\u0020a\u0020map\u0020object\u0020and\u0020returns\u0020the\u0020image\u0020as\u0020InterventionImage\u0020object.",
             "url": "classes/Tmx-Service-Printer.html#method_render"
         },                {
             "fqsen": "\\Tmx\\Service\\Printer\u003A\u003AextractLayersInOrder\u0028\u0029",
@@ -2103,7 +1918,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Service\\Writer",
             "name": "Writer",
-            "summary": "",
+            "summary": "Service\u0020class\u0020writer\u0020writes\u0020a\u0020map\u0020to\u0020a\u0020tmx\u0020file.",
             "url": "classes/Tmx-Service-Writer.html"
         },                {
             "fqsen": "\\Tmx\\Service\\Writer\u003A\u003A__construct\u0028\u0029",
@@ -2113,7 +1928,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Service\\Writer\u003A\u003Awrite\u0028\u0029",
             "name": "write",
-            "summary": "",
+            "summary": "Write\u0020a\u0020map\u0020object\u0020to\u0020the\u0020filename.",
             "url": "classes/Tmx-Service-Writer.html#method_write"
         },                {
             "fqsen": "\\Tmx\\Service\\Writer\u003A\u003A\u0024serializer",
@@ -2123,7 +1938,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Terrain",
             "name": "Terrain",
-            "summary": "",
+            "summary": "Represents\u0020terrains.",
             "url": "classes/Tmx-Terrain.html"
         },                {
             "fqsen": "\\Tmx\\Terrain\u003A\u003AgetName\u0028\u0029",
@@ -2148,17 +1963,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Terrain\u003A\u003A\u0024name",
             "name": "name",
-            "summary": "",
+            "summary": "The\u0020name\u0020of\u0020the\u0020terrain\u0020type.",
             "url": "classes/Tmx-Terrain.html#property_name"
         },                {
             "fqsen": "\\Tmx\\Terrain\u003A\u003A\u0024tile",
             "name": "tile",
-            "summary": "",
+            "summary": "The\u0020local\u0020tile\u002Did\u0020of\u0020the\u0020tile\u0020that\u0020represents\u0020the\u0020terrain\u0020visually.",
             "url": "classes/Tmx-Terrain.html#property_tile"
         },                {
             "fqsen": "\\Tmx\\TerrainCollection",
             "name": "TerrainCollection",
-            "summary": "",
+            "summary": "Represents\u0020terrain\u0020types.",
             "url": "classes/Tmx-TerrainCollection.html"
         },                {
             "fqsen": "\\Tmx\\TerrainCollection\u003A\u003AgetTerrains\u0028\u0029",
@@ -2183,7 +1998,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Tile",
             "name": "Tile",
-            "summary": "",
+            "summary": "Represents\u0020tiles\u0020in\u0020a\u0020tileSet.",
             "url": "classes/Tmx-Tile.html"
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003AgetId\u0028\u0029",
@@ -2268,37 +2083,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003A\u0024id",
             "name": "id",
-            "summary": "",
+            "summary": "The\u0020local\u0020tile\u0020ID\u0020within\u0020its\u0020tile\u0020set.",
             "url": "classes/Tmx-Tile.html#property_id"
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003A\u0024type",
             "name": "type",
-            "summary": "",
+            "summary": "The\u0020type\u0020of\u0020the\u0020tile.\u0020Refers\u0020to\u0020an\u0020object\u0020type\u0020and\u0020is\u0020used\u0020by\u0020tile\u0020objects.",
             "url": "classes/Tmx-Tile.html#property_type"
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003A\u0024topLeftTerrainId",
             "name": "topLeftTerrainId",
-            "summary": "",
+            "summary": "Defines\u0020the\u0020terrain\u0020type\u0020of\u0020top\u0020left\u0020corner\u0020of\u0020the\u0020tile.",
             "url": "classes/Tmx-Tile.html#property_topLeftTerrainId"
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003A\u0024topRightTerrainId",
             "name": "topRightTerrainId",
-            "summary": "",
+            "summary": "Defines\u0020the\u0020terrain\u0020type\u0020of\u0020top\u0020right\u0020corner\u0020of\u0020the\u0020tile.",
             "url": "classes/Tmx-Tile.html#property_topRightTerrainId"
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003A\u0024bottomLeftTerrainId",
             "name": "bottomLeftTerrainId",
-            "summary": "",
+            "summary": "Defines\u0020the\u0020terrain\u0020type\u0020of\u0020bottom\u0020left\u0020corner\u0020of\u0020the\u0020tile.",
             "url": "classes/Tmx-Tile.html#property_bottomLeftTerrainId"
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003A\u0024bottomRightTerrainId",
             "name": "bottomRightTerrainId",
-            "summary": "",
+            "summary": "Defines\u0020the\u0020terrain\u0020type\u0020of\u0020bottom\u0020right\u0020corner\u0020of\u0020the\u0020tile.",
             "url": "classes/Tmx-Tile.html#property_bottomRightTerrainId"
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003A\u0024probability",
             "name": "probability",
-            "summary": "",
+            "summary": "A\u0020percentage\u0020indicating\u0020the\u0020probability\u0020that\u0020this\u0020tile\u0020is\u0020chosen\u0020when\u0020it\u0020competes\nwith\u0020others\u0020while\u0020editing\u0020with\u0020the\u0020terrain\u0020tool.",
             "url": "classes/Tmx-Tile.html#property_probability"
         },                {
             "fqsen": "\\Tmx\\Tile\u003A\u003A\u0024animation",
@@ -2308,7 +2123,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\TileLayer",
             "name": "TileLayer",
-            "summary": "",
+            "summary": "This\u0020class\u0020represents\u0020an\u0020abstract\u0020layer\u0020of\u0020an\u0020map.",
             "url": "classes/Tmx-TileLayer.html"
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003AgetId\u0028\u0029",
@@ -2393,47 +2208,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003A\u0024id",
             "name": "id",
-            "summary": "",
+            "summary": "Unique\u0020ID\u0020of\u0020the\u0020layer.",
             "url": "classes/Tmx-TileLayer.html#property_id"
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003A\u0024name",
             "name": "name",
-            "summary": "",
+            "summary": "The\u0020name\u0020of\u0020the\u0020layer.",
             "url": "classes/Tmx-TileLayer.html#property_name"
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003A\u0024opacity",
             "name": "opacity",
-            "summary": "",
+            "summary": "The\u0020opacity\u0020of\u0020the\u0020layer\u0020as\u0020a\u0020value\u0020from\u00200\u0020to\u00201.",
             "url": "classes/Tmx-TileLayer.html#property_opacity"
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003A\u0024visible",
             "name": "visible",
-            "summary": "",
+            "summary": "Whether\u0020the\u0020layer\u0020is\u0020shown\u0020\u00281\u0029\u0020or\u0020hidden\u0020\u00280\u0029.",
             "url": "classes/Tmx-TileLayer.html#property_visible"
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003A\u0024tintColor",
             "name": "tintColor",
-            "summary": "",
+            "summary": "A\u0020color\u0020that\u0020is\u0020multiplied\u0020with\u0020any\u0020tiles\u0020drawn\u0020by\u0020this\u0020layer\u0020in\u0020\u0023AARRGGBB\u0020or\u0020\u0023RRGGBB\u0020format.",
             "url": "classes/Tmx-TileLayer.html#property_tintColor"
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003A\u0024offsetX",
             "name": "offsetX",
-            "summary": "",
+            "summary": "Horizontal\u0020offset\u0020for\u0020this\u0020layer\u0020in\u0020pixels.\u0020Defaults\u0020to\u00200.",
             "url": "classes/Tmx-TileLayer.html#property_offsetX"
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003A\u0024offsetY",
             "name": "offsetY",
-            "summary": "",
+            "summary": "Vertical\u0020offset\u0020for\u0020this\u0020layer\u0020in\u0020pixels.\u0020Defaults\u0020to\u00200.",
             "url": "classes/Tmx-TileLayer.html#property_offsetY"
         },                {
             "fqsen": "\\Tmx\\TileLayer\u003A\u003A\u0024map",
             "name": "map",
-            "summary": "",
+            "summary": "The\u0020map\u0020object,\u0020which\u0020holds\u0020this\u0020layer.",
             "url": "classes/Tmx-TileLayer.html#property_map"
         },                {
             "fqsen": "\\Tmx\\TileOffset",
             "name": "TileOffset",
-            "summary": "",
+            "summary": "Represents\u0020the\u0020tileOffset\u0020object.",
             "url": "classes/Tmx-TileOffset.html"
         },                {
             "fqsen": "\\Tmx\\TileOffset\u003A\u003AgetX\u0028\u0029",
@@ -2458,17 +2273,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\TileOffset\u003A\u003A\u0024x",
             "name": "x",
-            "summary": "",
+            "summary": "Horizontal\u0020offset\u0020in\u0020pixels.",
             "url": "classes/Tmx-TileOffset.html#property_x"
         },                {
             "fqsen": "\\Tmx\\TileOffset\u003A\u003A\u0024y",
             "name": "y",
-            "summary": "",
+            "summary": "Vertical\u0020offset\u0020in\u0020pixels.",
             "url": "classes/Tmx-TileOffset.html#property_y"
         },                {
             "fqsen": "\\Tmx\\TileSet",
             "name": "TileSet",
-            "summary": "",
+            "summary": "Represents\u0020the\u0020tileOffset\u0020object.",
             "url": "classes/Tmx-TileSet.html"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003AgetFirstGid\u0028\u0029",
@@ -2628,52 +2443,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024firstGid",
             "name": "firstGid",
-            "summary": "",
+            "summary": "The\u0020first\u0020global\u0020tile\u0020ID\u0020of\u0020this\u0020tileset\u0020\u0028this\u0020global\u0020ID\u0020maps\u0020to\u0020the\u0020first\u0020tile\u0020in\u0020this\u0020tileset\u0029.",
             "url": "classes/Tmx-TileSet.html#property_firstGid"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024source",
             "name": "source",
-            "summary": "",
+            "summary": "If\u0020this\u0020tileset\u0020is\u0020stored\u0020in\u0020an\u0020external\u0020TSX\u0020\u0028Tile\u0020Set\u0020XML\u0029\u0020file,\u0020this\u0020attribute\u0020refers\u0020to\u0020that\u0020file.",
             "url": "classes/Tmx-TileSet.html#property_source"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024name",
             "name": "name",
-            "summary": "",
+            "summary": "The\u0020name\u0020of\u0020this\u0020tileset.",
             "url": "classes/Tmx-TileSet.html#property_name"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024tileWidth",
             "name": "tileWidth",
-            "summary": "",
+            "summary": "The\u0020\u0028maximum\u0029\u0020width\u0020of\u0020the\u0020tiles\u0020in\u0020this\u0020tileset.",
             "url": "classes/Tmx-TileSet.html#property_tileWidth"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024tileHeight",
             "name": "tileHeight",
-            "summary": "",
+            "summary": "The\u0020\u0028maximum\u0029\u0020height\u0020of\u0020the\u0020tiles\u0020in\u0020this\u0020tileset.",
             "url": "classes/Tmx-TileSet.html#property_tileHeight"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024spacing",
             "name": "spacing",
-            "summary": "",
+            "summary": "The\u0020spacing\u0020in\u0020pixels\u0020between\u0020the\u0020tiles\u0020in\u0020this\u0020tileset.",
             "url": "classes/Tmx-TileSet.html#property_spacing"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024margin",
             "name": "margin",
-            "summary": "",
+            "summary": "The\u0020margin\u0020around\u0020the\u0020tiles\u0020in\u0020this\u0020tileset.",
             "url": "classes/Tmx-TileSet.html#property_margin"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024tileCount",
             "name": "tileCount",
-            "summary": "",
+            "summary": "The\u0020number\u0020of\u0020tiles\u0020in\u0020this\u0020tileset.",
             "url": "classes/Tmx-TileSet.html#property_tileCount"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024columns",
             "name": "columns",
-            "summary": "",
+            "summary": "The\u0020number\u0020of\u0020tile\u0020columns\u0020in\u0020the\u0020tileset.",
             "url": "classes/Tmx-TileSet.html#property_columns"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024objectAlignment",
             "name": "objectAlignment",
-            "summary": "",
+            "summary": "Controls\u0020the\u0020alignment\u0020for\u0020tile\u0020objects.",
             "url": "classes/Tmx-TileSet.html#property_objectAlignment"
         },                {
             "fqsen": "\\Tmx\\TileSet\u003A\u003A\u0024image",
@@ -2703,7 +2518,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\WangCollection",
             "name": "WangCollection",
-            "summary": "",
+            "summary": "Represents\u0020the\u0020wangsets.",
             "url": "classes/Tmx-WangCollection.html"
         },                {
             "fqsen": "\\Tmx\\WangCollection\u003A\u003AgetWangSets\u0028\u0029",
@@ -2728,7 +2543,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\WangColor",
             "name": "WangColor",
-            "summary": "",
+            "summary": "Abstract\u0020class\u0020which\u0020are\u0020used\u0020by\u0020wangCornerColor\u0020and\u0020wangEdgeColor.",
             "url": "classes/Tmx-WangColor.html"
         },                {
             "fqsen": "\\Tmx\\WangColor\u003A\u003AgetName\u0028\u0029",
@@ -2773,37 +2588,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\WangColor\u003A\u003A\u0024name",
             "name": "name",
-            "summary": "",
+            "summary": "The\u0020name\u0020of\u0020this\u0020color.",
             "url": "classes/Tmx-WangColor.html#property_name"
         },                {
             "fqsen": "\\Tmx\\WangColor\u003A\u003A\u0024color",
             "name": "color",
-            "summary": "",
+            "summary": "The\u0020color\u0020in\u0020\u0023RRGGBB\u0020format.",
             "url": "classes/Tmx-WangColor.html#property_color"
         },                {
             "fqsen": "\\Tmx\\WangColor\u003A\u003A\u0024tileId",
             "name": "tileId",
-            "summary": "",
+            "summary": "The\u0020tile\u0020ID\u0020of\u0020the\u0020tile\u0020representing\u0020this\u0020color.",
             "url": "classes/Tmx-WangColor.html#property_tileId"
         },                {
             "fqsen": "\\Tmx\\WangColor\u003A\u003A\u0024probability",
             "name": "probability",
-            "summary": "",
+            "summary": "The\u0020relative\u0020probability\u0020that\u0020this\u0020color\u0020is\u0020chosen\u0020over\u0020others\u0020in\u0020case\u0020of\u0020multiple\u0020options.",
             "url": "classes/Tmx-WangColor.html#property_probability"
         },                {
             "fqsen": "\\Tmx\\WangCornerColor",
             "name": "WangCornerColor",
-            "summary": "",
+            "summary": "WangCornerColor\u0020object.",
             "url": "classes/Tmx-WangCornerColor.html"
         },                {
             "fqsen": "\\Tmx\\WangEdgeColor",
             "name": "WangEdgeColor",
-            "summary": "",
+            "summary": "WangEdgeColor\u0020object.",
             "url": "classes/Tmx-WangEdgeColor.html"
         },                {
             "fqsen": "\\Tmx\\WangSet",
             "name": "WangSet",
-            "summary": "",
+            "summary": "WangSet\u0020object.",
             "url": "classes/Tmx-WangSet.html"
         },                {
             "fqsen": "\\Tmx\\WangSet\u003A\u003AgetName\u0028\u0029",
@@ -2873,12 +2688,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\WangSet\u003A\u003A\u0024name",
             "name": "name",
-            "summary": "",
+            "summary": "The\u0020name\u0020of\u0020the\u0020Wang\u0020set.",
             "url": "classes/Tmx-WangSet.html#property_name"
         },                {
             "fqsen": "\\Tmx\\WangSet\u003A\u003A\u0024tileId",
             "name": "tileId",
-            "summary": "",
+            "summary": "The\u0020tile\u0020ID\u0020of\u0020the\u0020tile\u0020representing\u0020this\u0020Wang\u0020set.",
             "url": "classes/Tmx-WangSet.html#property_tileId"
         },                {
             "fqsen": "\\Tmx\\WangSet\u003A\u003A\u0024wangEdgeColors",
@@ -2898,7 +2713,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\WangTile",
             "name": "WangTile",
-            "summary": "",
+            "summary": "WangSet\u0020object.",
             "url": "classes/Tmx-WangTile.html"
         },                {
             "fqsen": "\\Tmx\\WangTile\u003A\u003AgetTileId\u0028\u0029",
@@ -2923,12 +2738,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Tmx\\WangTile\u003A\u003A\u0024tileId",
             "name": "tileId",
-            "summary": "",
+            "summary": "The\u0020tile\u0020ID.",
             "url": "classes/Tmx-WangTile.html#property_tileId"
         },                {
             "fqsen": "\\Tmx\\WangTile\u003A\u003A\u0024wangId",
             "name": "wangId",
-            "summary": "",
+            "summary": "The\u0020Wang\u0020ID.",
             "url": "classes/Tmx-WangTile.html#property_wangId"
         },                {
             "fqsen": "\\",

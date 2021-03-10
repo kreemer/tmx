@@ -12,6 +12,9 @@ namespace Tmx\EventSubscriber;
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 
+/**
+ * @internal
+ */
 class TileEventSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
@@ -26,6 +29,9 @@ class TileEventSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * Parses the terrain id string list.
+     */
     public function onPreDeserialize(PreDeserializeEvent $event): void
     {
         /** @var \SimpleXMLElement $data */
@@ -34,12 +40,6 @@ class TileEventSubscriber implements EventSubscriberInterface
             $terrainIdList = (string) $data->attributes()['terrain'];
             $terrainId = explode(',', $terrainIdList);
 
-            $array = [
-                'topLeftTerrainId' => $terrainId[0],
-                'topRightTerrainId' => $terrainId[1],
-                'bottomLeftTerrainId' => $terrainId[2],
-                'bottomRightTerrainId' => $terrainId[3],
-            ];
             if (isset($terrainId[0]) && '' !== $terrainId[0]) {
                 $data->attributes()->addAttribute('topLeftTerrainId', $terrainId[0]);
             }

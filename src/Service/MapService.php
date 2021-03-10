@@ -12,8 +12,22 @@ namespace Tmx\Service;
 use Tmx\GroupContainer;
 use Tmx\Map;
 
+/**
+ * Service class for maps.
+ *
+ * This Service class provides different methods to process map objects
+ *
+ * @see Map
+ */
 class MapService
 {
+    /**
+     * Find all layers within the container as ordered array.
+     *
+     * @param GroupContainer $container Container which can hold a layer
+     *
+     * @return array Ordered array of layers
+     */
     public static function findLayers(GroupContainer $container): array
     {
         $layers = [];
@@ -28,6 +42,9 @@ class MapService
         return $layers;
     }
 
+    /**
+     * calculate the total height of a map in tiles.
+     */
     public static function getCalculatedHeight(Map $instance): ?int
     {
         if ($instance->isInfiniteMap()) {
@@ -45,6 +62,9 @@ class MapService
         return $instance->getHeight();
     }
 
+    /**
+     * Calculate the width of a map in tiles.
+     */
     public static function getCalculatedWidth(Map $instance): ?int
     {
         if ($instance->isInfiniteMap()) {
@@ -62,6 +82,9 @@ class MapService
         return $instance->getWidth();
     }
 
+    /**
+     * get the offset x of an infinite map.
+     */
     public static function getInfiniteMapOffsetX(Map $instance): ?int
     {
         if ($instance->isInfiniteMap()) {
@@ -78,6 +101,9 @@ class MapService
         return 0;
     }
 
+    /**
+     * get the total offset y of an infinite map.
+     */
     public static function getInfiniteMapOffsetY(Map $instance): ?int
     {
         if ($instance->isInfiniteMap()) {
@@ -94,6 +120,9 @@ class MapService
         return 0;
     }
 
+    /**
+     * Get the largest offset x of an map from all layers.
+     */
     public static function getMapOffsetX(Map $instance): int
     {
         $maxPixel = 0;
@@ -108,6 +137,9 @@ class MapService
         return (int) round($maxPixel);
     }
 
+    /**
+     * Get the largest offset y of an map from all layers.
+     */
     public static function getMapOffsetY(Map $instance): int
     {
         $maxPixel = 0;

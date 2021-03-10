@@ -9,9 +9,27 @@
 
 namespace Tmx;
 
+/**
+ * Representation of a frame.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#frame Documentation
+ */
 class Frame
 {
+    /**
+     * The local ID of a tile within the parent {@see TileSet}.
+     *
+     * @see Frame::getTileId()
+     * @see Frame::setTileId()
+     */
     private ?int $tileId = null;
+
+    /**
+     * How long (in milliseconds) this frame should be displayed before advancing to the next frame.
+     *
+     * @see Frame::getDuration()
+     * @see Frame::setDuration()
+     */
     private ?int $duration = null;
 
     public function getTileId(): ?int

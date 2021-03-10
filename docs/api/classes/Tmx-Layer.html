@@ -101,12 +101,31 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
-        
+            <p class="phpdocumentor-summary">Represents a layer.</p>
+
+    <section class="phpdocumentor-description"><p>A layer contains different tiles which can be printed</p>
+</section>
 
 
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#layer"><abbr title="https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#layer">https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#layer</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"><p>Documentation</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 
 
@@ -118,9 +137,9 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Tmx-Printable.html"><abbr title="\Tmx\Printable">Printable</abbr></a></dt>
-        <dd></dd>
+        <dd>Marks something as a printable layer.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Tmx-PropertyBagHolder.html"><abbr title="\Tmx\PropertyBagHolder">PropertyBagHolder</abbr></a></dt>
-        <dd></dd>
+        <dd>Interface for all elements, which contains properties.</dd>
     
     
     </dl>
@@ -137,63 +156,63 @@
     <span>
                 &nbsp;: int|null            </span>
 </dt>
-<dd></dd>
+<dd>The height of the layer in tiles. Always the same as the map height for fixed-size maps.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-TileLayer.html#property_id">$id</a>
     <span>
                 &nbsp;: int|null            </span>
 </dt>
-<dd></dd>
+<dd>Unique ID of the layer.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-Layer.html#property_layerData">$layerData</a>
     <span>
                 &nbsp;: <a href="classes/Tmx-LayerData.html"><abbr title="\Tmx\LayerData">LayerData</abbr></a>|null            </span>
 </dt>
-<dd></dd>
+<dd>Data which are under this layer.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-TileLayer.html#property_map">$map</a>
     <span>
                 &nbsp;: <a href="classes/Tmx-Map.html"><abbr title="\Tmx\Map">Map</abbr></a>|null            </span>
 </dt>
-<dd></dd>
+<dd>The map object, which holds this layer.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-TileLayer.html#property_name">$name</a>
     <span>
                 &nbsp;: string|null            </span>
 </dt>
-<dd></dd>
+<dd>The name of the layer.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-TileLayer.html#property_offsetX">$offsetX</a>
     <span>
                 &nbsp;: float            </span>
 </dt>
-<dd></dd>
+<dd>Horizontal offset for this layer in pixels. Defaults to 0.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-TileLayer.html#property_offsetY">$offsetY</a>
     <span>
                 &nbsp;: float            </span>
 </dt>
-<dd></dd>
+<dd>Vertical offset for this layer in pixels. Defaults to 0.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-TileLayer.html#property_opacity">$opacity</a>
     <span>
                 &nbsp;: float|null            </span>
 </dt>
-<dd></dd>
+<dd>The opacity of the layer as a value from 0 to 1.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-Layer.html#property_order">$order</a>
     <span>
                 &nbsp;: int            </span>
 </dt>
-<dd></dd>
+<dd>Which order in the map should this tileLayer be rendered.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-PropertyBagTrait.html#property_propertyBag">$propertyBag</a>
@@ -207,35 +226,35 @@
     <span>
                 &nbsp;: string|null            </span>
 </dt>
-<dd></dd>
+<dd>A color that is multiplied with any tiles drawn by this layer in #AARRGGBB or #RRGGBB format.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-TileLayer.html#property_visible">$visible</a>
     <span>
                 &nbsp;: bool            </span>
 </dt>
-<dd></dd>
+<dd>Whether the layer is shown (1) or hidden (0).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-Layer.html#property_width">$width</a>
     <span>
                 &nbsp;: int|null            </span>
 </dt>
-<dd></dd>
+<dd>The width of the layer in tiles. Always the same as the map width for fixed-size maps.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-Layer.html#property_x">$x</a>
     <span>
                 &nbsp;: int            </span>
 </dt>
-<dd></dd>
+<dd>The x coordinate of the layer in tiles.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Tmx-Layer.html#property_y">$y</a>
     <span>
                 &nbsp;: int            </span>
 </dt>
-<dd></dd>
+<dd>The y coordinate of the layer in tiles.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Tmx-Layer.html#method_getHeight">getHeight()</a>
@@ -475,18 +494,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The height of the layer in tiles. Always the same as the map height for fixed-size maps.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int|null</span>
     <span class="phpdocumentor-signature__name">$height</span>
     </code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_getHeight"><abbr title="\Tmx\Layer::getHeight()">Layer::getHeight()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_setHeight"><abbr title="\Tmx\Layer::setHeight()">Layer::setHeight()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -505,18 +550,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Unique ID of the layer.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int|null</span>
     <span class="phpdocumentor-signature__name">$id</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_getId"><abbr title="\Tmx\TileLayer::getId()">TileLayer::getId()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_setId"><abbr title="\Tmx\TileLayer::setId()">TileLayer::setId()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -535,18 +606,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Data which are under this layer.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type"><a href="classes/Tmx-LayerData.html"><abbr title="\Tmx\LayerData">LayerData</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$layerData</span>
     </code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_getLayerData"><abbr title="\Tmx\Layer::getLayerData()">Layer::getLayerData()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_setLayerData"><abbr title="\Tmx\Layer::setLayerData()">Layer::setLayerData()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -565,18 +662,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The map object, which holds this layer.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type"><a href="classes/Tmx-Map.html"><abbr title="\Tmx\Map">Map</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$map</span>
     </code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_getMap"><abbr title="\Tmx\TileLayer::getMap()">TileLayer::getMap()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_setMap"><abbr title="\Tmx\TileLayer::setMap()">TileLayer::setMap()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -595,18 +718,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The name of the layer.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$name</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_getName"><abbr title="\Tmx\TileLayer::getName()">TileLayer::getName()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_setName"><abbr title="\Tmx\TileLayer::setName()">TileLayer::setName()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -625,18 +774,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Horizontal offset for this layer in pixels. Defaults to 0.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">float</span>
     <span class="phpdocumentor-signature__name">$offsetX</span>
      = <span class="phpdocumentor-signature__default-value">0.0</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_getOffsetX"><abbr title="\Tmx\TileLayer::getOffsetX()">TileLayer::getOffsetX()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_setOffsetX"><abbr title="\Tmx\TileLayer::setOffsetX()">TileLayer::setOffsetX()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -655,18 +830,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Vertical offset for this layer in pixels. Defaults to 0.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">float</span>
     <span class="phpdocumentor-signature__name">$offsetY</span>
      = <span class="phpdocumentor-signature__default-value">0.0</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_getOffsetY"><abbr title="\Tmx\TileLayer::getOffsetY()">TileLayer::getOffsetY()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_setOffsetY"><abbr title="\Tmx\TileLayer::setOffsetY()">TileLayer::setOffsetY()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -685,18 +886,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The opacity of the layer as a value from 0 to 1.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">float|null</span>
     <span class="phpdocumentor-signature__name">$opacity</span>
      = <span class="phpdocumentor-signature__default-value">1.0</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_getOpacity"><abbr title="\Tmx\TileLayer::getOpacity()">TileLayer::getOpacity()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_setOpacity"><abbr title="\Tmx\TileLayer::setOpacity()">TileLayer::setOpacity()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -715,18 +942,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Which order in the map should this tileLayer be rendered.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$order</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_setOrder"><abbr title="\Tmx\Layer::setOrder()">Layer::setOrder()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_setOrder"><abbr title="\Tmx\Layer::setOrder()">Layer::setOrder()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -745,7 +998,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PropertyBagTrait.php"><a href="files/src-propertybagtrait.html"><abbr title="src/PropertyBagTrait.php">PropertyBagTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -755,8 +1008,33 @@
     <span class="phpdocumentor-signature__name">$propertyBag</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-PropertyBagTrait.html#method_getPropertyBag"><abbr title="\Tmx\PropertyBagTrait::getPropertyBag()">PropertyBagTrait::getPropertyBag()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-PropertyBagTrait.html#method_setPropertyBag"><abbr title="\Tmx\PropertyBagTrait::setPropertyBag()">PropertyBagTrait::setPropertyBag()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -775,18 +1053,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">A color that is multiplied with any tiles drawn by this layer in #AARRGGBB or #RRGGBB format.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$tintColor</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_getTintColor"><abbr title="\Tmx\TileLayer::getTintColor()">TileLayer::getTintColor()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_setTintColor"><abbr title="\Tmx\TileLayer::setTintColor()">TileLayer::setTintColor()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -805,18 +1109,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Whether the layer is shown (1) or hidden (0).</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$visible</span>
      = <span class="phpdocumentor-signature__default-value">true</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_isVisible"><abbr title="\Tmx\TileLayer::isVisible()">TileLayer::isVisible()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-TileLayer.html#method_setVisible"><abbr title="\Tmx\TileLayer::setVisible()">TileLayer::setVisible()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -835,18 +1165,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The width of the layer in tiles. Always the same as the map width for fixed-size maps.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int|null</span>
     <span class="phpdocumentor-signature__name">$width</span>
     </code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_getWidth"><abbr title="\Tmx\Layer::getWidth()">Layer::getWidth()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_setWidth"><abbr title="\Tmx\Layer::setWidth()">Layer::setWidth()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -865,18 +1221,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The x coordinate of the layer in tiles.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$x</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_getX"><abbr title="\Tmx\Layer::getX()">Layer::getX()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_setX"><abbr title="\Tmx\Layer::setX()">Layer::setX()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -895,18 +1277,44 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The y coordinate of the layer in tiles.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$y</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
 
+        <section class="phpdocumentor-description"></section>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_getY"><abbr title="\Tmx\Layer::getY()">Layer::getY()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Tmx-Layer.html#method_setY"><abbr title="\Tmx\Layer::setY()">Layer::setY()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
 </article>
             </section>
@@ -929,7 +1337,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 </aside>
 
     
@@ -961,7 +1369,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 </aside>
 
     
@@ -993,7 +1401,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 </aside>
 
     
@@ -1025,7 +1433,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 </aside>
 
     
@@ -1057,7 +1465,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
     
@@ -1089,7 +1497,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 </aside>
 
     
@@ -1121,7 +1529,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 </aside>
 
     
@@ -1153,7 +1561,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 </aside>
 
     
@@ -1185,7 +1593,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
 
     
@@ -1217,7 +1625,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PropertyBagTrait.php"><a href="files/src-propertybagtrait.html"><abbr title="src/PropertyBagTrait.php">PropertyBagTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
     
@@ -1249,7 +1657,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 </aside>
 
     
@@ -1281,7 +1689,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 </aside>
 
     
@@ -1313,7 +1721,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 </aside>
 
     
@@ -1345,7 +1753,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 </aside>
 
     
@@ -1377,7 +1785,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 </aside>
 
     
@@ -1409,7 +1817,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 </aside>
 
     
@@ -1451,7 +1859,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 </aside>
 
     
@@ -1493,7 +1901,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">136</span>
 </aside>
 
     
@@ -1535,7 +1943,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 </aside>
 
     
@@ -1577,7 +1985,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 </aside>
 
     
@@ -1619,7 +2027,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">146</span>
 </aside>
 
     
@@ -1661,7 +2069,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 </aside>
 
     
@@ -1703,7 +2111,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 </aside>
 
     
@@ -1745,7 +2153,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 </aside>
 
     
@@ -1787,7 +2195,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PropertyBagTrait.php"><a href="files/src-propertybagtrait.html"><abbr title="src/PropertyBagTrait.php">PropertyBagTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 </aside>
 
     
@@ -1829,7 +2237,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 </aside>
 
     
@@ -1871,7 +2279,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TileLayer.php"><a href="files/src-tilelayer.html"><abbr title="src/TileLayer.php">TileLayer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 </aside>
 
     
@@ -1913,7 +2321,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
     
@@ -1955,7 +2363,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 </aside>
 
     
@@ -1997,7 +2405,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Layer.php"><a href="files/src-layer.html"><abbr title="src/Layer.php">Layer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 </aside>
 
     

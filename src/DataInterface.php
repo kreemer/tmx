@@ -9,6 +9,9 @@
 
 namespace Tmx;
 
+/**
+ * DataInterfaces are all objects, which can contain data.
+ */
 interface DataInterface
 {
     public function getData(): ?string;

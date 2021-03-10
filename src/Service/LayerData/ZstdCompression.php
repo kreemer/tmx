@@ -12,6 +12,11 @@ namespace Tmx\Service\LayerData;
 use Tmx\LayerData;
 use Tmx\Service\ReaderException;
 
+/**
+ * Zstd compression reader.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#data Documentation
+ */
 class ZstdCompression implements CompressionInterface
 {
     public function unpackData(string $data): string

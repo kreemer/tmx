@@ -9,6 +9,11 @@
 
 namespace Tmx\Service\Context;
 
+/**
+ * Used to hold properties, if a layer should be printed or not.
+ *
+ * @internal
+ */
 class PrintContext
 {
     private ?bool $visible = null;

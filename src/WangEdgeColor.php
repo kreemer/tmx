@@ -9,6 +9,11 @@
 
 namespace Tmx;
 
+/**
+ * WangEdgeColor object.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#wangedgecolor Documentation
+ */
 class WangEdgeColor extends WangColor
 {
 }

@@ -9,25 +9,28 @@
 
 namespace Tmx;
 
+/**
+ * A group container provides different data holder objects.
+ */
 interface GroupContainer
 {
     /**
-     * @return array<Group>
+     * @return Group[]
      */
     public function getGroups(): array;
 
     /**
-     * @return array<Layer>
+     * @return Layer[]
      */
     public function getLayers(): array;
 
     /**
-     * @return array<ObjectLayer>
+     * @return ObjectLayer[]
      */
     public function getObjectLayers(): array;
 
     /**
-     * @return array<ImageLayer>
+     * @return ImageLayer[]
      */
     public function getImageLayers(): array;
 }

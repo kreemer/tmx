@@ -9,18 +9,63 @@
 
 namespace Tmx;
 
+/**
+ * Represents a layer.
+ *
+ * A layer contains different tiles which can be printed
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#layer Documentation
+ */
 class Layer extends TileLayer implements Printable, PropertyBagHolder
 {
     use PropertyBagTrait;
 
+    /**
+     * Which order in the map should this tileLayer be rendered.
+     *
+     * @see Layer::setOrder()
+     * @see Layer::setOrder()
+     */
     private int $order = 0;
 
+    /**
+     * The x coordinate of the layer in tiles.
+     *
+     * @see Layer::getX()
+     * @see Layer::setX()
+     */
     private int $x = 0;
+
+    /**
+     * The y coordinate of the layer in tiles.
+     *
+     * @see Layer::getY()
+     * @see Layer::setY()
+     */
     private int $y = 0;
 
+    /**
+     * The width of the layer in tiles. Always the same as the map width for fixed-size maps.
+     *
+     * @see Layer::getWidth()
+     * @see Layer::setWidth()
+     */
     private ?int $width;
+
+    /**
+     * The height of the layer in tiles. Always the same as the map height for fixed-size maps.
+     *
+     * @see Layer::getHeight()
+     * @see Layer::setHeight()
+     */
     private ?int $height;
 
+    /**
+     * Data which are under this layer.
+     *
+     * @see Layer::getLayerData()
+     * @see Layer::setLayerData()
+     */
     private ?LayerData $layerData;
 
     public function getOrder(): int

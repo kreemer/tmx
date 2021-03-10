@@ -11,15 +11,26 @@ namespace Tmx;
 
 use Tmx\Property\AbstractProperty;
 
+/**
+ * Represents properties.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#properties Documentation
+ */
 class PropertyBag
 {
     /**
-     * @var array<AbstractProperty>
+     * Wraps any number of custom properties.
+     *
+     * @var AbstractProperty[]
+     *
+     * @see PropertyBag::getProperties()
+     * @see PropertyBag::addProperty()
+     * @see PropertyBag::removeProperty()
      */
     private array $properties = [];
 
     /**
-     * @return array<AbstractProperty>
+     * @return AbstractProperty[]
      */
     public function getProperties(): array
     {

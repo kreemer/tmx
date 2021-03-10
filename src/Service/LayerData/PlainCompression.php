@@ -11,6 +11,11 @@ namespace Tmx\Service\LayerData;
 
 use Tmx\LayerData;
 
+/**
+ * Plain (no) compression reader.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#data Documentation
+ */
 class PlainCompression implements CompressionInterface
 {
     public function unpackData(string $data): string

@@ -12,6 +12,11 @@ namespace Tmx\Service\LayerData;
 use Tmx\DataInterface;
 use Tmx\LayerData;
 
+/**
+ * Parser for CSV encoded data.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#data Documentation
+ */
 class CsvDataParser implements DataParserInterface
 {
     public function getData(DataInterface $dataInterface): string

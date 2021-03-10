@@ -9,11 +9,29 @@
 
 namespace Tmx;
 
+/**
+ * Represents terrains.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#terrain Documentation
+ */
 class Terrain implements PropertyBagHolder
 {
     use PropertyBagTrait;
 
+    /**
+     * The name of the terrain type.
+     *
+     * @see Terrain::getName()
+     * @see Terrain::setName()
+     */
     private ?string $name = null;
+
+    /**
+     * The local tile-id of the tile that represents the terrain visually.
+     *
+     * @see Terrain::setTile()
+     * @see Terrain::getTile()
+     */
     private ?int $tile = null;
 
     public function getName(): ?string

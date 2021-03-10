@@ -15,6 +15,9 @@ use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 use Tmx\GroupContainer;
 use Tmx\Map;
 
+/**
+ * @internal
+ */
 class MapEventSubscriber implements EventSubscriberInterface
 {
     private int $layerOrder = 0;
@@ -37,6 +40,9 @@ class MapEventSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * set the order of the parsed layers.
+     */
     public function onPreDeserialize(PreDeserializeEvent $event): void
     {
         /** @var \SimpleXMLElement $data */
@@ -62,6 +68,9 @@ class MapEventSubscriber implements EventSubscriberInterface
         }
     }
 
+    /**
+     * Set the dependency graph.
+     */
     public function onPostDeserialize(ObjectEvent $event): void
     {
         if (!$event->getObject() instanceof Map) {

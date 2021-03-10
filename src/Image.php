@@ -9,11 +9,45 @@
 
 namespace Tmx;
 
+/**
+ * Represents an image.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#image Documentation
+ */
 class Image
 {
+    /**
+     * Used for embedded images, in combination with a data child element.
+     * Valid values are file extensions like png, gif, jpg, bmp, etc.
+     *
+     * @see Image::getFormat()
+     * @see Image::setFormat()
+     */
     private ?string $format = null;
+
+    /**
+     * The reference to the tileset image file (Tiled supports most common image formats).
+     * Only used if the image is not embedded.
+     *
+     * @see Image::getSource()
+     * @see Image::setSource()
+     */
     private ?string $source;
+
+    /**
+     * The image width in pixels (optional).
+     *
+     * @see Image::getWidth()
+     * @see Image::setWidth()
+     */
     private ?int $width;
+
+    /**
+     * The image height in pixels (optional).
+     *
+     * @see Image::getHeight()
+     * @see Image::setHeight()
+     */
     private ?int $height;
 
     public function getFormat(): ?string

@@ -9,13 +9,54 @@
 
 namespace Tmx;
 
+/**
+ * WangSet object.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#wangset Documentation
+ */
 class WangSet
 {
+    /**
+     * The name of the Wang set.
+     *
+     * @see WangSet::getName()
+     * @see WangSet::setName()
+     */
     private ?string $name = null;
+
+    /**
+     * The tile ID of the tile representing this Wang set.
+     *
+     * @see WangSet::getTileId()
+     * @see WangSet::setTileId()
+     */
     private ?int $tileId = null;
 
+    /**
+     * @var WangEdgeColor[]
+     *
+     * @see WangSet::getWangEdgeColors()
+     * @see WangSet::addWangEdgeColor()
+     * @see WangSet::removeWangEdgeColor()
+     */
     private array $wangEdgeColors = [];
+
+    /**
+     * @var WangCornerColor[]
+     *
+     * @see WangSet::getWangCornerColors()
+     * @see WangSet::addWangCornerColor()
+     * @see WangSet::removeWangCornerColor()
+     */
     private array $wangCornerColors = [];
+
+    /**
+     * @var WangTile[]
+     *
+     * @see WangSet::getWangTiles()
+     * @see WangSet::addWangTile()
+     * @see WangSet::removeWangTile()
+     */
     private array $wangTiles = [];
 
     public function getName(): ?string
@@ -43,7 +84,7 @@ class WangSet
     }
 
     /**
-     * @return array<WangEdgeColor>
+     * @return WangEdgeColor[]
      */
     public function getWangEdgeColors(): array
     {
@@ -67,7 +108,7 @@ class WangSet
     }
 
     /**
-     * @return array<WangCornerColor>
+     * @return WangCornerColor[]
      */
     public function getWangCornerColors(): array
     {
@@ -91,7 +132,7 @@ class WangSet
     }
 
     /**
-     * @return array<WangTile>
+     * @return WangTile[]
      */
     public function getWangTiles(): array
     {

@@ -14,24 +14,53 @@ use Tmx\LayerData;
 use Tmx\Service\LayerData\CompressionInterface;
 use Tmx\Service\LayerData\DataParserInterface;
 
+/**
+ * Service class for reading the encoded and/or compressed data.
+ *
+ * This service class provides methods, to parse encoded and / or compressed layer data.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#data Documentation
+ */
 class LayerDataReader
 {
     /**
-     * @var array<DataParserInterface>
+     * All DataParserInterface objects, which can be used by this reader.
+     *
+     * @var DataParserInterface[]
      */
-    private $parsers;
+    private array $parsers = [];
 
     /**
-     * @var array<CompressionInterface>
+     * All the compression algorithms, which can be used by this reader.
+     *
+     * @var CompressionInterface[]
      */
-    private $compressions;
+    private array $compressions = [];
 
+    /**
+     * LayerDataReader constructor.
+     *
+     * @param array $parsers      List of {@see DataParserInterface} which can be used to read the data
+     * @param array $compressions List of {@see CompressionInterface} which can be used to decompress the data
+     */
     public function __construct(array $parsers, array $compressions)
     {
         $this->parsers = $parsers;
         $this->compressions = $compressions;
     }
 
+    /**
+     * Method reads an encoded and / or compressed layer data.
+     *
+     * This method reads the encoded and / or compressed layer data and returns it as 2 dimensional array,
+     * where the first dimension represents the tile in the x axis and the second dimension is the tile in
+     * the y axis.
+     *
+     * @param LayerData $layerData The layer data which should be read
+     *
+     * @throws RuntimeException
+     * @throws ReaderException
+     */
     public function readLayerData(LayerData $layerData): array
     {
         if (null === $layerData->getLayer() || null === $layerData->getLayer()->getMap()) {

@@ -9,15 +9,24 @@
 
 namespace Tmx;
 
+/**
+ * Represents terrain types.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#terraintypes Documentation
+ */
 class TerrainCollection
 {
     /**
-     * @var array<Terrain>
+     * @var Terrain[]
+     *
+     * @see TerrainCollection::getTerrains()
+     * @see TerrainCollection::addTerrain()
+     * @see TerrainCollection::removeTerrain()
      */
     private array $terrains = [];
 
     /**
-     * @return array<Terrain>
+     * @return Terrain[]
      */
     public function getTerrains(): array
     {

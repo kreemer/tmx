@@ -9,18 +9,73 @@
 
 namespace Tmx;
 
+/**
+ * This class represents an abstract layer of an map.
+ */
 abstract class TileLayer
 {
+    /**
+     * Unique ID of the layer.
+     *
+     * @see TileLayer::getId()
+     * @see TileLayer::setId()
+     */
     private ?int $id = null;
+
+    /**
+     * The name of the layer.
+     *
+     * @see TileLayer::getName()
+     * @see TileLayer::setName()
+     */
     private ?string $name = null;
 
+    /**
+     * The opacity of the layer as a value from 0 to 1.
+     *
+     * @see TileLayer::getOpacity()
+     * @see TileLayer::setOpacity()
+     */
     private ?float $opacity = 1.0;
+
+    /**
+     * Whether the layer is shown (1) or hidden (0).
+     *
+     * @see TileLayer::isVisible()
+     * @see TileLayer::setVisible()
+     */
     private bool $visible = true;
+
+    /**
+     * A color that is multiplied with any tiles drawn by this layer in #AARRGGBB or #RRGGBB format.
+     *
+     * @see TileLayer::getTintColor()
+     * @see TileLayer::setTintColor()
+     */
     private ?string $tintColor = null;
 
+    /**
+     * Horizontal offset for this layer in pixels. Defaults to 0.
+     *
+     * @see TileLayer::getOffsetX()
+     * @see TileLayer::setOffsetX()
+     */
     private float $offsetX = 0.0;
+
+    /**
+     * Vertical offset for this layer in pixels. Defaults to 0.
+     *
+     * @see TileLayer::getOffsetY()
+     * @see TileLayer::setOffsetY()
+     */
     private float $offsetY = 0.0;
 
+    /**
+     * The map object, which holds this layer.
+     *
+     * @see TileLayer::getMap()
+     * @see TileLayer::setMap()
+     */
     private ?Map $map;
 
     public function getId(): ?int

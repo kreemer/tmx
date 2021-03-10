@@ -9,19 +9,95 @@
 
 namespace Tmx;
 
+/**
+ * Representation of an object.
+ *
+ * This class represents one object on a object layer
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#object Documentation
+ */
 abstract class DrawObject implements PropertyBagHolder
 {
     use PropertyBagTrait;
 
+    /**
+     * Unique ID of the object.
+     *
+     * @see DrawObject::getId()
+     * @see DrawObject::setId()
+     */
     private ?int $id = null;
+
+    /**
+     * The name of the object.
+     *
+     * @see DrawObject::getName()
+     * @see DrawObject::setName()
+     */
     private ?string $name = null;
+
+    /**
+     * The type of the object.
+     *
+     * @see DrawObject::getType()
+     * @see DrawObject::setType()
+     */
     private ?string $type = null;
+
+    /**
+     * The x coordinate of the object in pixels.
+     *
+     * @see DrawObject::getX()
+     * @see DrawObject::setX()
+     */
     private float $x = 0.0;
+
+    /**
+     * The y coordinate of the object in pixels.
+     *
+     * @see DrawObject::getY()
+     * @see DrawObject::setY()
+     */
     private float $y = 0.0;
+
+    /**
+     * The width of the object in pixels.
+     *
+     * @see DrawObject::getWidth()
+     * @see DrawObject::setWidth()
+     */
     private float $width = 0.0;
+
+    /**
+     * The height of the object in pixels.
+     *
+     * @see DrawObject::getHeight()
+     * @see DrawObject::setHeight()
+     */
     private float $height = 0.0;
+
+    /**
+     * The rotation of the object in degrees clockwise around (x, y).
+     *
+     * @see DrawObject::getRotation()
+     * @see DrawObject::setRotation()
+     */
     private string $rotation = '0';
+
+    /**
+     * A reference to a tile.
+     *
+     * @see DrawObject::getGid()
+     * @see DrawObject::setGid()
+     */
     private ?int $gid = null;
+
+    /**
+     * Whether the object is shown (1) or hidden (0).
+     *
+     * @see DrawObject::isVisible()
+     * @see DrawObject::setVisible()
+     */
     private bool $visible = true;
 
     public function getId(): ?int

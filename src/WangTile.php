@@ -9,9 +9,31 @@
 
 namespace Tmx;
 
+/**
+ * WangSet object.
+ *
+ * @see https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#wangtile Documentation
+ */
 class WangTile
 {
+    /**
+     * The tile ID.
+     *
+     * @see WangTile::getTileId()
+     * @see WangTile::setTileId()
+     */
     private ?int $tileId = null;
+
+    /**
+     * The Wang ID.
+     *
+     * A 32-bit unsigned integer stored in the format 0xCECECECE
+     * (where each C is a corner color and each E is an edge color,
+     * from right to left clockwise, starting with the top edge)
+     *
+     * @see WangTile::getWangId()
+     * @see WangTile::setWangId()
+     */
     private ?string $wangId = null;
 
     public function getTileId(): ?int

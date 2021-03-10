@@ -93,10 +93,13 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Service/Parser.php"><a href="files/src-service-parser.html"><abbr title="src/Service/Parser.php">Parser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 </aside>
 
-        
+            <p class="phpdocumentor-summary">Service class for parsing tmx files.</p>
+
+    <section class="phpdocumentor-description"><p>The parser deserialize the tmx file into an object graph</p>
+</section>
 
 
 
@@ -130,14 +133,14 @@
     <span>
                         &nbsp;: <a href="classes/Tmx-Map.html"><abbr title="\Tmx\Map">Map</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Parses a file and returns the map object representation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Tmx-Service-Parser.html#method_parseTileSet">parseTileSet()</a>
     <span>
                         &nbsp;: <a href="classes/Tmx-TileSet.html"><abbr title="\Tmx\TileSet">TileSet</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Parses a tileSet file (tsx) and returns the corresponding element.</dd>
 
         </dl>
 
@@ -167,7 +170,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Service/Parser.php"><a href="files/src-service-parser.html"><abbr title="src/Service/Parser.php">Parser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 </aside>
 
     
@@ -202,7 +205,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Service/Parser.php"><a href="files/src-service-parser.html"><abbr title="src/Service/Parser.php">Parser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parser constructor.</p>
@@ -236,15 +239,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Service/Parser.php"><a href="files/src-service-parser.html"><abbr title="src/Service/Parser.php">Parser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Parses a file and returns the map object representation.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Tmx-Map.html"><abbr title="\Tmx\Map">Map</abbr></a></span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -252,7 +257,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Path to the tmx file</p>
+</section>
+
             </dd>
             </dl>
 
@@ -278,15 +285,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Service/Parser.php"><a href="files/src-service-parser.html"><abbr title="src/Service/Parser.php">Parser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Parses a tileSet file (tsx) and returns the corresponding element.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">parseTileSet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Tmx-TileSet.html"><abbr title="\Tmx\TileSet">TileSet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tileSet</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Tmx-TileSet.html"><abbr title="\Tmx\TileSet">TileSet</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">parseTileSet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Tmx-TileSet.html"><abbr title="\Tmx\TileSet">TileSet</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tileSet</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Tmx-TileSet.html"><abbr title="\Tmx\TileSet">TileSet</abbr></a></span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -294,14 +303,18 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>the path to the tile set file</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$tileSet</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Tmx-TileSet.html"><abbr title="\Tmx\TileSet">TileSet</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Tmx-TileSet.html"><abbr title="\Tmx\TileSet">TileSet</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>TileSet object which will be populated. if null, a new tileset object will be made</p>
+</section>
+
             </dd>
             </dl>
 
