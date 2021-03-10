@@ -6,6 +6,9 @@
 - [Parsing](#parsing)
   - [Parsing data of a layer](#parsing-data-of-a-layer)
   - [Find all layers](#find-all-layers)
+- [Creating maps manually](#creating-maps-manually)
+  - [Tiles inside TileSets](#tiles-inside-tilesets)
+  - [Tile management](#tile-management)
 - [Printing](#printing)
 - [Saving](#saving)
 - [API](#api)
@@ -146,6 +149,52 @@ $layer->setLayerData($layerData);
 
 $map->addTileSet($tileSet);
 $map->addLayer($layer);
+```
+
+## Tiles inside TileSets
+
+You can manually define tiles with additional properties inside the `TileSet` object. While not necessary, it will help you if you want to later draw the map.
+
+```php
+<?php
+
+use Tmx\Tile;
+use Tmx\TileSet;
+
+
+$tileSet = new TileSet();
+$tile = new Tile();
+$tile->setId(123);
+// Creating type or set animation frames
+```
+
+
+## Tile management
+
+If you manage the `TileSet` manually, there is a service class to help you to find `Tile` objects inside the `TileSet` object. It works by adding a `StringProperty` to a tile, which can later be identified:
+
+```php
+<?php
+use Tmx\TileSet;
+use Tmx\Tile;
+use Tmx\PropertyBag;
+use Tmx\Property\StringProperty;
+use Tmx\Service\TileFinder;
+
+$tileSet = new TileSet();
+$tile = new Tile();
+$propertyBag = new PropertyBag();
+$property = new StringProperty();
+$property->setName('identifier');
+$property->setValue('grasTile');
+$tile->setPropertyBag($propertyBag);
+$tileSet->addTile($tile);
+
+$tiles = TileFinder::findTileByProperty($tileSet, ['identifier' => 'grasTile']);
+
+// tiles is an array which contains all tiles with
+// a string property with the name 'identifier'
+// and value 'grasTile'
 ```
 
 # Printing
