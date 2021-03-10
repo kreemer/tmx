@@ -9,16 +9,23 @@
 
 namespace Tmx\Service;
 
-
-use Tmx\Map;
-use Tmx\Property\AbstractProperty;
 use Tmx\Property\StringProperty;
-use Tmx\Tile;
 use Tmx\TileSet;
 
+/**
+ * Service class to find {@see Tile} objects inside {@see TileSet}.
+ */
 class TileFinder
 {
-
+    /**
+     * Find tiles by string property by name and value.
+     *
+     * @param TileSet $tileSet  The TileSet to search
+     * @param array   $criteria An associative array to search tiles.
+     *                          The key is the property name, while the value is the string value.
+     *
+     * @return array an array of found tiles
+     */
     public static function findTileByProperty(TileSet $tileSet, array $criteria): array
     {
         $tiles = [];
@@ -26,7 +33,7 @@ class TileFinder
         $keys = array_keys($criteria);
         foreach ($tileSet->getTiles() as $tile) {
             $check = false;
-            if ($tile->getPropertyBag() === null) {
+            if (null === $tile->getPropertyBag()) {
                 continue;
             }
             foreach ($tile->getPropertyBag()->getProperties() as $property) {
@@ -34,7 +41,7 @@ class TileFinder
                     continue;
                 }
                 $check = $property instanceof StringProperty &&
-                    in_array($property->getName(), $keys) !== false &&
+                    false !== in_array($property->getName(), $keys) &&
                     $property->getValue() === $criteria[$property->getName()];
             }
             if ($check) {
@@ -44,5 +51,4 @@ class TileFinder
 
         return $tiles;
     }
-
 }

@@ -154,9 +154,7 @@ class LayerDataReader
     }
 
     /**
-     * Get the default layerDataReader
-     *
-     * @return LayerDataReader
+     * Get the default layerDataReader.
      */
     public static function getDefaultLayerDataReader(): LayerDataReader
     {

@@ -9,11 +9,11 @@
 
 namespace Tmx\Tests\Service;
 
+use PHPUnit\Framework\TestCase;
 use Tmx\Property\ColorProperty;
 use Tmx\Property\StringProperty;
 use Tmx\PropertyBag;
 use Tmx\Service\TileFinder;
-use PHPUnit\Framework\TestCase;
 use Tmx\Tile;
 use Tmx\TileSet;
 
@@ -42,7 +42,6 @@ class TileFinderTest extends TestCase
         // then
         self::assertEmpty($tiles);
     }
-
 
     public function testArrayIsEmptyIfTileHasNoPropertyBag(): void
     {
@@ -225,5 +224,4 @@ class TileFinderTest extends TestCase
         self::assertSame($tile1, $tiles[0]);
         self::assertSame($tile2, $tiles[1]);
     }
-
 }

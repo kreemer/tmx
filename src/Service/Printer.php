@@ -16,11 +16,6 @@ use Tmx\ImageLayer;
 use Tmx\Layer;
 use Tmx\Map;
 use Tmx\Service\Context\PrintContext;
-use Tmx\Service\LayerData\Base64DataParser;
-use Tmx\Service\LayerData\CsvDataParser;
-use Tmx\Service\LayerData\PlainCompression;
-use Tmx\Service\LayerData\ZlibCompression;
-use Tmx\Service\LayerData\ZstdCompression;
 use Tmx\TileLayer;
 use Tmx\TileSet;
 
