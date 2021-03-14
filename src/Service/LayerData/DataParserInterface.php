@@ -27,7 +27,7 @@ interface DataParserInterface
     /**
      * After the compression algorithm decompresses the data, postCompile it.
      *
-     * @return array[][]
+     * @return string[][]
      */
     public function postCompress(string $data, int $width = null, int $height = null): array;
 

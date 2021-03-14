@@ -529,7 +529,7 @@ class Map implements GroupContainer, PropertyBagHolder
     /**
      * set the background color in the format #000000.
      *
-     * @return string|null
+     * @return $this
      *
      * @see Map::$backgroundColor
      */
