@@ -23,8 +23,8 @@ $ composer require kreemer/tmx
 ```php
 <?php
 
-use Tmx\Service\Service\Service\Parser;
-use Tmx\Service\Service\Service\Printer;
+use Tmx\Service\Parser;
+use Tmx\Service\Printer;
 
 $parser = new Parser();
 $map = $parser->parse('filename.tmx');
@@ -52,7 +52,13 @@ See [here](https://kreemer.github.io/tmx) for additional documentation.
 
 Bugs and feature request are tracked on [GitHub](https://github.com/kreemer/tmx/issues)
 
+### Attribution
+
+This library uses [Serene village revamped](https://limezu.itch.io/serenevillagerevamped) tiles for automatic tests. The tileset is under the [Creative commons](https://creativecommons.org/licenses/by/4.0/) license.
+
+Please support the original developer for this wonderful tileset.
+
 ### License
 
-Tmx is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+Tmx is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
