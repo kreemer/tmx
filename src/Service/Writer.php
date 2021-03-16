@@ -40,7 +40,7 @@ class Writer
      */
     public function __construct()
     {
-        $projectRootPath = ComposerLocator::getRootPath();
+        $projectRootPath = ComposerLocator::getPath('kreemer/tmx');
         $configDir = $projectRootPath . DIRECTORY_SEPARATOR . 'config';
         $this->serializer = SerializerBuilder::create()
             ->addMetadataDir($configDir)
