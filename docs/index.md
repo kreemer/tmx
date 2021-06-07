@@ -32,7 +32,7 @@ The library consist of three services:
 
 You can also build up the object graph yourself, which can be exported to an actual tmx file afterwards. 
 
-Only [version 1.4](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/) of the tmx format is supported. 
+Currently, only [version 1.4](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/) of the tmx format is fully supported, while the newer version (1.5) should also work as well.  
 
 # Parsing
 
