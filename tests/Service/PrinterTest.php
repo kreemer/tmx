@@ -154,6 +154,7 @@ class PrinterTest extends TmxTest
             'embedded-tileset' => ['embedded-tileset'],
             'image-layer' => ['image-layer'],
             'image-layer-multiple' => ['image-layer-multiple'],
+            'version1-5' => ['version1-5'],
         ];
     }
 

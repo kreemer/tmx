@@ -241,6 +241,7 @@ class WriterTest extends TmxTest
             'image-layer' => ['image-layer'],
             'image-layer-multiple' => ['image-layer-multiple'],
             'animation' => ['animation'],
+            'version1-5' => ['version1-5'],
         ];
     }
 }
